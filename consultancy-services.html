@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Consultancy Services - Spatio Property Services</title>
+  <meta name="description" content="Expert property consultancy for legal transactions, land processes, title transfers, and auctioneering in Kenya — delivered through licensed partners."/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+
+  <style>
+    :root {
+      --primary: #1e40af;
+      --secondary: #0f766e;
+      --accent: #f59e0b;
+      --light: #f9fafb;
+      --dark: #111827;
+      --gray: #6b7280;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', 'Segoe UI', sans-serif; line-height: 1.7; color: #333; background: #fff; }
+
+    header {
+      background: var(--dark);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      max-width: 1400px;
+      margin: auto;
+    }
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 900;
+      color: white;
+    }
+    .logo span { color: var(--accent); }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2.2rem;
+      transition: 0.4s;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: -8px;
+      left: 0;
+      background: var(--accent);
+      transition: 0.3s;
+    }
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+    .menu-toggle {
+      display: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      height: 65vh;
+      min-height: 450px;
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url('https://images.unsplash.com/photo-1765020553734-2c050ddb9494?w=800&auto=format&fit=crop&q=80')
+        center/cover no-repeat;
+      color: white;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding-top: 110px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    .hero p {
+      font: 1.2rem;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 5%;
+      text-align: left;
+    }
+    .content h2 {
+      font-size: 2.2rem;
+      margin: 40px 0 20px;
+      color: var(--dark);
+    }
+    .content ul {
+      padding-left: 30px;
+      margin: 20px 0;
+      list-style: none;
+    }
+    .content ul li {
+      margin: 12px 0;
+      position: relative;
+      padding-left: 25px;
+    }
+    .content ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 13px 30px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(245,158,11,0.4);
+    }
+    .btn:hover {
+      background: #d97706;
+      transform: translateY(-4px);
+    }
+
+    /* WHY GRID */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin: 50px 0;
+    }
+    .why-card {
+      background: var(--light);
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+    .why-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+    .why-card i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+    }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.3rem;
+      box-shadow: 0 5px 20px rgba(37,211,102,0.6);
+      z-index: 9999;
+      transition: 0.3s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 30px rgba(37,211,102,0.8);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero h1 { font-size: 2.7rem; }
+    }
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      nav ul {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--dark);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s;
+        gap: 3rem;
+        font-size: 1.4rem;
+      }
+      nav ul.active { left: 0; }
+      .hero { height: 60vh; min-height: 420px; }
+      .hero h1 { font-size: 2.3rem; }
+      .hero p { font-size: 1.05rem; }
+      .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+        bottom: 15px;
+        right: 15px;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.9rem; line-height: 1.25; }
+      .content h2 { font-size: 2rem; }
+      .content { padding: 80px 6%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">SpatioProperty<span>Services</span></div>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services" class="active">Services</a></li>
+          <li><a href="about-us.html">About</a></li>
+          <li><a href="index.html#listings">Listings</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Professional Consultancy Services</h1>
+      <p>End-to-end support for property transactions, legal documentation, land processes, and auctioneering across Kenya.</p>
+    </div>
+  </section>
+
+  <div class="content">
+    <h2>Trusted Advisory for Property & Land Matters</h2>
+    <p>We simplify complex real estate and land administration processes through our network of licensed legal, surveying, and auctioneering partners — ensuring compliance, speed, and peace of mind.</p>
+
+    <h2>Our Consultancy Services Include:</h2>
+    <ul>
+      <li>Property transaction advisory (buying, selling, leasing)</li>
+      <li>Land title verification and due diligence</li>
+      <li>Processing of transfers at Ardhi House</li>
+      <li>Subdivision, amalgamation, and change of user applications</li>
+      <li>Representation in land disputes and boundary conflicts</li>
+      <li>Property auctioneering and valuation support</li>
+      <li>Guidance on physical planning and NEMA requirements</li>
+    </ul>
+
+    <h2>Why Partner With Us?</h2>
+    <ul>
+      <li>Direct access to registered advocates, surveyors, and auctioneers</li>
+      <li>Transparent timelines and cost breakdowns</li>
+      <li>No hidden fees — fixed or hourly packages available</li>
+      <li>Dedicated case manager from start to completion</li>
+    </ul>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <i class="fas fa-balance-scale"></i>
+        <h3>Legal Compliance</h3>
+        <p>All processes follow Kenyan land laws and regulations.</p>
+      </div>
+      <div class="why-card">
+        <i class="fas fa-user-tie"></i>
+        <h3>Expert Network</h3>
+        <p>Vetted professionals across Nairobi, Mombasa, Kisumu & more.</p>
+      </div>
+      <div class="why-card">
+        <i class="fas fa-clock"></i>
+        <h3>Time-Saving</h3>
+        <p>Avoid long queues and bureaucratic delays.</p>
+      </div>
+      <div class="why-card">
+        <i class="fas fa-handshake"></i>
+        <h3>Client-Centric</h3>
+        <p>We act in your best interest — always.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:40px;">
+      <a href="index.html#contact" class="btn">Get Consultancy Support</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Spatio Property Services. All Rights Reserved. | Licensed Property & Land Professionals in Kenya</p>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-menu').addEventListener('click', function () {
+      const menu = document.getElementById('nav-menu');
+      const icon = this.querySelector('i');
+      menu.classList.toggle('active');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+  </script>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/254782424154?text=Hello%20Spatio%20Property%20Services%2C%20I%20need%20help%20with%20property%20consultancy%20or%20legal%20support%20in%20Kenya%20%E2%9C%8D"
+     target="_blank"
+     class="whatsapp-float"
+     aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</body>
+</html>

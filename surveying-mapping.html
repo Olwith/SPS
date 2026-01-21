@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Surveying & Mapping - Spatio Property Services</title>
+  <meta name="description" content="Professional land surveying, GIS mapping, boundary confirmation, and topographic surveys across Kenya. Licensed, accurate, and tech-driven."/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+
+  <style>
+    :root {
+      --primary:#1e40af;
+      --secondary:#0f766e;
+      --accent:#f59e0b;
+      --light:#f9fafb;
+      --dark:#111827;
+      --gray:#6b7280;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family:'Inter','Segoe UI',sans-serif;
+      line-height:1.7;
+      background:#fff;
+      color:#333;
+    }
+
+    /* HEADER */
+    header {
+      background:var(--dark);
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:1000;
+      box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .navbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:1rem 5%;
+      max-width:1400px;
+      margin:auto;
+    }
+
+    .logo {
+      font-size:1.9rem;
+      font-weight:900;
+      color:white;
+      user-select:none;
+    }
+    .logo span { color:var(--accent); }
+
+    nav ul {
+      display:flex;
+      list-style:none;
+      gap:2.2rem;
+      transition:0.4s ease-in-out;
+    }
+
+    nav a {
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+      position:relative;
+      transition:0.3s;
+      font-size:1rem;
+    }
+
+    nav a::after {
+      content:'';
+      position:absolute;
+      width:0;
+      height:3px;
+      bottom:-8px;
+      left:0;
+      background:var(--accent);
+      transition:0.3s;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width:100%;
+    }
+
+    .menu-toggle {
+      display:none;
+      color:white;
+      font-size:1.8rem;
+      cursor:pointer;
+    }
+
+    /* HERO */
+    .hero {
+      height:65vh;
+      min-height:480px;
+      background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+      url('https://images.unsplash.com/photo-1628155858736-bacadae33a88?q=80&w=870&auto=format&fit=crop')
+      center/cover no-repeat;
+      color:white;
+      display:flex;
+      align-items:center;
+      text-align:center;
+      padding:110px 5% 0;
+    }
+
+    .hero h1 {
+      font-size:3rem;
+      margin-bottom:1rem;
+      text-shadow:0 2px 10px rgba(0,0,0,0.5);
+      line-height:1.2;
+    }
+
+    .hero p {
+      font-size:1.15rem;
+      max-width:750px;
+      margin:auto;
+    }
+
+    /* SECTIONS */
+    section { 
+      padding:110px 5%; 
+      max-width:1300px; 
+      margin:auto; 
+    }
+
+    .section-title {
+      text-align:center;
+      font-size:2.7rem;
+      margin-bottom:55px;
+      color:var(--dark);
+      font-weight:800;
+    }
+    .section-title span { color:var(--accent); }
+
+    .why-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+    }
+
+    .why-card {
+      background:var(--light);
+      padding:30px 20px;
+      border-radius:14px;
+      text-align:center;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .why-card:hover {
+      transform:translateY(-5px);
+      box-shadow:0 8px 25px rgba(0,0,0,0.12);
+    }
+
+    .why-card i {
+      font-size:2.8rem;
+      color:var(--primary);
+      margin-bottom:15px;
+    }
+
+    .btn {
+      display:inline-block;
+      padding:13px 30px;
+      background:var(--accent);
+      color:white;
+      border-radius:50px;
+      font-weight:700;
+      text-decoration:none;
+      transition:0.3s;
+      box-shadow:0 5px 15px rgba(245,158,11,0.4);
+      font-size:1rem;
+    }
+
+    .btn:hover {
+      background:#d97706;
+      transform:translateY(-4px);
+    }
+
+    footer {
+      background:#111;
+      color:#aaa;
+      text-align:center;
+      padding:40px 20px;
+      font-size:0.9rem;
+      margin-top:40px;
+    }
+
+    /* WHATSAPP FLOAT BUTTON */
+    .whatsapp-float {
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      background:#25D366;
+      color:white;
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:2.3rem;
+      box-shadow:0 5px 20px rgba(37,211,102,0.6);
+      z-index:9999;
+      transition:0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform:scale(1.1);
+      box-shadow:0 8px 30px rgba(37,211,102,0.8);
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px) {
+      .hero h1 { font-size:2.7rem; }
+    }
+
+    @media(max-width:768px) {
+      .menu-toggle { display:block; }
+
+      nav ul {
+        position:fixed;
+        top:70px;
+        left:-100%;
+        width:100%;
+        height:100vh;
+        background:var(--dark);
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:3rem;
+        font-size:1.4rem;
+      }
+
+      nav ul.active { left:0; }
+
+      .hero {
+        height:65vh;
+        min-height:420px;
+      }
+
+      .hero h1 { font-size:2.3rem; }
+      .hero p { font-size:1.05rem; }
+
+      .whatsapp-float {
+        width:50px;
+        height:50px;
+        font-size:1.9rem;
+        right:15px;
+        bottom:15px;
+      }
+    }
+
+    @media(max-width:480px) {
+      .hero h1 { font-size:1.9rem; line-height:1.25; }
+      .section-title { font-size:2.2rem; }
+      section { padding:90px 6%; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="navbar">
+      <div class="logo">SpatioProperty<span>Services</span></div>
+
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services" class="active">Services</a></li>
+          <li><a href="about-us.html">About</a></li>
+          <li><a href="index.html#listings">Listings</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+
+        <div class="menu-toggle" id="mobile-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div style="max-width:800px;margin:auto;padding:0 20px;">
+      <h1>Professional Surveying & Mapping</h1>
+      <p>Accurate land surveys, GIS mapping, boundary confirmation, and topographic analysis across Kenya — delivered with precision and legal compliance.</p>
+    </div>
+  </section>
+
+  <!-- WHY SECTION -->
+  <section>
+    <h2 class="section-title">Our <span>Surveying & Mapping</span> Expertise</h2>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <i class="fas fa-border-all"></i>
+        <h3>Boundary Surveys</h3>
+        <p>Official demarcation of property lines with certified documentation accepted by Ardhi House and courts.</p>
+      </div>
+
+      <div class="why-card">
+        <i class="fas fa-mountain"></i>
+        <h3>Topographic Mapping</h3>
+        <p>Detailed elevation models for engineering, construction, and environmental planning.</p>
+      </div>
+
+      <div class="why-card">
+        <i class="fas fa-map-marked-alt"></i>
+        <h3>GIS & Drone Mapping</h3>
+        <p>High-resolution aerial maps integrated with spatial data for smart decision-making.</p>
+      </div>
+
+      <div class="why-card">
+        <i class="fas fa-file-contract"></i>
+        <h3>Title & Subdivision Support</h3>
+        <p>Full support for land subdivision, amalgamation, and title processing through registered partners.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:50px;">
+      <a href="index.html#contact" class="btn">Request a Survey Today</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Spatio Property Services. All Rights Reserved. | Licensed Land Surveyors & GIS Professionals in Kenya</p>
+  </footer>
+
+  <!-- MOBILE MENU JS -->
+  <script>
+    document.getElementById('mobile-menu').addEventListener('click', function() {
+      const menu = document.getElementById('nav-menu');
+      const icon = this.querySelector('i');
+      menu.classList.toggle('active');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+  </script>
+
+  <!-- WHATSAPP BUTTON -->
+  <a href="https://wa.me/254782424154?text=Hello%20Spatio%20Property%20Services%2C%20I%20need%20a%20land%20survey%20or%20mapping%20service%20in%20Kenya%20%E2%9C%8D"
+     target="_blank"
+     class="whatsapp-float"
+     aria-label="Chat on WhatsApp">
+     <i class="fab fa-whatsapp"></i>
+  </a>
+
+</body>
+</html>

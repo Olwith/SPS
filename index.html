@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spatio Property Services | Property, Surveying & Consultancy</title>
+
+  <meta name="description" content="Spatio Property Services offers property sales and rentals, land surveying and mapping, and professional consultancy services across Kenya." />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha512-..." crossorigin="" />
+
+  <style>
+    :root {
+      --primary: #1e40af;       /* Deep Blue — trust, authority */
+      --secondary: #0f766e;     /* Earth Green — land, sustainability */
+      --accent: #f59e0b;        /* Orange — action, CTA */
+      --light: #f9fafb;         /* Light background */
+      --dark: #111827;          /* Charcoal text */
+      --muted: #6b7280;         /* Muted gray */
+      --header-h: 72px;
+      --max-width: 1400px;
+      --container-pad: 5%;
+      --radius-lg: 16px;
+      --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
+      --shadow-focus: 0 6px 18px rgba(30,64,175,0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: Inter, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial;
+      line-height: 1.6;
+      color: var(--dark);
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; }
+
+    /* HEADER */
+    header {
+      width: 100%;
+      background: var(--primary);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      position: fixed;
+      top: 0;
+      z-index: 999;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .logo-text {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .logo-text span {
+      color: var(--accent);
+    }
+
+    .desktop-nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .desktop-nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+      padding: 8px 0;
+      position: relative;
+    }
+
+    .desktop-nav a:hover,
+    .desktop-nav a.active {
+      color: var(--accent);
+    }
+
+    .desktop-nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: #fff;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100vh;
+      background: var(--primary);
+      box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+      padding: 80px 20px;
+      flex-direction: column;
+      transition: right 0.3s ease;
+      z-index: 1000;
+    }
+
+    .mobile-nav.show {
+      right: 0;
+    }
+
+    .mobile-nav .nav-list {
+      list-style: none;
+    }
+
+    .mobile-nav .nav-list a {
+      display: block;
+      padding: 15px 0;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: #fff;
+      transition: 0.3s;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .mobile-nav .nav-list a:hover,
+    .mobile-nav .nav-list a.active {
+      color: var(--accent);
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+      display: none;
+    }
+
+    .overlay.show {
+      display: block;
+    }
+
+    .hero {
+      min-height: calc(100vh - var(--header-h));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: calc(var(--header-h) + 1.25rem) var(--container-pad) 4rem;
+      background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('https://plus.unsplash.com/premium_photo-1723759283157-54d22e11a870?w=600&auto=format&fit=crop&q=60') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+    }
+    .hero-content { max-width: 900px; }
+    .hero h1 {
+      font-size: clamp(2rem, 7.5vw, 3.6rem);
+      margin-bottom: 0.8rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.45);
+      line-height: 1.05;
+    }
+    .hero p {
+      font-size: clamp(1rem, 3.8vw, 1.25rem);
+      margin: 1rem 0 1.6rem;
+      opacity: 0.98;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 34px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: clamp(0.95rem, 2.4vw, 1.05rem);
+      box-shadow: 0 6px 18px rgba(245,158,11,0.28);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(245,158,11,0.36);
+    }
+    .btn.btn-sm {
+      padding: 9px 20px;
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 64px var(--container-pad);
+      scroll-margin-top: calc(var(--header-h) + 12px);
+    }
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+      margin-bottom: 48px;
+      color: var(--dark);
+    }
+    .section-title span {
+      color: var(--accent);
+    }
+
+    .services { background: var(--light); }
+    .services-grid {
+      display: grid;
+      gap: 28px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      grid-template-columns: repeat(auto-fit, minmax(min(280px,100%), 1fr));
+    }
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 36px 22px;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      transition: transform 0.35s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-12px);
+    }
+    .service-card i {
+      color: var(--primary);
+      font-size: clamp(2.6rem, 6vw, 3.6rem);
+      margin-bottom: 14px;
+    }
+
+    .service-card .service-icon {
+      width: 300px;
+      height: 300px;
+      border-radius: 100%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+    }
+
+    .about-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 34px;
+      align-items: center;
+    }
+    .about-text h3 {
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+      color: var(--dark);
+    }
+    .about-text p {
+      color: #444;
+    }
+    .about-list {
+      list-style: none;
+      margin: 20px 0 0;
+      padding-left: 0;
+    }
+    .about-list li {
+      margin: 12px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #333;
+    }
+    .about-list i {
+      color: var(--secondary);
+    }
+
+    .about-img {
+      height: 400px;
+      border-radius: var(--radius-lg);
+      background: url('https://images.unsplash.com/photo-1649145058041-f3e2ed855990?w=600&auto=format&fit=crop&q=60') center/cover no-repeat;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .projects-grid {
+      display: grid;
+      gap: 26px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      grid-template-columns: repeat(auto-fit, minmax(min(320px,100%),1fr));
+    }
+    .project-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .project-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .project-info {
+      padding: 16px 18px;
+    }
+    .project-info h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+    .project-info p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .blog-grid {
+      display: grid;
+      gap: 32px;
+      grid-template-columns: repeat(auto-fit, minmax(min(340px,100%),1fr));
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .blog-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      transition: transform 0.35s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .blog-card-content {
+      padding: 24px;
+    }
+
+    .blog-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+
+    .blog-card p {
+      color: #555;
+      margin-bottom: 14px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .contact {
+      background: var(--dark);
+      color: #f9fafb;
+    }
+    .contact-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+    .contact-block h3 {
+      color: var(--accent);
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+    .contact-block p {
+      font-size: 1.02rem;
+      margin-bottom: 18px;
+      color: #f3f4f6;
+    }
+    .contact-methods {
+      margin-top: 26px;
+    }
+    .contact-item {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin: 14px 0;
+    }
+    .contact-item i {
+      font-size: 1.6rem;
+      color: var(--accent);
+    }
+    .whatsapp-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 28px;
+      border-radius: 70px;
+      font-weight: 800;
+      font-size: 1rem;
+      background: #25D366;
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(37,211,102,0.28);
+      text-decoration: none;
+    }
+    .contact-form {
+      background: #fff;
+      color: var(--dark);
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+    }
+    .form-field {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid #e6e6e6;
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+
+    .contact-note {
+      text-align: center;
+      margin-top: 10px;
+      color: #666;
+      font-size: 0.92rem;
+    }
+
+    footer {
+      background: #0b0b0b;
+      color: #bfbfbf;
+      text-align: center;
+      padding: 36px 14px;
+      font-size: 0.95rem;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #25D366;
+      color: #fff;
+      font-size: 1.6rem;
+      box-shadow: 0 6px 20px rgba(37,211,102,0.35);
+      z-index: 1400;
+      transition: transform 0.14s ease;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.12);
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+
+    @media (min-width: 769px) {
+      .menu-toggle { display: none; }
+      .desktop-nav { display: block; }
+      .mobile-nav { display: none; }
+      .about-content { grid-template-columns: 1fr 1fr; }
+      .about-img { height: 500px; }
+      .contact-wrapper { grid-template-columns: 1fr 1fr; }
+      section { padding: 80px var(--container-pad); }
+      .hero { padding: calc(var(--header-h) + 2rem) var(--container-pad) 6rem; }
+    }
+
+    @media (max-width: 1024px) {
+      :root { --max-width: 1100px; }
+    }
+
+    @media (max-width: 768px) {
+      .desktop-nav { display: none; }
+      .menu-toggle { display: block; }
+      .hero { padding-top: calc(var(--header-h) + 1rem); }
+      .about-img { order: -1; }
+      .about-content { grid-template-columns: 1fr; }
+      .contact-wrapper { grid-template-columns: 1fr; }
+      section { padding: 60px 4%; }
+      .service-card .service-icon {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; margin-bottom: 1.1rem; }
+      .project-card img { height: 180px; }
+      .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        font-size: 1.45rem;
+        right: 14px;
+        bottom: 14px;
+      }
+      section { padding: 50px 4%; }
+      .mobile-nav { width: 85%; }
+    }
+
+    a:focus, button:focus, input:focus, textarea:focus {
+      outline: 3px solid rgba(30,64,175,0.12);
+      box-shadow: var(--shadow-focus);
+      outline-offset: 2px;
+    }
+
+    .table-title {
+      margin: 2.5rem 0 1rem;
+      font-size: 1.4rem;
+      color: #1f2937;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+    }
+
+    .listing-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .listing-table th,
+    .listing-table td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .listing-table th {
+      background: var(--dark);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .listing-table tr:hover {
+      background: var(--light);
+    }
+
+    .listing-table td button {
+      white-space: nowrap;
+    }
+
+    .filters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .filters-grid input,
+    .filters-grid select {
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 1rem;
+    }
+
+    #propertyMap {
+      width: 100%;
+      height: 450px;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+
+    .modal-overlay.show {
+      display: flex;
+    }
+
+    .modal-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .modal-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 12px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .contact-form .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .contact-form button {
+      padding: 12px 30px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="navbar container">
+      <div class="logo">
+        <img src="https://i.ibb.co/HpbpF2vz/Black-Blue-Minimalist-Modern-Initial-Font-Logo.png" alt="Black Blue Minimalist Modern Initial Font Logo" border="0" alt="Spatio Property Services Logo" class="logo-img">
+        <span class="logo-text">SpatioProperty<span>Services</span></span>
+      </div>
+
+      <nav aria-label="Primary navigation" class="desktop-nav">
+        <ul id="nav-desktop">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#listings">Listings</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="mobile-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="mobile-nav" id="mobile-menu" aria-hidden="true">
+      <nav class="nav-list">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#listings">Listings</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero" id="home" aria-label="Hero">
+      <div class="hero-content">
+        <h1>Property Solutions <span>Surveying </span> & Consultancy</h1>
+        <p>We connect buyers, sellers, landlords and tenants while delivering professional surveying, mapping and property consultancy services across Kenya.</p>
+        <a href="#contact" class="btn">Talk to Us</a>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services" aria-label="Services">
+      <h2 class="section-title">Our <span>Services</span></h2>
+      <div class="services-grid container">
+        <article class="service-card" aria-labelledby="s1">
+          <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=600&auto=format&fit=crop&q=60" alt="Property Bazaar Services" class="service-icon">
+          <h3 id="s1">Property Bazaar Services</h3>
+          <p>Renting and letting, buying and selling of properties, and verified property listings.</p>
+          <a class="btn btn-sm" href="property-bazaar.html">Learn more...</a>
+        </article>
+
+        <article class="service-card" aria-labelledby="s2">
+          <img src="https://plus.unsplash.com/premium_photo-1683134342961-182d4ba368cb?q=80&w=870&auto=format&fit=crop" alt="Surveying & Mapping" class="service-icon">
+          <h3 id="s2">Surveying & Mapping</h3>
+          <p>Boundary confirmation, physical planning, valuation, GIS mapping, title-related surveys.</p>
+          <a class="btn btn-sm" href="surveying-mapping.html">Learn more...</a>
+        </article>
+
+        <article class="service-card" aria-labelledby="s3">
+          <img src="https://images.unsplash.com/photo-1765020553734-2c050ddb9494?w=600&auto=format&fit=crop&q=60" alt="Consultancy Services" class="service-icon">
+          <h3 id="s3">Consultancy Services</h3>
+          <p>Legal transactions, official office processes, and auctioneering through registered partners.</p>
+          <a class="btn btn-sm" href="consultancy-services.html">Learn more...</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about" aria-label="About">
+      <h2 class="section-title">About <span>Us</span></h2>
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Trusted Property & Land Professionals</h3>
+          <p>Spatio Property Services provides integrated solutions in real estate, surveying, mapping and consultancy, ensuring transparency, accuracy and value.</p>
+          <ul class="about-list">
+            <li><i class="fas fa-check-circle"></i> Verified property listings</li>
+            <li><i class="fas fa-check-circle"></i> Professional surveying and mapping</li>
+            <li><i class="fas fa-check-circle"></i> Legal and transaction support</li>
+            <li><i class="fas fa-check-circle"></i> Client-focused service delivery</li>
+          </ul>
+          <div style="margin-top:18px;">
+            <a href="#contact" class="btn">Get in Touch</a>
+            <a href="about-us.html" class="btn btn-sm" style="background:var(--primary); margin-left:12px;">More About Us...</a>
+          </div>
+        </div>
+        <div class="about-img" role="img" aria-label="Survey team in the field"></div>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <div class="container" style="margin-bottom:30px">
+      <div class="filters-grid">
+        <input type="text" id="searchLocation" placeholder="Search by location">
+        <select id="filterType">
+          <option value="">All Types</option>
+          <option value="Apartment">Apartment</option>
+          <option value="Plot">Plot</option>
+          <option value="Land">Land</option>
+        </select>
+        <select id="filterCategory">
+          <option value="">All Categories</option>
+          <option value="For Sale">For Sale</option>
+          <option value="To Let">To Let</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Listings -->
+    <!-- Listings -->
+<section class="listings" id="listings" aria-label="Property and Land Listings">
+  <h2 class="section-title">Available <span>Properties & Lands</span></h2>
+  <div class="container">
+    <h3 class="table-title">Property Listings</h3>
+    <div class="table-responsive">
+      <table class="listing-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Location</th>
+            <th>Type</th>
+            <th>Asking Price</th>
+            <th>Category</th>
+            <th>Photos</th>
+            <!-- Removed "Map" column -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-location="Kilimani, Nairobi" data-lat="-1.2921" data-lng="36.784" data-photo="https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=800&auto=format&fit=crop&q=80  ">
+            <td>1</td>
+            <td>Kilimani, Nairobi</td>
+            <td>Apartment</td>
+            <td>KES 12,000,000</td>
+            <td>For Sale</td>
+            <td><button class="btn btn-sm view-photo">View</button></td>
+            <!-- Removed "View Map" button -->
+          </tr>
+          <tr data-location="Kitengela" data-lat="-1.4707" data-lng="36.957" data-photo="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format&fit=crop&q=80  ">
+            <td>2</td>
+            <td>Kitengela</td>
+            <td>Residential Plot</td>
+            <td>KES 2,500,000</td>
+            <td>For Sale</td>
+            <td><button class="btn btn-sm view-photo">View</button></td>
+            <!-- Removed "View Map" button -->
+          </tr>
+          <tr data-location="Westlands, Nairobi" data-lat="-1.2667" data-lng="36.8167" data-photo="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&auto=format&fit=crop&q=80  ">
+            <td>3</td>
+            <td>Westlands, Nairobi</td>
+            <td>Rental Apartment</td>
+            <td>KES 65,000 / Month</td>
+            <td>To Let</td>
+            <td><button class="btn btn-sm view-photo">View</button></td>
+            <!-- Removed "View Map" button -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="table-title">Land for Sale</h3>
+    <div class="table-responsive">
+      <table class="listing-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Location</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Size</th>
+            <th>Price</th>
+            <th>Photos</th> <!-- Added Photos column -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-location="Katani, Machakos County" data-lat="-1.5200" data-lng="37.2500" data-photo="https://images.unsplash.com/photo-1764222233275-87dc016c11dc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzaWRlbnRpYWwlMjBsYW5kfGVufDB8fDB8fHww ">
+            <td>1</td>
+            <td>Katani, Machakos County</td>
+            <td>Residential Land</td>
+            <td>Gated community, ready title</td>
+            <td>1/8 Acre</td>
+            <td>KES 1,200,000</td>
+            <td><button class="btn btn-sm view-photo">View</button></td> <!-- Added View Photo -->
+          </tr>
+          <tr data-location="Ruiru, Kiambu County" data-lat="-1.1482" data-lng="36.963" data-photo="https://images.unsplash.com/photo-1723559292807-4a1b4fe5f01b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Q29tbWVyY2lhbCUyMExhbmQlMjBuZWFyJTIwcm9hZHxlbnwwfHwwfHx8MA%3D%3D ">
+            <td>2</td>
+            <td>Ruiru, Kiambu County</td>
+            <td>Commercial Land</td>
+            <td>Along tarmac, ideal for business</td>
+            <td>1/4 Acre</td>
+            <td>KES 8,500,000</td>
+            <td><button class="btn btn-sm view-photo">View</button></td> <!-- Added View Photo -->
+          </tr>
+          <tr data-location="Malindi" data-lat="-3.2189" data-lng="40.1169" data-photo="https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWdyaWN1bHR1cmFsJTIwbGFuZHxlbnwwfHwwfHx8MA%3D%3D ">
+            <td>3</td>
+            <td>Malindi</td>
+            <td>Agricultural Land</td>
+            <td>Fertile land suitable for farming</td>
+            <td>5 Acres</td>
+            <td>KES 6,000,000</td>
+            <td><button class="btn btn-sm view-photo">View</button></td> <!-- Added View Photo -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+    <!-- Property Map -->
+    <section class="container" style="margin-top:60px">
+      <h3 class="table-title">Property Locations</h3>
+      <div id="propertyMap"></div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact" aria-label="Contact">
+      <h2 class="section-title">Get In <span>Get In Touch</span></h2>
+      <div class="contact-wrapper">
+        <div class="contact-block">
+          <h3>Talk to Us on WhatsApp</h3>
+          <p>Click below and start talking to our representative</p>
+          <p>
+            <a class="whatsapp-primary" href="https://wa.me/254782424154?text=Hello%20Spatio%20Property%20Services%2C%20I%20need%20help%20with%20%E2%9C%8D" target="_blank" rel="noopener">
+              <i class="fab fa-whatsapp" aria-hidden="true" style="font-size:1.55rem;"></i>
+              <span style="display:block;text-align:left;">
+                <strong style="display:block;">Chat on WhatsApp</strong>
+                <small style="display:block;opacity:.95;">+254 782 424 154</small>
+              </span>
+            </a>
+          </p>
+          <div class="contact-methods">
+            <div class="contact-item"><i class="fas fa-phone" aria-hidden="true"></i><div><strong>Call:</strong> <a href="tel:+254782424154" style="color:#fff">+254 782 424 154</a></div></div>
+            <div class="contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><div><strong>Email:</strong> <a href="mailto:info.spske@gmail.com" style="color:#fff">info.spske@gmail.com</a></div></div>
+            <div class="contact-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Location:</strong> Nairobi, Kenya</div></div>
+          </div>
+        </div>
+
+        <form action="https://formspree.io/f/xreejeyy" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Type your inquiry here" required></textarea>
+          </div>
+
+          <input type="hidden" name="subject" value="Spatio Property Services Website Inquiry">
+
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+
+        
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; Spatio Property Services. All Rights Reserved. | Connecting buyers and Sellers.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a class="whatsapp-float" href="https://wa.me/254782424154?text=Hello%20Spatio%20Property%20Services%2C%20I'm%20requesting%20assistance.%20Kindly%20guide%20me%20on..." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+
+  <!-- Photo Modal -->
+  <div class="modal-overlay" id="photoModal">
+    <div class="modal-content">
+      <span class="modal-close" id="closeModal">&times;</span>
+      <img id="modalImage" src="" alt="Property Photo">
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha512-..." crossorigin=""></script>
+
+  <script>
+    let map;
+
+    document.addEventListener("DOMContentLoaded", function () {
+      map = L.map("propertyMap", {
+        center: [-1.286389, 36.817223],
+        zoom: 7,
+        scrollWheelZoom: false
+      });
+
+      const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: "&copy; OpenStreetMap contributors"
+      }).addTo(map);
+
+      const satellite = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+        maxZoom: 19,
+        attribution: "Tiles &copy; Esri"
+      });
+
+      L.control.layers({
+        "OpenStreetMap": osm,
+        "Satellite": satellite
+      }).addTo(map);
+
+      const properties = [
+        { location: "Kilimani, Nairobi", type: "Apartment", price: "KES 12,000,000", lat: -1.2921, lng: 36.784 },
+        { location: "Kitengela", type: "Residential Plot", price: "KES 2,500,000", lat: -1.4707, lng: 36.957 },
+        { location: "Westlands, Nairobi", type: "Rental Apartment", price: "KES 65,000 / Month", lat: -1.2667, lng: 36.8167 },
+        { location: "Katani, Machakos County", type: "Residential Land", price: "KES 1,200,000", lat: -1.5200, lng: 37.2500 },
+        { location: "Ruiru, Kiambu County", type: "Commercial Land", price: "KES 8,500,000", lat: -1.1482, lng: 36.963 },
+        { location: "Malindi", type: "Agricultural Land", price: "KES 6,000,000", lat: -3.2189, lng: 40.1169 }
+      ];
+
+      properties.forEach(p => {
+        if (p.lat && p.lng) {
+          L.marker([p.lat, p.lng])
+            .addTo(map)
+            .bindPopup(`<strong>${p.location}</strong><br>${p.type}<br>${p.price}`);
+        }
+      });
+
+      setTimeout(() => map.invalidateSize(), 300);
+    });
+
+    // PHOTO MODAL
+    document.addEventListener("DOMContentLoaded", function () {
+      const modal = document.getElementById('photoModal');
+      const modalImg = document.getElementById('modalImage');
+      const closeModalBtn = document.getElementById('closeModal');
+
+      closeModalBtn.addEventListener('click', () => modal.classList.remove('show'));
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('show');
+      });
+
+      document.querySelectorAll('.view-photo').forEach(button => {
+        button.addEventListener('click', function() {
+          const row = this.closest('tr');
+          const location = row.getAttribute('data-location');
+          const photoUrl = row.getAttribute('data-photo') || 'https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=800&auto=format&fit=crop&q=80';
+          modalImg.src = photoUrl;
+          modalImg.alt = `Photo of property in ${location}`;
+          modal.classList.add('show');
+        });
+      });
+
+      // FIXED VIEW MAP BUTTON
+      document.querySelectorAll('.view-map').forEach(button => {
+        button.addEventListener('click', function() {
+          const row = this.closest('tr');
+          const lat = parseFloat(row.getAttribute('data-lat'));
+          const lng = parseFloat(row.getAttribute('data-lng'));
+          const location = row.getAttribute('data-location');
+
+          if (!isNaN(lat) && !isNaN(lng)) {
+            map.setView([lat, lng], 14);
+
+            // Precise marker match using small tolerance
+            map.eachLayer(layer => {
+              if (layer instanceof L.Marker) {
+                const markerLat = layer.getLatLng().lat;
+                const markerLng = layer.getLatLng().lng;
+                if (Math.abs(markerLat - lat) < 0.0001 && Math.abs(markerLng - lng) < 0.0001) {
+                  layer.openPopup();
+                }
+              }
+            });
+          } else {
+            alert(`Map location not available for ${location}`);
+          }
+        });
+      });
+    });
+
+    // Mobile Menu Toggle
+    const toggleBtn = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('overlay');
+    const mobileIcon = toggleBtn.querySelector('i');
+    const mobileLinks = document.querySelectorAll('.mobile-nav a');
+
+    function toggleMobileMenu() {
+      const isOpen = mobileMenu.classList.contains('show');
+      if (isOpen) {
+        mobileMenu.classList.remove('show');
+        overlay.classList.remove('show');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        mobileIcon.className = 'fas fa-bars';
+        document.body.style.overflow = '';
+      } else {
+        mobileMenu.classList.add('show');
+        overlay.classList.add('show');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        mobileIcon.className = 'fas fa-times';
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    toggleBtn.addEventListener('click', toggleMobileMenu);
+    overlay.addEventListener('click', toggleMobileMenu);
+    mobileLinks.forEach(link => link.addEventListener('click', toggleMobileMenu));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('show')) {
+        toggleMobileMenu();
+      }
+    });
+
+    // Active Link on Scroll
+    const sections = document.querySelectorAll('main section[id]');
+    const desktopNavLinks = document.querySelectorAll('#nav-desktop a');
+
+    function throttle(fn, wait = 100) {
+      let last = 0;
+      return (...args) => {
+        const now = Date.now();
+        if (now - last >= wait) { last = now; fn(...args); }
+      };
+    }
+
+    function refreshActiveLink() {
+      const top = window.scrollY + (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 72) + 6;
+      sections.forEach(sec => {
+        const id = sec.id;
+        const offsetTop = sec.offsetTop;
+        const height = sec.offsetHeight;
+        const desktopLink = document.querySelector(`#nav-desktop a[href="#${id}"]`);
+        
+        if (top >= offsetTop && top < offsetTop + height) {
+          desktopNavLinks.forEach(l => l.classList.remove('active'));
+          if (desktopLink) desktopLink.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', throttle(refreshActiveLink, 120));
+    window.addEventListener('load', refreshActiveLink);
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        if (mobileMenu.classList.contains('show')) toggleMobileMenu();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>
