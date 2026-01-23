@@ -903,6 +903,36 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('overlay');
+
+    function openMobileMenu() {
+      mobileMenu.classList.add('show');
+      overlay.classList.add('show');
+      document.body.style.overflow = 'hidden'; // Prevent background scroll
+      mobileToggle.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('show');
+      overlay.classList.remove('show');
+      document.body.style.overflow = ''; // Restore scroll
+      mobileToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    mobileToggle.addEventListener('click', openMobileMenu);
+    overlay.addEventListener('click', closeMobileMenu);
+
+    // Close menu when clicking a nav link (improves UX)
+    const navLinks = mobileMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+  });
+</script>
 /* ==========================
     SUPABASE CONFIG
 ========================== */
