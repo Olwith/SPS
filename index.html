@@ -4,23 +4,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Spatio Property Services | Property, Surveying & Consultancy</title>
-
   <meta name="description" content="Spatio Property Services offers property sales and rentals, land surveying and mapping, and professional consultancy services across Kenya." />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha512-..." crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Bootstrap 5 (for responsiveness) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #1e40af;       /* Deep Blue — trust, authority */
-      --secondary: #0f766e;     /* Earth Green — land, sustainability */
-      --accent: #f59e0b;        /* Orange — action, CTA */
-      --light: #f9fafb;         /* Light background */
-      --dark: #111827;          /* Charcoal text */
-      --muted: #6b7280;         /* Muted gray */
+      --primary: #1e40af;
+      --secondary: #0f766e;
+      --accent: #f59e0b;
+      --light: #f9fafb;
+      --dark: #111827;
+      --muted: #6b7280;
       --header-h: 72px;
       --max-width: 1400px;
       --container-pad: 5%;
@@ -188,7 +190,7 @@
       padding: calc(var(--header-h) + 1.25rem) var(--container-pad) 4rem;
       background:
         linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url('https://plus.unsplash.com/premium_photo-1723759283157-54d22e11a870?w=600&auto=format&fit=crop&q=60') center/cover no-repeat;
+        url('https://plus.unsplash.com/premium_photo-1723759283157-54d22e11a870?w=1200&auto=format&fit=crop&q=60') center/cover no-repeat;
       color: #fff;
       text-align: center;
     }
@@ -588,6 +590,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 16px;
+      margin-bottom: 30px;
     }
 
     .filters-grid input,
@@ -621,8 +624,9 @@
 
     .modal-content {
       position: relative;
-      max-width: 90%;
-      max-height: 90%;
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 12px;
     }
 
     .modal-content img {
@@ -661,6 +665,40 @@
       padding: 12px 30px;
       border-radius: 8px;
     }
+
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+    }
+    /* Fix section title visibility on dark backgrounds */
+.contact .section-title {
+  color: #ffffff;
+}
+
+.contact .section-title span {
+  color: var(--accent);
+}
+/* MOBILE HEADER FIX */
+@media (max-width: 768px) {
+  .navbar {
+    gap: 10px;
+  }
+
+  .logo-text {
+    font-size: 1.05rem;
+    max-width: 165px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .logo-img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -669,7 +707,7 @@
   <header>
     <div class="navbar container">
       <div class="logo">
-        <img src="https://i.ibb.co/HpbpF2vz/Black-Blue-Minimalist-Modern-Initial-Font-Logo.png" alt="Black Blue Minimalist Modern Initial Font Logo" border="0" alt="Spatio Property Services Logo" class="logo-img">
+        <img src="https://i.ibb.co/HpbpF2vz/Black-Blue-Minimalist-Modern-Initial-Font-Logo.png" alt="Spatio Property Services Logo" class="logo-img">
         <span class="logo-text">SpatioProperty<span>Services</span></span>
       </div>
 
@@ -763,7 +801,7 @@
     </section>
 
     <!-- Filters -->
-    <div class="container" style="margin-bottom:30px">
+    <div class="container">
       <div class="filters-grid">
         <input type="text" id="searchLocation" placeholder="Search by location">
         <select id="filterType">
@@ -771,6 +809,9 @@
           <option value="Apartment">Apartment</option>
           <option value="Plot">Plot</option>
           <option value="Land">Land</option>
+          <option value="Residential Plot">Residential Plot</option>
+          <option value="Commercial Land">Commercial Land</option>
+          <option value="Agricultural Land">Agricultural Land</option>
         </select>
         <select id="filterCategory">
           <option value="">All Categories</option>
@@ -781,103 +822,14 @@
     </div>
 
     <!-- Listings -->
-    <!-- Listings -->
-<section class="listings" id="listings" aria-label="Property and Land Listings">
-  <h2 class="section-title">Available <span>Properties & Lands</span></h2>
-  <div class="container">
-    <h3 class="table-title">Property Listings</h3>
-    <div class="table-responsive">
-      <table class="listing-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Location</th>
-            <th>Type</th>
-            <th>Asking Price</th>
-            <th>Category</th>
-            <th>Photos</th>
-            <!-- Removed "Map" column -->
-          </tr>
-        </thead>
-        <tbody>
-          <tr data-location="Kilimani, Nairobi" data-lat="-1.2921" data-lng="36.784" data-photo="https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=800&auto=format&fit=crop&q=80  ">
-            <td>1</td>
-            <td>Kilimani, Nairobi</td>
-            <td>Apartment</td>
-            <td>KES 12,000,000</td>
-            <td>For Sale</td>
-            <td><button class="btn btn-sm view-photo">View</button></td>
-            <!-- Removed "View Map" button -->
-          </tr>
-          <tr data-location="Kitengela" data-lat="-1.4707" data-lng="36.957" data-photo="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format&fit=crop&q=80  ">
-            <td>2</td>
-            <td>Kitengela</td>
-            <td>Residential Plot</td>
-            <td>KES 2,500,000</td>
-            <td>For Sale</td>
-            <td><button class="btn btn-sm view-photo">View</button></td>
-            <!-- Removed "View Map" button -->
-          </tr>
-          <tr data-location="Westlands, Nairobi" data-lat="-1.2667" data-lng="36.8167" data-photo="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&auto=format&fit=crop&q=80  ">
-            <td>3</td>
-            <td>Westlands, Nairobi</td>
-            <td>Rental Apartment</td>
-            <td>KES 65,000 / Month</td>
-            <td>To Let</td>
-            <td><button class="btn btn-sm view-photo">View</button></td>
-            <!-- Removed "View Map" button -->
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3 class="table-title">Land for Sale</h3>
-    <div class="table-responsive">
-      <table class="listing-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Location</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Size</th>
-            <th>Price</th>
-            <th>Photos</th> <!-- Added Photos column -->
-          </tr>
-        </thead>
-        <tbody>
-          <tr data-location="Katani, Machakos County" data-lat="-1.5200" data-lng="37.2500" data-photo="https://images.unsplash.com/photo-1764222233275-87dc016c11dc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzaWRlbnRpYWwlMjBsYW5kfGVufDB8fDB8fHww ">
-            <td>1</td>
-            <td>Katani, Machakos County</td>
-            <td>Residential Land</td>
-            <td>Gated community, ready title</td>
-            <td>1/8 Acre</td>
-            <td>KES 1,200,000</td>
-            <td><button class="btn btn-sm view-photo">View</button></td> <!-- Added View Photo -->
-          </tr>
-          <tr data-location="Ruiru, Kiambu County" data-lat="-1.1482" data-lng="36.963" data-photo="https://images.unsplash.com/photo-1723559292807-4a1b4fe5f01b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Q29tbWVyY2lhbCUyMExhbmQlMjBuZWFyJTIwcm9hZHxlbnwwfHwwfHx8MA%3D%3D ">
-            <td>2</td>
-            <td>Ruiru, Kiambu County</td>
-            <td>Commercial Land</td>
-            <td>Along tarmac, ideal for business</td>
-            <td>1/4 Acre</td>
-            <td>KES 8,500,000</td>
-            <td><button class="btn btn-sm view-photo">View</button></td> <!-- Added View Photo -->
-          </tr>
-          <tr data-location="Malindi" data-lat="-3.2189" data-lng="40.1169" data-photo="https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWdyaWN1bHR1cmFsJTIwbGFuZHxlbnwwfHwwfHx8MA%3D%3D ">
-            <td>3</td>
-            <td>Malindi</td>
-            <td>Agricultural Land</td>
-            <td>Fertile land suitable for farming</td>
-            <td>5 Acres</td>
-            <td>KES 6,000,000</td>
-            <td><button class="btn btn-sm view-photo">View</button></td> <!-- Added View Photo -->
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
+    <section class="listings" id="listings" aria-label="Property and Land Listings">
+      <h2 class="section-title">Available <span>Properties & Lands</span></h2>
+      <div class="container">
+        <div id="listingsContainer">
+          <div class="loading">Loading listings...</div>
+        </div>
+      </div>
+    </section>
 
     <!-- Property Map -->
     <section class="container" style="margin-top:60px">
@@ -887,7 +839,7 @@
 
     <!-- Contact -->
     <section class="contact" id="contact" aria-label="Contact">
-      <h2 class="section-title">Get In <span>Get In Touch</span></h2>
+      <h2 class="section-title">Get In <span>Touch</span></h2>
       <div class="contact-wrapper">
         <div class="contact-block">
           <h3>Talk to Us on WhatsApp</h3>
@@ -923,8 +875,6 @@
 
           <button type="submit" class="btn">Send Message</button>
         </form>
-
-        
       </div>
     </section>
   </main>
@@ -948,180 +898,240 @@
     </div>
   </div>
 
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha512-..." crossorigin=""></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* ==========================
+    SUPABASE CONFIG
+========================== */
+const supabaseUrl = 'https://mdtcckyejiwdzocklfmf.supabase.co';
+const supabaseAnonKey = 'sb_publishable_1O-a6s0K1KANqu3w0nwFmw_uETdLXxn';
+const supabaseClient = supabase.createClient(supabaseUrl, supabaseAnonKey);
 
-  <script>
-    let map;
+let map;
+let markers = {}; 
+let allProperties = []; 
 
-    document.addEventListener("DOMContentLoaded", function () {
-      map = L.map("propertyMap", {
+/* ==========================
+    MAP INITIALIZATION
+========================== */
+function initMap() {
+    map = L.map("propertyMap", {
         center: [-1.286389, 36.817223],
         zoom: 7,
         scrollWheelZoom: false
-      });
+    });
 
-      const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19,
         attribution: "&copy; OpenStreetMap contributors"
-      }).addTo(map);
+    }).addTo(map);
 
-      const satellite = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
-        maxZoom: 19,
-        attribution: "Tiles &copy; Esri"
-      });
+    const satellite = L.tileLayer(
+        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+        { maxZoom: 19, attribution: "Tiles © Esri" }
+    );
 
-      L.control.layers({
-        "OpenStreetMap": osm,
-        "Satellite": satellite
-      }).addTo(map);
+    L.control.layers(
+        { "OpenStreetMap": osm, "Satellite": satellite }
+    ).addTo(map);
+}
 
-      const properties = [
-        { location: "Kilimani, Nairobi", type: "Apartment", price: "KES 12,000,000", lat: -1.2921, lng: 36.784 },
-        { location: "Kitengela", type: "Residential Plot", price: "KES 2,500,000", lat: -1.4707, lng: 36.957 },
-        { location: "Westlands, Nairobi", type: "Rental Apartment", price: "KES 65,000 / Month", lat: -1.2667, lng: 36.8167 },
-        { location: "Katani, Machakos County", type: "Residential Land", price: "KES 1,200,000", lat: -1.5200, lng: 37.2500 },
-        { location: "Ruiru, Kiambu County", type: "Commercial Land", price: "KES 8,500,000", lat: -1.1482, lng: 36.963 },
-        { location: "Malindi", type: "Agricultural Land", price: "KES 6,000,000", lat: -3.2189, lng: 40.1169 }
-      ];
+/* ==========================
+    LOAD DATA ONCE
+========================== */
+async function loadListings() {
+    try {
+        const { data, error } = await supabaseClient
+            .from('properties')
+            .select('*')
+            .order('created_at', { ascending: false });
 
-      properties.forEach(p => {
-        if (p.lat && p.lng) {
-          L.marker([p.lat, p.lng])
-            .addTo(map)
-            .bindPopup(`<strong>${p.location}</strong><br>${p.type}<br>${p.price}`);
-        }
-      });
+        if (error) throw error;
 
-      setTimeout(() => map.invalidateSize(), 300);
+        allProperties = data || [];
+        renderListings(allProperties);
+    } catch (err) {
+        console.error(err);
+        document.getElementById('listingsContainer').innerHTML =
+            '<p class="text-center text-danger">Failed to load properties.</p>';
+    }
+}
+
+/* ==========================
+    RENDER & FILTER LISTINGS
+========================== */
+function renderListings(listings) {
+    const container = document.getElementById('listingsContainer');
+    const search = document.getElementById('searchLocation').value.toLowerCase();
+    const type = document.getElementById('filterType').value;
+    const cat = document.getElementById('filterCategory').value;
+
+    const filtered = listings.filter(item => {
+        const matchLoc = item.location?.toLowerCase().includes(search);
+        const matchType = type === "" || item.type === type;
+        const matchCat = cat === "" || item.category === cat;
+        return matchLoc && matchType && matchCat;
     });
 
-    // PHOTO MODAL
-    document.addEventListener("DOMContentLoaded", function () {
-      const modal = document.getElementById('photoModal');
-      const modalImg = document.getElementById('modalImage');
-      const closeModalBtn = document.getElementById('closeModal');
+    updateMapMarkers(filtered);
 
-      closeModalBtn.addEventListener('click', () => modal.classList.remove('show'));
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) modal.classList.remove('show');
-      });
+    if (filtered.length === 0) {
+        container.innerHTML = '<p class="text-center text-muted">No matching listings found.</p>';
+        return;
+    }
 
-      document.querySelectorAll('.view-photo').forEach(button => {
-        button.addEventListener('click', function() {
-          const row = this.closest('tr');
-          const location = row.getAttribute('data-location');
-          const photoUrl = row.getAttribute('data-photo') || 'https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=800&auto=format&fit=crop&q=80';
-          modalImg.src = photoUrl;
-          modalImg.alt = `Photo of property in ${location}`;
-          modal.classList.add('show');
+    let html = `
+        <div class="table-responsive">
+            <table class="listing-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Status</th>
+                        <th>Location</th>
+                        <th>Type</th>
+                        <th>Category</th>
+                        <th>Size</th>
+                        <th>Price</th>
+                        <th>Photos</th>
+                        <th>Map</th>
+                    </tr>
+                </thead>
+                <tbody>`;
+
+    filtered.forEach((item, i) => {
+        const photoUrl = item.photo_url || 'https://via.placeholder.com/800x600?text=No+Image';
+        const status = (item.status || 'Active').toLowerCase();
+        const statusClass = status === 'sold' ? 'text-danger' : status === 'rented' ? 'text-warning' : 'text-success';
+
+        html += `
+            <tr data-id="${item.id}" data-photo="${photoUrl}" data-lat="${item.lat}" data-lng="${item.lng}">
+                <td>${i + 1}</td>
+                <td><span class="fw-bold ${statusClass}">${status.toUpperCase()}</span></td>
+                <td><strong>${item.location}</strong></td>
+                <td>${item.type || '—'}</td>
+                <td><span class="badge bg-secondary">${item.category || '—'}</span></td>
+                <td>${item.size || '—'}</td>
+                <td class="text-success fw-bold">${item.price || '—'}</td>
+                <td>
+                    <button class="btn btn-sm btn-primary view-photo"><i class="fas fa-image"></i> View</button>
+                </td>
+                <td>
+                    ${(item.lat && item.lng) ? `<button class="btn btn-sm btn-dark locate-on-map"><i class="fas fa-map-marker-alt"></i> Locate</button>` : '—'}
+                </td>
+            </tr>`;
+    });
+
+    html += `</tbody></table></div>`;
+    container.innerHTML = html;
+
+    attachEventListeners();
+}
+
+/* ==========================
+    INTERACTION LOGIC
+========================== */
+function attachEventListeners() {
+    document.querySelectorAll('.view-photo').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const row = btn.closest('tr');
+            const img = document.getElementById('modalImage');
+            img.src = row.dataset.photo;
+            img.style.objectFit = "contain"; 
+            document.getElementById('photoModal').classList.add('show');
         });
-      });
+    });
 
-      // FIXED VIEW MAP BUTTON
-      document.querySelectorAll('.view-map').forEach(button => {
-        button.addEventListener('click', function() {
-          const row = this.closest('tr');
-          const lat = parseFloat(row.getAttribute('data-lat'));
-          const lng = parseFloat(row.getAttribute('data-lng'));
-          const location = row.getAttribute('data-location');
+    document.querySelectorAll('.locate-on-map').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const row = btn.closest('tr');
+            const lat = parseFloat(row.dataset.lat);
+            const lng = parseFloat(row.dataset.lng);
+            const id = row.dataset.id;
 
-          if (!isNaN(lat) && !isNaN(lng)) {
-            map.setView([lat, lng], 14);
-
-            // Precise marker match using small tolerance
-            map.eachLayer(layer => {
-              if (layer instanceof L.Marker) {
-                const markerLat = layer.getLatLng().lat;
-                const markerLng = layer.getLatLng().lng;
-                if (Math.abs(markerLat - lat) < 0.0001 && Math.abs(markerLng - lng) < 0.0001) {
-                  layer.openPopup();
+            if (lat && lng) {
+                document.getElementById('propertyMap').scrollIntoView({ behavior: 'smooth' });
+                map.flyTo([lat, lng], 15);
+                if (markers[id]) {
+                    markers[id].openPopup();
                 }
-              }
-            });
-          } else {
-            alert(`Map location not available for ${location}`);
-          }
+            }
         });
-      });
     });
+}
 
-    // Mobile Menu Toggle
-    const toggleBtn = document.getElementById('mobile-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const overlay = document.getElementById('overlay');
-    const mobileIcon = toggleBtn.querySelector('i');
-    const mobileLinks = document.querySelectorAll('.mobile-nav a');
-
-    function toggleMobileMenu() {
-      const isOpen = mobileMenu.classList.contains('show');
-      if (isOpen) {
-        mobileMenu.classList.remove('show');
-        overlay.classList.remove('show');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-        mobileIcon.className = 'fas fa-bars';
-        document.body.style.overflow = '';
-      } else {
-        mobileMenu.classList.add('show');
-        overlay.classList.add('show');
-        toggleBtn.setAttribute('aria-expanded', 'true');
-        mobileIcon.className = 'fas fa-times';
-        document.body.style.overflow = 'hidden';
-      }
-    }
-
-    toggleBtn.addEventListener('click', toggleMobileMenu);
-    overlay.addEventListener('click', toggleMobileMenu);
-    mobileLinks.forEach(link => link.addEventListener('click', toggleMobileMenu));
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileMenu.classList.contains('show')) {
-        toggleMobileMenu();
-      }
-    });
-
-    // Active Link on Scroll
-    const sections = document.querySelectorAll('main section[id]');
-    const desktopNavLinks = document.querySelectorAll('#nav-desktop a');
-
-    function throttle(fn, wait = 100) {
-      let last = 0;
-      return (...args) => {
-        const now = Date.now();
-        if (now - last >= wait) { last = now; fn(...args); }
-      };
-    }
-
-    function refreshActiveLink() {
-      const top = window.scrollY + (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 72) + 6;
-      sections.forEach(sec => {
-        const id = sec.id;
-        const offsetTop = sec.offsetTop;
-        const height = sec.offsetHeight;
-        const desktopLink = document.querySelector(`#nav-desktop a[href="#${id}"]`);
-        
-        if (top >= offsetTop && top < offsetTop + height) {
-          desktopNavLinks.forEach(l => l.classList.remove('active'));
-          if (desktopLink) desktopLink.classList.add('active');
+/* ==========================
+    MAP MARKERS WITH DIRECTIONS
+========================== */
+function updateMapMarkers(listings) {
+    Object.values(markers).forEach(marker => {
+        if (map.hasLayer(marker)) {
+            map.removeLayer(marker);
         }
-      });
-    }
-
-    window.addEventListener('scroll', throttle(refreshActiveLink, 120));
-    window.addEventListener('load', refreshActiveLink);
-
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href === '#') return;
-        const target = document.querySelector(href);
-        if (!target) return;
-        e.preventDefault();
-        if (mobileMenu.classList.contains('show')) toggleMobileMenu();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
     });
-  </script>
+    markers = {};
+
+    listings.forEach(item => {
+        const lat = Number(item.lat);
+        const lng = Number(item.lng);
+
+        if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
+
+        const photoUrl = item.photo_url || 'https://via.placeholder.com/150?text=No+Image';
+        
+        // Google Maps Directions Link
+        const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+
+        const popupContent = `
+            <div style="width:200px; font-family: sans-serif;">
+                <img src="${photoUrl}" 
+                     style="width:100%; height:120px; object-fit:cover; border-radius:8px; margin-bottom:8px;">
+                <h5 style="margin:0; font-size:14px; color:#1e40af;">${item.location || 'Property'}</h5>
+                <p style="margin:4px 0; font-size:12px; color:#666;">
+                    ${item.type || ''} ${item.category ? ' - ' + item.category : ''}
+                </p>
+                <p style="margin:0 0 10px 0; font-weight:bold; color:#0f766e;">
+                    ${item.price || ''}
+                </p>
+                <a href="${directionsUrl}" target="_blank" 
+                   style="display: block; background-color: #f59e0b; color: white; text-align: center; 
+                          padding: 8px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 12px;">
+                   <i class="fas fa-directions"></i> Get Directions
+                </a>
+            </div>
+        `;
+
+        const marker = L.marker([lat, lng])
+            .addTo(map)
+            .bindPopup(popupContent);
+
+        markers[item.id] = marker;
+    });
+}
+
+/* ==========================
+    FILTER EVENTS
+========================== */
+document.getElementById('searchLocation').addEventListener('input', () => renderListings(allProperties));
+document.getElementById('filterType').addEventListener('change', () => renderListings(allProperties));
+document.getElementById('filterCategory').addEventListener('change', () => renderListings(allProperties));
+
+/* ==========================
+    MODAL CLOSE
+========================== */
+const modal = document.getElementById('photoModal');
+document.getElementById('closeModal').onclick = () => modal.classList.remove('show');
+modal.onclick = e => { if (e.target === modal) modal.classList.remove('show'); };
+
+/* ==========================
+    INIT
+========================== */
+document.addEventListener('DOMContentLoaded', () => {
+    initMap();
+    loadListings();
+});
+</script>
 </body>
 </html>
