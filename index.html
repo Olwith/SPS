@@ -242,6 +242,97 @@
       color: var(--accent);
     }
 
+    /* FEATURED LISTINGS SECTION */
+    .featured-listings {
+      background: #fff;
+    }
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(280px,100%), 1fr));
+      gap: 26px;
+      max-width: var(--max-width);
+      margin: 0 auto 40px;
+    }
+    .featured-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      transition: transform 0.35s ease;
+      cursor: pointer;
+      position: relative;
+      transform: translateY(40px);
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+    }
+    .featured-card:nth-child(1) { animation-delay: 0.1s; }
+    .featured-card:nth-child(2) { animation-delay: 0.2s; }
+    .featured-card:nth-child(3) { animation-delay: 0.3s; }
+    .featured-card:nth-child(4) { animation-delay: 0.4s; }
+    .featured-card:nth-child(5) { animation-delay: 0.5s; }
+    
+    @keyframes fadeUp {
+      to { transform: translateY(0); opacity: 1; }
+    }
+    
+    .featured-card:hover {
+      transform: translateY(-12px);
+    }
+    .featured-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .featured-card:hover img {
+      transform: scale(1.05);
+    }
+    .featured-card-content {
+      padding: 20px;
+    }
+    .featured-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+    .featured-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .featured-price {
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    
+    .new-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 50px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+    
+    .skeleton {
+      height: 320px;
+      background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 37%, #e5e7eb 63%);
+      background-size: 400% 100%;
+      animation: skeleton 1.4s ease infinite;
+      border-radius: var(--radius-lg);
+    }
+    
+    @keyframes skeleton {
+      0% { background-position: 100% 0; }
+      100% { background-position: 0 0; }
+    }
+
     .services { background: var(--light); }
     .services-grid {
       display: grid;
@@ -496,56 +587,6 @@
       padding: 0 var(--container-pad);
     }
 
-    @media (min-width: 769px) {
-      .menu-toggle { display: none; }
-      .desktop-nav { display: block; }
-      .mobile-nav { display: none; }
-      .about-content { grid-template-columns: 1fr 1fr; }
-      .about-img { height: 500px; }
-      .contact-wrapper { grid-template-columns: 1fr 1fr; }
-      section { padding: 80px var(--container-pad); }
-      .hero { padding: calc(var(--header-h) + 2rem) var(--container-pad) 6rem; }
-    }
-
-    @media (max-width: 1024px) {
-      :root { --max-width: 1100px; }
-    }
-
-    @media (max-width: 768px) {
-      .desktop-nav { display: none; }
-      .menu-toggle { display: block; }
-      .hero { padding-top: calc(var(--header-h) + 1rem); }
-      .about-img { order: -1; }
-      .about-content { grid-template-columns: 1fr; }
-      .contact-wrapper { grid-template-columns: 1fr; }
-      section { padding: 60px 4%; }
-      .service-card .service-icon {
-        width: 200px;
-        height: 200px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 2.2rem; }
-      .hero p { font-size: 1rem; margin-bottom: 1.1rem; }
-      .project-card img { height: 180px; }
-      .whatsapp-float {
-        width: 56px;
-        height: 56px;
-        font-size: 1.45rem;
-        right: 14px;
-        bottom: 14px;
-      }
-      section { padding: 50px 4%; }
-      .mobile-nav { width: 85%; }
-    }
-
-    a:focus, button:focus, input:focus, textarea:focus {
-      outline: 3px solid rgba(30,64,175,0.12);
-      box-shadow: var(--shadow-focus);
-      outline-offset: 2px;
-    }
-
     .table-title {
       margin: 2.5rem 0 1rem;
       font-size: 1.4rem;
@@ -671,34 +712,104 @@
       padding: 2rem;
       color: var(--muted);
     }
+    
+    /* Marker pulse animation */
+    .leaflet-marker-icon.pulse {
+      animation: pulse 1s ease infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+    
     /* Fix section title visibility on dark backgrounds */
-.contact .section-title {
-  color: #ffffff;
-}
+    .contact .section-title {
+      color: #ffffff;
+    }
 
-.contact .section-title span {
-  color: var(--accent);
-}
-/* MOBILE HEADER FIX */
-@media (max-width: 768px) {
-  .navbar {
-    gap: 10px;
-  }
+    .contact .section-title span {
+      color: var(--accent);
+    }
+    
+    /* MOBILE HEADER FIX */
+    @media (max-width: 768px) {
+      .navbar {
+        gap: 10px;
+      }
 
-  .logo-text {
-    font-size: 1.05rem;
-    max-width: 165px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+      .logo-text {
+        font-size: 1.05rem;
+        max-width: 165px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
 
-  .logo-img {
-    width: 48px;
-    height: 48px;
-  }
-}
+      .logo-img {
+        width: 48px;
+        height: 48px;
+      }
+    }
 
+    @media (min-width: 769px) {
+      .menu-toggle { display: none; }
+      .desktop-nav { display: block; }
+      .mobile-nav { display: none; }
+      .about-content { grid-template-columns: 1fr 1fr; }
+      .about-img { height: 500px; }
+      .contact-wrapper { grid-template-columns: 1fr 1fr; }
+      section { padding: 80px var(--container-pad); }
+      .hero { padding: calc(var(--header-h) + 2rem) var(--container-pad) 6rem; }
+    }
+
+    @media (max-width: 1024px) {
+      :root { --max-width: 1100px; }
+    }
+
+    @media (max-width: 768px) {
+      .desktop-nav { display: none; }
+      .menu-toggle { display: block; }
+      .hero { padding-top: calc(var(--header-h) + 1rem); }
+      .about-img { order: -1; }
+      .about-content { grid-template-columns: 1fr; }
+      .contact-wrapper { grid-template-columns: 1fr; }
+      section { padding: 60px 4%; }
+      .service-card .service-icon {
+        width: 200px;
+        height: 200px;
+      }
+      .featured-card img {
+        height: 180px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; margin-bottom: 1.1rem; }
+      .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        font-size: 1.45rem;
+        right: 14px;
+        bottom: 14px;
+      }
+      section { padding: 50px 4%; }
+      .mobile-nav { width: 85%; }
+      .featured-card-content {
+        padding: 15px;
+      }
+      .featured-card h3 {
+        font-size: 1.1rem;
+      }
+    }
+
+    a:focus, button:focus, input:focus, textarea:focus {
+      outline: 3px solid rgba(30,64,175,0.12);
+      box-shadow: var(--shadow-focus);
+      outline-offset: 2px;
+    }
   </style>
 </head>
 <body>
@@ -715,8 +826,8 @@
         <ul id="nav-desktop">
           <li><a href="#home" class="active">Home</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#listings">Listings</a></li>
+          <li><a href="#featured">Featured</a></li>
+          <li><a href="#listings">All Listings</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -731,8 +842,8 @@
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#listings">Listings</a></li>
+          <li><a href="#featured">Featured</a></li>
+          <li><a href="#listings">All Listings</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -748,6 +859,20 @@
         <h1>Property Solutions <span>Surveying </span> & Consultancy</h1>
         <p>We connect buyers, sellers, landlords and tenants while delivering professional surveying, mapping and property consultancy services across Kenya.</p>
         <a href="#contact" class="btn">Talk to Us</a>
+      </div>
+    </section>
+
+    <!-- Featured Listings Section -->
+    <section class="featured-listings" id="featured" aria-label="Featured Listings">
+      <h2 class="section-title">New <span>Listings</span></h2>
+      <div class="featured-grid container" id="featuredContainer">
+        <!-- Skeleton loaders for initial state -->
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+      </div>
+      <div class="text-center">
+        <a href="#listings" class="btn">View More Listings</a>
       </div>
     </section>
 
@@ -821,7 +946,7 @@
       </div>
     </div>
 
-    <!-- Listings -->
+    <!-- All Listings -->
     <section class="listings" id="listings" aria-label="Property and Land Listings">
       <h2 class="section-title">Available <span>Properties & Lands</span></h2>
       <div class="container">
@@ -902,216 +1027,194 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
   
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileToggle = document.getElementById('mobile-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const overlay = document.getElementById('overlay');
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mobileToggle = document.getElementById('mobile-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const overlay = document.getElementById('overlay');
 
-    function openMobileMenu() {
-      mobileMenu.classList.add('show');
-      overlay.classList.add('show');
-      document.body.style.overflow = 'hidden'; // Prevent background scroll
-      mobileToggle.setAttribute('aria-expanded', 'true');
-    }
+      function openMobileMenu() {
+        mobileMenu.classList.add('show');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        mobileToggle.setAttribute('aria-expanded', 'true');
+      }
 
-    function closeMobileMenu() {
-      mobileMenu.classList.remove('show');
-      overlay.classList.remove('show');
-      document.body.style.overflow = ''; // Restore scroll
-      mobileToggle.setAttribute('aria-expanded', 'false');
-    }
+      function closeMobileMenu() {
+        mobileMenu.classList.remove('show');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      }
 
-    mobileToggle.addEventListener('click', openMobileMenu);
-    overlay.addEventListener('click', closeMobileMenu);
+      mobileToggle.addEventListener('click', openMobileMenu);
+      overlay.addEventListener('click', closeMobileMenu);
 
-    // Close menu when clicking a nav link (improves UX)
-    const navLinks = mobileMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', closeMobileMenu);
-    });
-  });
-
-/* ==========================
-    SUPABASE CONFIG
-========================== */
-const supabaseUrl = 'https://mdtcckyejiwdzocklfmf.supabase.co';
-const supabaseAnonKey = 'sb_publishable_1O-a6s0K1KANqu3w0nwFmw_uETdLXxn';
-const supabaseClient = supabase.createClient(supabaseUrl, supabaseAnonKey);
-
-let map;
-let markers = {}; 
-let allProperties = []; 
-
-/* ==========================
-    MAP INITIALIZATION
-========================== */
-function initMap() {
-    map = L.map("propertyMap", {
-        center: [-1.286389, 36.817223],
-        zoom: 7,
-        scrollWheelZoom: false
+      const navLinks = mobileMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
     });
 
-    const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
-        attribution: "&copy; OpenStreetMap contributors"
-    }).addTo(map);
+    /* ==========================
+        SUPABASE CONFIG
+    ========================== */
+    const supabaseUrl = 'https://mdtcckyejiwdzocklfmf.supabase.co';
+    const supabaseAnonKey = 'sb_publishable_1O-a6s0K1KANqu3w0nwFmw_uETdLXxn';
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseAnonKey);
 
-    const satellite = L.tileLayer(
-        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-        { maxZoom: 19, attribution: "Tiles © Esri" }
-    );
+    let map;
+    let markers = {}; 
+    let allProperties = []; 
+    let featuredMarkers = {};
 
-    L.control.layers(
-        { "OpenStreetMap": osm, "Satellite": satellite }
-    ).addTo(map);
-}
-
-/* ==========================
-    LOAD DATA ONCE
-========================== */
-async function loadListings() {
-    try {
-        const { data, error } = await supabaseClient
-            .from('properties')
-            .select('*')
-            .order('created_at', { ascending: false });
-
-        if (error) throw error;
-
-        allProperties = data || [];
-        renderListings(allProperties);
-    } catch (err) {
-        console.error(err);
-        document.getElementById('listingsContainer').innerHTML =
-            '<p class="text-center text-danger">Failed to load properties.</p>';
-    }
-}
-
-/* ==========================
-    RENDER & FILTER LISTINGS
-========================== */
-function renderListings(listings) {
-    const container = document.getElementById('listingsContainer');
-    const search = document.getElementById('searchLocation').value.toLowerCase();
-    const type = document.getElementById('filterType').value;
-    const cat = document.getElementById('filterCategory').value;
-
-    const filtered = listings.filter(item => {
-        const matchLoc = item.location?.toLowerCase().includes(search);
-        const matchType = type === "" || item.type === type;
-        const matchCat = cat === "" || item.category === cat;
-        return matchLoc && matchType && matchCat;
-    });
-
-    updateMapMarkers(filtered);
-
-    if (filtered.length === 0) {
-        container.innerHTML = '<p class="text-center text-muted">No matching listings found.</p>';
-        return;
-    }
-
-    let html = `
-        <div class="table-responsive">
-            <table class="listing-table">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Status</th>
-                        <th>Location</th>
-                        <th>Type</th>
-                        <th>Category</th>
-                        <th>Size</th>
-                        <th>Price</th>
-                        <th>Photos</th>
-                        <th>Map</th>
-                    </tr>
-                </thead>
-                <tbody>`;
-
-    filtered.forEach((item, i) => {
-        const photoUrl = item.photo_url || 'https://via.placeholder.com/800x600?text=No+Image';
-        const status = (item.status || 'Active').toLowerCase();
-        const statusClass = status === 'sold' ? 'text-danger' : status === 'rented' ? 'text-warning' : 'text-success';
-
-        html += `
-            <tr data-id="${item.id}" data-photo="${photoUrl}" data-lat="${item.lat}" data-lng="${item.lng}">
-                <td>${i + 1}</td>
-                <td><span class="fw-bold ${statusClass}">${status.toUpperCase()}</span></td>
-                <td><strong>${item.location}</strong></td>
-                <td>${item.type || '—'}</td>
-                <td><span class="badge bg-secondary">${item.category || '—'}</span></td>
-                <td>${item.size || '—'}</td>
-                <td class="text-success fw-bold">${item.price || '—'}</td>
-                <td>
-                    <button class="btn btn-sm btn-primary view-photo"><i class="fas fa-image"></i> View</button>
-                </td>
-                <td>
-                    ${(item.lat && item.lng) ? `<button class="btn btn-sm btn-dark locate-on-map"><i class="fas fa-map-marker-alt"></i> Locate</button>` : '—'}
-                </td>
-            </tr>`;
-    });
-
-    html += `</tbody></table></div>`;
-    container.innerHTML = html;
-
-    attachEventListeners();
-}
-
-/* ==========================
-    INTERACTION LOGIC
-========================== */
-function attachEventListeners() {
-    document.querySelectorAll('.view-photo').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const row = btn.closest('tr');
-            const img = document.getElementById('modalImage');
-            img.src = row.dataset.photo;
-            img.style.objectFit = "contain"; 
-            document.getElementById('photoModal').classList.add('show');
+    /* ==========================
+        MAP INITIALIZATION
+    ========================== */
+    function initMap() {
+        map = L.map("propertyMap", {
+            center: [-1.286389, 36.817223],
+            zoom: 7,
+            scrollWheelZoom: false
         });
-    });
 
-    document.querySelectorAll('.locate-on-map').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const row = btn.closest('tr');
-            const lat = parseFloat(row.dataset.lat);
-            const lng = parseFloat(row.dataset.lng);
-            const id = row.dataset.id;
+        const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 19,
+            attribution: "&copy; OpenStreetMap contributors"
+        }).addTo(map);
 
-            if (lat && lng) {
-                document.getElementById('propertyMap').scrollIntoView({ behavior: 'smooth' });
-                map.flyTo([lat, lng], 15);
-                if (markers[id]) {
-                    markers[id].openPopup();
-                }
+        const satellite = L.tileLayer(
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+            { maxZoom: 19, attribution: "Tiles © Esri" }
+        );
+
+        L.control.layers(
+            { "OpenStreetMap": osm, "Satellite": satellite }
+        ).addTo(map);
+    }
+
+    /* ==========================
+        LOAD FEATURED LISTINGS (NEW ≤24 HOURS)
+    ========================== */
+    async function loadFeaturedListings() {
+        try {
+            const since = new Date(Date.now() - 86400000).toISOString(); // 24 hours ago
+            
+            const { data, error } = await supabaseClient
+                .from('properties')
+                .select('*')
+                .gte('created_at', since)
+                .order('created_at', { ascending: false })
+                .limit(5);
+
+            if (error) throw error;
+
+            const container = document.getElementById('featuredContainer');
+            
+            if (!data || data.length === 0) {
+                container.innerHTML = '<p class="text-center text-muted">No new listings today. Check back soon!</p>';
+                return;
             }
-        });
-    });
-}
 
-/* ==========================
-    MAP MARKERS WITH DIRECTIONS
-========================== */
-function updateMapMarkers(listings) {
-    Object.values(markers).forEach(marker => {
-        if (map.hasLayer(marker)) {
-            map.removeLayer(marker);
+            let html = '';
+            data.forEach((item) => {
+                const photoUrl = item.photo_url || 'https://via.placeholder.com/800x600?text=No+Image';
+                
+                html += `
+                    <div class="featured-card" data-id="${item.id}" data-lat="${item.lat}" data-lng="${item.lng}">
+                        <span class="new-badge">NEW</span>
+                        <img src="${photoUrl}" alt="${item.location}" loading="lazy">
+                        <div class="featured-card-content">
+                            <h3>${item.location}</h3>
+                            <p>${item.type || ''} • ${item.category || ''}</p>
+                            <div class="featured-price">${item.price || 'Price on request'}</div>
+                        </div>
+                    </div>
+                `;
+                
+                // Add marker for featured property
+                if (item.lat && item.lng) {
+                    addMarker(item, true);
+                }
+            });
+            
+            container.innerHTML = html;
+            
+            // Add click event to featured cards
+            document.querySelectorAll('.featured-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const id = this.dataset.id;
+                    const lat = parseFloat(this.dataset.lat);
+                    const lng = parseFloat(this.dataset.lng);
+                    
+                    if (lat && lng) {
+                        // Smooth scroll to map
+                        document.getElementById('propertyMap').scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Fly to location on map
+                        map.flyTo([lat, lng], 15, {
+                            animate: true,
+                            duration: 1.5
+                        });
+                        
+                        // Highlight and pulse the marker
+                        setTimeout(() => {
+                            const marker = markers[id] || featuredMarkers[id];
+                            if (marker) {
+                                marker.openPopup();
+                                const icon = marker._icon;
+                                if (icon) {
+                                    icon.classList.add('pulse');
+                                    setTimeout(() => icon.classList.remove('pulse'), 2000);
+                                }
+                            }
+                        }, 1500);
+                    }
+                });
+            });
+            
+        } catch (err) {
+            console.error('Error loading featured listings:', err);
+            document.getElementById('featuredContainer').innerHTML = 
+                '<p class="text-center text-danger">Failed to load featured properties.</p>';
         }
-    });
-    markers = {};
+    }
 
-    listings.forEach(item => {
+    /* ==========================
+        LOAD ALL LISTINGS
+    ========================== */
+    async function loadListings() {
+        try {
+            const { data, error } = await supabaseClient
+                .from('properties')
+                .select('*')
+                .order('created_at', { ascending: false });
+
+            if (error) throw error;
+
+            allProperties = data || [];
+            renderListings(allProperties);
+        } catch (err) {
+            console.error(err);
+            document.getElementById('listingsContainer').innerHTML =
+                '<p class="text-center text-danger">Failed to load properties.</p>';
+        }
+    }
+
+    /* ==========================
+        ADD MARKER TO MAP
+    ========================== */
+    function addMarker(item, isFeatured = false) {
         const lat = Number(item.lat);
         const lng = Number(item.lng);
 
         if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
 
         const photoUrl = item.photo_url || 'https://via.placeholder.com/150?text=No+Image';
-        
-        // Google Maps Directions Link
         const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
 
         const popupContent = `
@@ -1137,31 +1240,156 @@ function updateMapMarkers(listings) {
             .addTo(map)
             .bindPopup(popupContent);
 
-        markers[item.id] = marker;
+        if (isFeatured) {
+            featuredMarkers[item.id] = marker;
+        } else {
+            markers[item.id] = marker;
+        }
+    }
+
+    /* ==========================
+        RENDER & FILTER LISTINGS
+    ========================== */
+    function renderListings(listings) {
+        const container = document.getElementById('listingsContainer');
+        const search = document.getElementById('searchLocation').value.toLowerCase();
+        const type = document.getElementById('filterType').value;
+        const cat = document.getElementById('filterCategory').value;
+
+        const filtered = listings.filter(item => {
+            const matchLoc = item.location?.toLowerCase().includes(search);
+            const matchType = type === "" || item.type === type;
+            const matchCat = cat === "" || item.category === cat;
+            return matchLoc && matchType && matchCat;
+        });
+
+        // Clear existing markers except featured ones
+        Object.keys(markers).forEach(id => {
+            if (map.hasLayer(markers[id])) {
+                map.removeLayer(markers[id]);
+            }
+        });
+        markers = {};
+        
+        // Add markers for filtered listings
+        filtered.forEach(item => {
+            if (item.lat && item.lng && !featuredMarkers[item.id]) {
+                addMarker(item, false);
+            }
+        });
+
+        if (filtered.length === 0) {
+            container.innerHTML = '<p class="text-center text-muted">No matching listings found.</p>';
+            return;
+        }
+
+        let html = `
+            <div class="table-responsive">
+                <table class="listing-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Status</th>
+                            <th>Location</th>
+                            <th>Type</th>
+                            <th>Category</th>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Photos</th>
+                            <th>Map</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+
+        filtered.forEach((item, i) => {
+            const photoUrl = item.photo_url || 'https://via.placeholder.com/800x600?text=No+Image';
+            const status = (item.status || 'Active').toLowerCase();
+            const statusClass = status === 'sold' ? 'text-danger' : status === 'rented' ? 'text-warning' : 'text-success';
+
+            html += `
+                <tr data-id="${item.id}" data-photo="${photoUrl}" data-lat="${item.lat}" data-lng="${item.lng}">
+                    <td>${i + 1}</td>
+                    <td><span class="fw-bold ${statusClass}">${status.toUpperCase()}</span></td>
+                    <td><strong>${item.location}</strong></td>
+                    <td>${item.type || '—'}</td>
+                    <td><span class="badge bg-secondary">${item.category || '—'}</span></td>
+                    <td>${item.size || '—'}</td>
+                    <td class="text-success fw-bold">${item.price || '—'}</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary view-photo"><i class="fas fa-image"></i> View</button>
+                    </td>
+                    <td>
+                        ${(item.lat && item.lng) ? `<button class="btn btn-sm btn-dark locate-on-map"><i class="fas fa-map-marker-alt"></i> Locate</button>` : '—'}
+                    </td>
+                </tr>`;
+        });
+
+        html += `</tbody></table></div>`;
+        container.innerHTML = html;
+
+        attachEventListeners();
+    }
+
+    /* ==========================
+        INTERACTION LOGIC
+    ========================== */
+    function attachEventListeners() {
+        document.querySelectorAll('.view-photo').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const row = btn.closest('tr');
+                const img = document.getElementById('modalImage');
+                img.src = row.dataset.photo;
+                img.style.objectFit = "contain"; 
+                document.getElementById('photoModal').classList.add('show');
+            });
+        });
+
+        document.querySelectorAll('.locate-on-map').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const row = btn.closest('tr');
+                const lat = parseFloat(row.dataset.lat);
+                const lng = parseFloat(row.dataset.lng);
+                const id = row.dataset.id;
+
+                if (lat && lng) {
+                    document.getElementById('propertyMap').scrollIntoView({ behavior: 'smooth' });
+                    map.flyTo([lat, lng], 15);
+                    const marker = markers[id] || featuredMarkers[id];
+                    if (marker) {
+                        marker.openPopup();
+                        const icon = marker._icon;
+                        if (icon) {
+                            icon.classList.add('pulse');
+                            setTimeout(() => icon.classList.remove('pulse'), 2000);
+                        }
+                    }
+                }
+            });
+        });
+    }
+
+    /* ==========================
+        FILTER EVENTS
+    ========================== */
+    document.getElementById('searchLocation').addEventListener('input', () => renderListings(allProperties));
+    document.getElementById('filterType').addEventListener('change', () => renderListings(allProperties));
+    document.getElementById('filterCategory').addEventListener('change', () => renderListings(allProperties));
+
+    /* ==========================
+        MODAL CLOSE
+    ========================== */
+    const modal = document.getElementById('photoModal');
+    document.getElementById('closeModal').onclick = () => modal.classList.remove('show');
+    modal.onclick = e => { if (e.target === modal) modal.classList.remove('show'); };
+
+    /* ==========================
+        INITIALIZE EVERYTHING
+    ========================== */
+    document.addEventListener('DOMContentLoaded', () => {
+        initMap();
+        loadFeaturedListings();
+        loadListings();
     });
-}
-
-/* ==========================
-    FILTER EVENTS
-========================== */
-document.getElementById('searchLocation').addEventListener('input', () => renderListings(allProperties));
-document.getElementById('filterType').addEventListener('change', () => renderListings(allProperties));
-document.getElementById('filterCategory').addEventListener('change', () => renderListings(allProperties));
-
-/* ==========================
-    MODAL CLOSE
-========================== */
-const modal = document.getElementById('photoModal');
-document.getElementById('closeModal').onclick = () => modal.classList.remove('show');
-modal.onclick = e => { if (e.target === modal) modal.classList.remove('show'); };
-
-/* ==========================
-    INIT
-========================== */
-document.addEventListener('DOMContentLoaded', () => {
-    initMap();
-    loadListings();
-});
-</script>
+  </script>
 </body>
 </html>
