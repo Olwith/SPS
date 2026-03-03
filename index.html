@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <!-- 🔐 Security & Performance -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' https: 'unsafe-inline'; img-src 'self' https: data: blob:; connect-src 'self' https://*.supabase.co https://*.openstreetmap.org https://*.arcgisonline.com https://wa.me https://formspree.io; font-src 'self' https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https: 'unsafe-inline'; img-src 'self' https: data: blob:; connect-src 'self' https://mdtcckyejiwdzocklfmf.supabase.co https://*.supabase.co https://*.openstreetmap.org https://*.arcgisonline.com https://wa.me https://formspree.io; font-src 'self' https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:;">
 <link rel="preconnect" href="https://mdtcckyejiwdzocklfmf.supabase.co" crossorigin>
 <link rel="preconnect" href="https://unpkg.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -13,8 +13,8 @@
 
 <!-- 📄 Primary Meta Tags -->
 <title>Property Services Kenya | Land Surveying & Real Estate Consultancy</title>
-<meta name="description" content="Spatio Property Services - Leading property sales, land surveying, GIS mapping & real estate consultancy in Kenya. Find verified properties for sale & rent in Nairobi.">
-<meta name="keywords" content="property services Kenya, land surveying Nairobi, property for sale, real estate consultancy, GIS mapping, property rentals, surveyor Kenya">
+<meta name="description" content="Spatio Property Services - Leading property sales, land surveying, GIS mapping & real estate consultancy in Kenya. Find verified properties for sale & rent in Nairobi, Mombasa, Kisumu.">
+<meta name="keywords" content="property services Kenya, land surveying Nairobi, property for sale, real estate consultancy, GIS mapping, property rentals, surveyor Kenya, land for sale Kenya">
 <meta name="author" content="Spatio Property Services">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://spatiopropertyservices.co.ke/">
@@ -23,7 +23,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://spatiopropertyservices.co.ke/">
 <meta property="og:title" content="Property Services Kenya | Spatio Property Services">
-<meta property="og:description" content="Verified properties for sale & rent. Professional land surveying & real estate consultancy across Kenya.">
+<meta property="og:description" content="Verified properties for sale & rent. Professional land surveying, GIS mapping & real estate consultancy across Kenya.">
 <meta property="og:image" content="https://spatiopropertyservices.co.ke/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -36,6 +36,7 @@
 <meta name="twitter:title" content="Property Services Kenya | Spatio Property Services">
 <meta name="twitter:description" content="Verified properties for sale & rent. Professional land surveying & real estate consultancy in Kenya.">
 <meta name="twitter:image" content="https://spatiopropertyservices.co.ke/og-image.jpg">
+<meta name="twitter:site" content="@SpatioPropKE">
 
 <!-- 🎨 Theme & Icons -->
 <meta name="theme-color" content="#0f3d3e" media="(prefers-color-scheme: light)">
@@ -43,8 +44,10 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Spatio Properties">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
 
 <!-- 🧭 Structured Data (JSON-LD) -->
 <script type="application/ld+json">
@@ -57,10 +60,54 @@
   "url": "https://spatiopropertyservices.co.ke",
   "telephone": "+254782424154",
   "email": "info.spske@gmail.com",
-  "address": { "@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE" },
-  "geo": { "@type": "GeoCoordinates", "latitude": -1.286389, "longitude": 36.817223 },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Nairobi",
+    "addressLocality": "Nairobi",
+    "addressCountry": "KE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -1.286389,
+    "longitude": 36.817223
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "08:00",
+    "closes": "18:00"
+  },
   "priceRange": "$$",
-  "areaServed": ["KE"]
+  "areaServed": ["KE"],
+  "makesOffer": {
+    "@type": "OfferCatalog",
+    "name": "Property Services",
+    "itemListElement": [
+      {"@type": "OfferCatalogItem", "name": "Property Sales"},
+      {"@type": "OfferCatalogItem", "name": "Land Surveying"},
+      {"@type": "OfferCatalogItem", "name": "GIS Mapping"},
+      {"@type": "OfferCatalogItem", "name": "Real Estate Consultancy"}
+    ]
+  }
+}
+</script>
+
+<!-- 🏠 Breadcrumb Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://spatiopropertyservices.co.ke/"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Listings",
+    "item": "https://spatiopropertyservices.co.ke/#listings"
+  }]
 }
 </script>
 
@@ -85,6 +132,7 @@
   --shadow-lg: 0 12px 30px rgba(0,0,0,0.08);
   --shadow-focus: 0 6px 18px rgba(15,61,62,0.18);
   --transition: all 0.3s ease;
+  --font-main: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 [data-theme="dark"] {
   --primary: #1a5254;
@@ -98,11 +146,12 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: Inter, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial;
+  font-family: var(--font-main);
   line-height: 1.6;
   color: var(--dark);
   background: #fff;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   transition: background 0.3s ease, color 0.3s ease;
 }
@@ -115,7 +164,7 @@ button { font-family: inherit; cursor: pointer; }
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
-/* Skip Link */
+/* Skip Link for Accessibility */
 .skip-link {
   position: absolute; top: -40px; left: 0; background: var(--accent);
   color: white; padding: 8px 16px; z-index: 10000; transition: top 0.3s;
@@ -136,8 +185,13 @@ header {
 .logo-img {
   width: 56px; height: 56px; border-radius: 50%;
   object-fit: cover; border: 2px solid var(--accent);
+  transition: transform 0.3s ease;
 }
-.logo-text { font-size: 1.3rem; font-weight: 700; color: #fff; }
+.logo-img:hover { transform: scale(1.05); }
+.logo-text {
+  font-size: 1.3rem; font-weight: 700; color: #fff;
+  letter-spacing: -0.3px;
+}
 .logo-text span { color: var(--accent); }
 .nav-actions { display: flex; align-items: center; gap: 12px; }
 .theme-toggle {
@@ -153,28 +207,33 @@ header {
 }
 .desktop-nav a {
   text-decoration: none; color: #fff; font-weight: 500;
-  transition: var(--transition); padding: 8px 4px; position: relative;
+  transition: var(--transition); padding: 8px 4px;
+  position: relative; font-size: 0.95rem;
 }
 .desktop-nav a:hover, .desktop-nav a.active { color: var(--accent); }
 .desktop-nav a.active::after {
   content: ''; position: absolute; bottom: -4px; left: 0;
   width: 100%; height: 2px; background: var(--accent);
+  border-radius: 2px;
 }
 .menu-toggle {
   display: none; background: none; border: none;
   font-size: 1.6rem; color: #fff; cursor: pointer;
   z-index: 1001; width: 40px; height: 40px;
-  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; transition: var(--transition);
 }
+.menu-toggle:hover { background: rgba(255,255,255,0.15); }
 .mobile-nav {
-  position: fixed; top: 0; right: -100%; width: 85%; max-width: 320px;
-  height: 100vh; background: var(--primary);
+  position: fixed; top: 0; right: -100%; width: 85%;
+  max-width: 320px; height: 100vh; background: var(--primary);
   box-shadow: -2px 0 15px rgba(0,0,0,0.4);
   padding: 70px 24px 24px; flex-direction: column;
-  transition: right 0.35s ease; z-index: 1000;
+  transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+  z-index: 1000; overflow-y: auto;
 }
 .mobile-nav.show { right: 0; }
-.mobile-nav .nav-list { list-style: none; }
+.mobile-nav .nav-list { list-style: none; margin-bottom: 24px; }
 .mobile-nav .nav-list a {
   display: block; padding: 14px 0; font-size: 1.1rem;
   text-decoration: none; color: #fff; transition: var(--transition);
@@ -186,18 +245,28 @@ header {
 .overlay {
   position: fixed; top: 0; left: 0; width: 100%; height: 100%;
   background: rgba(0,0,0,0.6); z-index: 998; display: none;
+  backdrop-filter: blur(4px); transition: opacity 0.3s ease;
 }
-.overlay.show { display: block; }
-/* HERO */
+.overlay.show { display: block; opacity: 1; }
+/* HERO SECTION */
 .hero {
   min-height: calc(100vh - var(--header-h));
   display: flex; align-items: center; justify-content: center;
   padding: calc(var(--header-h) + 2rem) var(--container-pad) 4rem;
   background: linear-gradient(rgba(11,31,34,0.75), rgba(11,31,34,0.75)),
               url('https://plus.unsplash.com/premium_photo-1723759283157-54d22e11a870?w=1600&auto=format&fit=crop&q=80') center/cover no-repeat;
-  color: #fff; text-align: center;
+  color: #fff; text-align: center; position: relative;
+  overflow: hidden;
 }
-.hero-content { max-width: 900px; animation: fadeInUp 0.8s ease-out; }
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at bottom, rgba(212,160,23,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-content {
+  max-width: 900px; position: relative; z-index: 2;
+  animation: fadeInUp 0.8s ease-out;
+}
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
@@ -209,7 +278,8 @@ header {
 }
 .hero p {
   font-size: clamp(1.05rem, 3.5vw, 1.3rem);
-  margin: 1.2rem 0 2rem; opacity: 0.95;
+  margin: 1.2rem 0 2rem; opacity: 0.95; max-width: 700px;
+  margin-left: auto; margin-right: auto;
 }
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
@@ -217,18 +287,29 @@ header {
   color: #fff; border-radius: 50px; font-weight: 700;
   font-size: clamp(0.95rem, 2.2vw, 1.05rem);
   box-shadow: 0 10px 25px rgba(212,160,23,0.4);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: none; text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  cursor: pointer; border: none; text-decoration: none;
+  position: relative; overflow: hidden;
 }
+.btn::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%); transition: transform 0.6s ease;
+}
+.btn:hover::before { transform: translateX(100%); }
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 16px 35px rgba(212,160,23,0.55);
 }
-.btn.btn-sm { padding: 10px 24px; font-size: 0.9rem; }
 .btn.btn-outline {
-  background: transparent; border: 2px solid #fff; color: #fff;
+  background: transparent; border: 2px solid #fff;
+  color: #fff; box-shadow: none;
 }
-.btn.btn-outline:hover { background: #fff; color: var(--primary); }
+.btn.btn-outline:hover {
+  background: #fff; color: var(--primary);
+}
+.btn.btn-sm { padding: 10px 24px; font-size: 0.9rem; }
+.btn.btn-icon { padding: 12px; width: 48px; height: 48px; border-radius: 50%; }
 /* SECTIONS */
 section {
   padding: 72px var(--container-pad);
@@ -239,7 +320,8 @@ section {
 }
 .section-title {
   font-size: clamp(1.8rem, 5vw, 2.8rem);
-  margin-bottom: 16px; color: var(--dark); font-weight: 800;
+  margin-bottom: 16px; color: var(--dark);
+  font-weight: 800; line-height: 1.2;
 }
 [data-theme="dark"] .section-title { color: #f8f9fa; }
 .section-title span { color: var(--accent); }
@@ -261,34 +343,61 @@ section {
   transition: var(--transition); cursor: pointer;
   position: relative; transform: translateY(30px);
   opacity: 0; animation: fadeUp 0.7s ease forwards;
+  border: 1px solid rgba(0,0,0,0.05);
 }
 [data-theme="dark"] .featured-card {
-  background: #161b22; border: 1px solid rgba(255,255,255,0.1);
+  background: #161b22; border-color: rgba(255,255,255,0.1);
 }
 .featured-card:nth-child(1) { animation-delay: 0.1s; }
 .featured-card:nth-child(2) { animation-delay: 0.2s; }
 .featured-card:nth-child(3) { animation-delay: 0.3s; }
-@keyframes fadeUp { to { transform: translateY(0); opacity: 1; } }
-.featured-card:hover { transform: translateY(-10px); }
+.featured-card:nth-child(4) { animation-delay: 0.4s; }
+.featured-card:nth-child(5) { animation-delay: 0.5s; }
+@keyframes fadeUp {
+  to { transform: translateY(0); opacity: 1; }
+}
+.featured-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
 .featured-card img {
   width: 100%; height: 220px; object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.6s ease; display: block;
 }
 .featured-card:hover img { transform: scale(1.06); }
 .featured-card-content { padding: 22px; }
 .featured-card h3 {
-  font-size: 1.25rem; margin-bottom: 8px; color: var(--dark); font-weight: 700;
+  font-size: 1.25rem; margin-bottom: 8px;
+  color: var(--dark); font-weight: 700;
+  display: -webkit-box; -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; overflow: hidden;
 }
 [data-theme="dark"] .featured-card h3 { color: #f8f9fa; }
-.featured-card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 12px; }
-.featured-price { color: var(--secondary); font-weight: 800; font-size: 1.15rem; }
+.featured-card p {
+  color: var(--muted); font-size: 0.95rem;
+  margin-bottom: 12px; line-height: 1.5;
+}
+.featured-meta {
+  display: flex; justify-content: space-between;
+  align-items: center; margin-top: 16px;
+  flex-wrap: wrap; gap: 10px;
+}
+.featured-price {
+  color: var(--secondary); font-weight: 800;
+  font-size: 1.15rem;
+}
 [data-theme="dark"] .featured-price { color: var(--accent); }
 .new-badge {
   position: absolute; top: 16px; left: 16px;
   background: var(--accent); color: #fff;
   font-size: 0.75rem; font-weight: 700;
   padding: 6px 14px; border-radius: 50px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 10;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 10; animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212,160,23,0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(212,160,23,0); }
 }
 .skeleton {
   height: 340px; background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 37%, #e5e7eb 63%);
@@ -298,8 +407,11 @@ section {
 [data-theme="dark"] .skeleton {
   background: linear-gradient(90deg, #2d333b 25%, #373e47 37%, #2d333b 63%);
 }
-@keyframes skeleton { 0% { background-position: 100% 0; } 100% { background-position: 0 0; } }
-/* SERVICES */
+@keyframes skeleton {
+  0% { background-position: 100% 0; }
+  100% { background-position: 0 0; }
+}
+/* SERVICES SECTION */
 .services { background: var(--light); }
 [data-theme="dark"] .services { background: #0f1419; }
 .services-wrapper {
@@ -308,8 +420,8 @@ section {
 }
 .scroll-container {
   overflow-x: auto; white-space: nowrap;
-  padding: 1rem 0; scroll-behavior: smooth; flex: 1;
-  scrollbar-width: none; -ms-overflow-style: none;
+  padding: 1rem 0; scroll-behavior: smooth;
+  flex: 1; scrollbar-width: none; -ms-overflow-style: none;
 }
 .scroll-container::-webkit-scrollbar { display: none; }
 .services-scroll .item {
@@ -321,14 +433,19 @@ section {
   border-radius: 50%; font-size: 1.3rem; color: var(--primary);
   cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   z-index: 10; transition: var(--transition);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
 }
 [data-theme="dark"] .scroll-btn {
   background: #1e2530; color: #f8f9fa;
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
-.scroll-btn:hover { transform: scale(1.1); background: var(--primary); color: white; }
-.scroll-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.scroll-btn:hover {
+  transform: scale(1.1); background: var(--primary); color: white;
+}
+.scroll-btn:disabled {
+  opacity: 0.5; cursor: not-allowed; transform: none;
+}
 .scroll-btn.left { margin-right: 8px; }
 .scroll-btn.right { margin-left: 8px; }
 .service-card {
@@ -336,42 +453,78 @@ section {
   padding: 32px 24px; text-align: center;
   box-shadow: var(--shadow-lg); transition: var(--transition);
   height: 100%; display: flex; flex-direction: column;
+  border: 1px solid rgba(0,0,0,0.05);
 }
 [data-theme="dark"] .service-card {
-  background: #161b22; border: 1px solid rgba(255,255,255,0.1);
+  background: #161b22; border-color: rgba(255,255,255,0.1);
 }
-.service-card:hover { transform: translateY(-8px); }
-.service-icon {
-  width: 100%; height: 180px; object-fit: cover;
-  border-radius: 12px; margin-bottom: 20px;
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
-.service-card h3 { font-size: 1.3rem; margin-bottom: 12px; color: var(--dark); font-weight: 700; }
+.service-icon-wrapper {
+  width: 100%; height: 180px; border-radius: 12px;
+  overflow: hidden; margin-bottom: 20px;
+  position: relative; background: var(--light);
+}
+.service-card .service-icon {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.service-card:hover .service-icon { transform: scale(1.05); }
+.service-card h3 {
+  font-size: 1.3rem; margin-bottom: 12px;
+  color: var(--dark); font-weight: 700;
+}
 [data-theme="dark"] .service-card h3 { color: #f8f9fa; }
-.service-card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
-.service-card .btn { align-self: center; margin-top: auto; padding: 10px 28px; font-size: 0.9rem; }
-/* ABOUT */
+.service-card p {
+  color: var(--muted); font-size: 0.95rem;
+  margin-bottom: 20px; flex-grow: 1;
+}
+.service-card .btn {
+  align-self: center; margin-top: auto;
+  padding: 10px 28px; font-size: 0.9rem;
+}
+/* ABOUT SECTION */
 .about-content {
   max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center;
+  display: grid; grid-template-columns: 1fr;
+  gap: 40px; align-items: center;
 }
-.about-text h3 { margin-bottom: 16px; font-size: 1.6rem; color: var(--dark); font-weight: 700; }
+.about-text h3 {
+  margin-bottom: 16px; font-size: 1.6rem;
+  color: var(--dark); font-weight: 700;
+}
 [data-theme="dark"] .about-text h3 { color: #f8f9fa; }
-.about-text p { color: #444; margin-bottom: 20px; line-height: 1.7; }
+.about-text p {
+  color: #444; margin-bottom: 20px; line-height: 1.7;
+}
 [data-theme="dark"] .about-text p { color: #adb5bd; }
-.about-list { list-style: none; margin: 24px 0; padding-left: 0; }
+.about-list {
+  list-style: none; margin: 24px 0; padding-left: 0;
+}
 .about-list li {
-  margin: 14px 0; display: flex; align-items: flex-start; gap: 14px; color: #333;
+  margin: 14px 0; display: flex; align-items: flex-start;
+  gap: 14px; color: #333; font-size: 1.02rem;
 }
 [data-theme="dark"] .about-list li { color: #f8f9fa; }
-.about-list i { color: var(--secondary); font-size: 1.3rem; margin-top: 3px; flex-shrink: 0; }
+.about-list i {
+  color: var(--secondary); font-size: 1.3rem;
+  margin-top: 3px; flex-shrink: 0;
+}
 .about-img {
   height: 420px; border-radius: var(--radius-lg);
   background: url('https://images.unsplash.com/photo-1649145058041-f3e2ed855990?w=800&auto=format&fit=crop&q=80') center/cover no-repeat;
   box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+  position: relative; overflow: hidden;
 }
-/* FILTERS - Original Simple Style */
+.about-img::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(15,61,62,0.2), transparent 60%);
+}
+/* FILTERS - ORIGINAL SIMPLE STYLE */
 .filters-section {
-  background: #fff; padding: 20px var(--container-pad);
+  background: #fff; padding: 24px var(--container-pad);
   border-bottom: 1px solid rgba(0,0,0,0.08);
   position: sticky; top: var(--header-h); z-index: 100;
   box-shadow: 0 4px 20px rgba(0,0,0,0.06);
@@ -386,159 +539,346 @@ section {
 .filters-grid input, .filters-grid select {
   width: 100%; padding: 12px 14px; border-radius: 8px;
   border: 1px solid #d1d5db; font-size: 1rem;
-  background: #fff; color: var(--dark);
+  background: #fff; transition: var(--transition);
 }
 [data-theme="dark"] .filters-grid input,
 [data-theme="dark"] .filters-grid select {
-  background: #1e2530; border-color: #374151; color: #f8f9fa;
+  background: #1e2530; border-color: #374151;
+  color: #f8f9fa;
 }
 .filters-grid input:focus, .filters-grid select:focus {
   outline: none; border-color: var(--secondary);
   box-shadow: 0 0 0 3px rgba(19,111,99,0.15);
 }
-/* LISTINGS TABLE - Original Style */
-.table-title { margin: 2.5rem 0 1rem; font-size: 1.4rem; color: var(--dark); }
+/* LISTINGS TABLE - ORIGINAL STYLE */
+.table-title {
+  margin: 2.5rem 0 1rem;
+  font-size: 1.4rem; color: var(--dark);
+}
 [data-theme="dark"] .table-title { color: #f8f9fa; }
-.table-responsive { overflow-x: auto; }
+.table-responsive {
+  overflow-x: auto;
+}
 .listing-table {
-  width: 100%; border-collapse: collapse; background: #fff;
-  border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-lg);
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
 }
 [data-theme="dark"] .listing-table {
-  background: #161b22; border: 1px solid rgba(255,255,255,0.1);
+  background: #161b22;
+  border: 1px solid rgba(255,255,255,0.1);
 }
-.listing-table th, .listing-table td {
-  padding: 14px 16px; text-align: left; border-bottom: 1px solid #e5e7eb;
+.listing-table th,
+.listing-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
 }
 [data-theme="dark"] .listing-table th,
 [data-theme="dark"] .listing-table td {
   border-color: #374151;
 }
-.listing-table th { background: var(--primary); color: #fff; font-weight: 600; }
-.listing-table tr:hover { background: var(--light); }
-[data-theme="dark"] .listing-table tr:hover { background: #1e2530; }
-.listing-table td button { white-space: nowrap; }
-/* MAP */
+.listing-table th {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+.listing-table tr:hover {
+  background: var(--light);
+}
+[data-theme="dark"] .listing-table tr:hover {
+  background: #1e2530;
+}
+.listing-table td button {
+  white-space: nowrap;
+}
+/* MAP SECTION */
 #propertyMap {
-  width: 100%; height: 450px; border-radius: 14px;
+  width: 100%;
+  height: 450px;
+  border-radius: 14px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
-/* CONTACT */
-.contact { background: var(--dark); color: #f9fafb; }
-.contact .section-title { color: #ffffff; }
-.contact .section-title span { color: var(--accent); }
+[data-theme="dark"] #propertyMap {
+  background: #1e2530;
+  border-color: rgba(255,255,255,0.1);
+}
+/* CONTACT SECTION */
+.contact {
+  background: var(--dark);
+  color: #f9fafb;
+}
+.contact .section-title {
+  color: #ffffff;
+}
+.contact .section-title span {
+  color: var(--accent);
+}
 .contact-wrapper {
-  max-width: 1100px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr; gap: 36px; align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: start;
 }
-.contact-block h3 { color: var(--accent); font-size: 1.4rem; margin-bottom: 8px; }
-.contact-block p { font-size: 1.02rem; margin-bottom: 18px; color: #f3f4f6; }
-.contact-methods { margin-top: 26px; }
+.contact-block h3 {
+  color: var(--accent);
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+.contact-block p {
+  font-size: 1.02rem;
+  margin-bottom: 18px;
+  color: #f3f4f6;
+}
+.contact-methods {
+  margin-top: 26px;
+}
 .contact-item {
-  display: flex; gap: 14px; align-items: center; margin: 14px 0;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin: 14px 0;
 }
-.contact-item i { font-size: 1.6rem; color: var(--accent); }
+.contact-item i {
+  font-size: 1.6rem;
+  color: var(--accent);
+}
 .whatsapp-primary {
-  display: inline-flex; align-items: center; gap: 14px;
-  padding: 16px 28px; border-radius: 70px; font-weight: 800;
-  font-size: 1rem; background: #25D366; color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 28px;
+  border-radius: 70px;
+  font-weight: 800;
+  font-size: 1rem;
+  background: #25D366;
+  color: #fff;
   box-shadow: 0 10px 30px rgba(37,211,102,0.28);
   text-decoration: none;
 }
 .contact-form {
-  background: #fff; color: var(--dark); padding: 22px;
-  border-radius: 12px; box-shadow: var(--shadow-lg);
+  background: #fff;
+  color: var(--dark);
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
 }
 [data-theme="dark"] .contact-form {
-  background: #161b22; color: #f8f9fa; border: 1px solid rgba(255,255,255,0.1);
+  background: #161b22;
+  border-color: rgba(255,255,255,0.1);
+  color: #f8f9fa;
 }
-.form-group { margin-bottom: 1rem; }
-.form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--dark); }
-[data-theme="dark"] .form-group label { color: #f8f9fa; }
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: var(--dark);
+}
+[data-theme="dark"] .form-group label {
+  color: #f8f9fa;
+}
 .form-control {
-  width: 100%; padding: 12px 14px; border-radius: 8px;
-  border: 1px solid #e6e6e6; font-size: 1rem; background: #fff; color: var(--dark);
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+  font-size: 1rem;
+  background: #fff;
+  transition: var(--transition);
 }
 [data-theme="dark"] .form-control {
-  background: #1e2530; border-color: #374151; color: #f8f9fa;
+  background: #1e2530;
+  border-color: #374151;
+  color: #f8f9fa;
 }
-.contact-note { text-align: center; margin-top: 10px; color: #666; font-size: 0.92rem; }
-[data-theme="dark"] .contact-note { color: #9ca3af; }
-/* FOOTER - Minimal */
+.form-control:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(19,111,99,0.15);
+}
+.contact-note {
+  text-align: center;
+  margin-top: 10px;
+  color: #666;
+  font-size: 0.92rem;
+}
+[data-theme="dark"] .contact-note {
+  color: #9ca3af;
+}
+/* FOOTER - MINIMAL */
 footer {
-  background: #0a0a0a; color: #9ca3af;
-  text-align: center; padding: 32px 24px; font-size: 0.95rem;
+  background: #0a0a0a;
+  color: #9ca3af;
+  text-align: center;
+  padding: 32px 24px;
+  font-size: 0.95rem;
 }
-footer a { color: #d1d5db; transition: var(--transition); }
-footer a:hover { color: var(--accent); }
+footer a {
+  color: #d1d5db;
+  transition: var(--transition);
+}
+footer a:hover {
+  color: var(--accent);
+}
 /* FLOATING WHATSAPP */
 .whatsapp-float {
-  position: fixed; right: 20px; bottom: 20px;
-  width: 64px; height: 64px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  background: #25D366; color: #fff; font-size: 1.6rem;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #25D366;
+  color: #fff;
+  font-size: 1.6rem;
   box-shadow: 0 6px 20px rgba(37,211,102,0.35);
-  z-index: 1400; transition: var(--transition);
+  z-index: 1400;
+  transition: var(--transition);
   text-decoration: none;
 }
-.whatsapp-float:hover { transform: scale(1.12); }
+.whatsapp-float:hover {
+  transform: scale(1.12);
+}
 /* MODAL */
 .modal-overlay {
-  position: fixed; inset: 0; background: rgba(0,0,0,0.8);
-  display: none; align-items: center; justify-content: center;
-  z-index: 2000; backdrop-filter: blur(4px);
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
 }
-.modal-overlay.show { display: flex; }
+.modal-overlay.show {
+  display: flex;
+}
 .modal-content {
-  position: relative; max-width: 95%; max-height: 90vh;
-  border-radius: 12px; background: #fff;
+  position: relative;
+  max-width: 95%;
+  max-height: 90vh;
+  border-radius: 12px;
+  background: #fff;
 }
-[data-theme="dark"] .modal-content { background: #161b22; }
+[data-theme="dark"] .modal-content {
+  background: #161b22;
+}
 .modal-content img {
-  max-width: 100%; max-height: 90vh;
-  border-radius: 12px 12px 0 0; display: block;
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 12px;
+  display: block;
 }
 .modal-close {
-  position: absolute; top: -40px; right: 0;
-  font-size: 2rem; color: #fff; cursor: pointer;
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
 }
 /* COOKIE CONSENT */
 .cookie-banner {
-  position: fixed; bottom: 0; left: 0; right: 0;
-  background: #fff; color: var(--dark);
-  padding: 20px 24px; box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
-  z-index: 1500; display: none; flex-wrap: wrap;
-  align-items: center; justify-content: space-between;
-  gap: 16px; animation: slideUp 0.3s ease;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  color: var(--dark);
+  padding: 20px 24px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+  z-index: 1500;
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  animation: slideUp 0.3s ease;
   border-top: 1px solid rgba(0,0,0,0.1);
 }
 [data-theme="dark"] .cookie-banner {
-  background: #161b22; color: #f8f9fa;
+  background: #161b22;
+  color: #f8f9fa;
   border-color: rgba(255,255,255,0.1);
 }
-.cookie-banner.show { display: flex; }
-.cookie-text { flex: 1; min-width: 280px; font-size: 0.95rem; line-height: 1.6; }
-.cookie-text a { color: var(--secondary); font-weight: 600; text-decoration: none; border-bottom: 1px dashed; }
-.cookie-text a:hover { color: var(--accent); }
-.cookie-btns { display: flex; gap: 12px; flex-shrink: 0; }
-.cookie-btn {
-  padding: 10px 24px; border-radius: 8px;
-  font-weight: 600; font-size: 0.95rem;
-  border: none; cursor: pointer; transition: var(--transition);
+.cookie-banner.show {
+  display: flex;
 }
-.cookie-btn.accept { background: var(--accent); color: #fff; }
-.cookie-btn.decline { background: #6c7a7a; color: #fff; }
-.cookie-btn:hover { transform: translateY(-2px); }
-@keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+.cookie-text {
+  flex: 1;
+  min-width: 280px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.cookie-text a {
+  color: var(--secondary);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dashed;
+}
+.cookie-text a:hover {
+  color: var(--accent);
+}
+.cookie-btns {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.cookie-btn {
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.cookie-btn.accept {
+  background: var(--accent);
+  color: #fff;
+}
+.cookie-btn.decline {
+  background: #6c7a7a;
+  color: #fff;
+}
+.cookie-btn:hover {
+  transform: translateY(-2px);
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
 /* LOADING */
-.loading { text-align: center; padding: 2rem; color: var(--muted); }
-/* Marker pulse */
-.leaflet-marker-icon.pulse { animation: pulse 1s ease infinite; }
-@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.3); } 100% { transform: scale(1); } }
-/* Focus styles */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+}
+/* Marker pulse animation */
+.leaflet-marker-icon.pulse {
+  animation: pulse 1s ease infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+/* FOCUS STYLES */
 a:focus, button:focus, input:focus, select:focus, textarea:focus {
   outline: 3px solid rgba(15,61,62,0.3);
-  box-shadow: var(--shadow-focus); outline-offset: 2px;
+  outline-offset: 2px;
+  box-shadow: var(--shadow-focus);
 }
 [data-theme="dark"] a:focus,
 [data-theme="dark"] button:focus,
@@ -547,7 +887,17 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 [data-theme="dark"] textarea:focus {
   outline-color: rgba(212,160,23,0.5);
 }
-/* Responsive */
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .whatsapp-float { animation: none; }
+}
+/* RESPONSIVE */
 @media (min-width: 769px) {
   .menu-toggle { display: none; }
   .desktop-nav { display: block; }
@@ -556,6 +906,10 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
   .about-img { height: 500px; }
   .contact-wrapper { grid-template-columns: 1fr 1fr; }
   section { padding: 80px var(--container-pad); }
+  .hero { padding: calc(var(--header-h) + 2rem) var(--container-pad) 6rem; }
+}
+@media (max-width: 1024px) {
+  :root { --max-width: 1100px; }
 }
 @media (max-width: 768px) {
   .desktop-nav { display: none; }
@@ -566,26 +920,31 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
   .contact-wrapper { grid-template-columns: 1fr; }
   section { padding: 60px 4%; }
   .service-card .service-icon { height: 160px; }
-  .featured-card img { height: 190px; }
+  .featured-card img { height: 180px; }
   .filters-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
-  .hero h1 { font-size: 2.4rem; }
-  .hero p { font-size: 1.05rem; margin-bottom: 1.4rem; }
-  .whatsapp-float { width: 56px; height: 56px; font-size: 1.45rem; right: 14px; bottom: 14px; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1rem; margin-bottom: 1.1rem; }
+  .whatsapp-float {
+    width: 56px; height: 56px; font-size: 1.45rem;
+    right: 14px; bottom: 14px;
+  }
   section { padding: 50px 4%; }
-  .mobile-nav { width: 90%; }
+  .mobile-nav { width: 85%; }
+  .featured-card-content { padding: 15px; }
+  .featured-card h3 { font-size: 1.1rem; }
 }
 </style>
 </head>
 <body>
-<!-- ♿ Skip Link -->
+<!-- ♿ Accessibility Skip Link -->
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- 🍪 Cookie Consent Banner -->
 <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Cookie consent">
   <p class="cookie-text">
-    We use cookies to enhance your experience and analyze site traffic. 
+    We use cookies to enhance your experience, analyze site traffic, and personalize content.
     By continuing to use this site, you agree to our use of cookies.
   </p>
   <div class="cookie-btns">
@@ -598,9 +957,11 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 <header>
   <div class="navbar container">
     <a href="/" class="logo" aria-label="Spatio Property Services Home">
-      <img src="https://i.ibb.co/NgVMK99N/Whats-App-Image-2026-01-27-at-08-54-24.jpg" 
-           alt="Spatio Property Services Logo" 
-           class="logo-img" width="56" height="56" loading="eager">
+      <img src="https://i.ibb.co/NgVMK99N/Whats-App-Image-2026-01-27-at-08-54-24.jpg"
+           alt="Spatio Property Services Logo"
+           class="logo-img"
+           width="56" height="56"
+           loading="eager">
       <span class="logo-text">Spatio<span>Property</span>Services</span>
     </a>
     
@@ -618,7 +979,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
         <i class="fas fa-moon" aria-hidden="true"></i>
       </button>
-      <button class="menu-toggle" id="mobileToggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle mobile menu">
+      <button class="menu-toggle" id="mobileToggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars" aria-hidden="true"></i>
       </button>
     </div>
@@ -641,7 +1002,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 
 <!-- 🏠 Main Content -->
 <main id="main-content">
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section class="hero" id="home" aria-label="Hero">
     <div class="hero-content">
       <h1>Property Solutions <span style="color:var(--accent);">Surveying</span> & Consultancy</h1>
@@ -650,12 +1011,12 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     </div>
   </section>
 
-  <!-- Featured Listings -->
+  <!-- Featured Listings Section -->
   <section class="featured-listings" id="featured" aria-label="Featured Listings">
     <h2 class="section-title">New <span>Listings</span></h2>
     <div class="featured-grid container" id="featuredContainer" role="list">
-      <!-- Skeleton loaders -->
-      <div class="skeleton" role="status"><span class="visually-hidden">Loading...</span></div>
+      <!-- Skeleton loaders for initial state -->
+      <div class="skeleton" role="status"><span class="visually-hidden">Loading featured listings...</span></div>
       <div class="skeleton"></div>
       <div class="skeleton"></div>
     </div>
@@ -664,29 +1025,44 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     </div>
   </section>
 
-  <!-- Services -->
+  <!-- Services with Arrow Navigation -->
   <section class="services" id="services" aria-label="Services">
     <h2 class="section-title">Our <span>Services</span></h2>
     <div class="services-wrapper container">
       <button class="scroll-btn left" id="scrollLeft" aria-label="Scroll left" disabled>&#10094;</button>
       <div class="scroll-container services-scroll" id="servicesScroll">
         <article class="service-card item" aria-labelledby="s1">
-          <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=600&auto=format&fit=crop&q=80"
-               alt="Property Bazaar Services" class="service-icon" width="300" height="180" loading="lazy">
+          <div class="service-icon-wrapper">
+            <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=600&auto=format&fit=crop&q=80"
+                 alt="Property Bazaar Services"
+                 class="service-icon"
+                 width="300" height="180"
+                 loading="lazy">
+          </div>
           <h3 id="s1">Property Bazaar Services</h3>
           <p>Renting and letting, buying and selling of properties, and verified property listings.</p>
           <a class="btn btn-sm" href="property-bazaar.html">Learn more...</a>
         </article>
         <article class="service-card item" aria-labelledby="s2">
-          <img src="https://plus.unsplash.com/premium_photo-1683134342961-182d4ba368cb?q=80&w=870&auto=format&fit=crop"
-               alt="Surveying & Mapping" class="service-icon" width="300" height="180" loading="lazy">
+          <div class="service-icon-wrapper">
+            <img src="https://plus.unsplash.com/premium_photo-1683134342961-182d4ba368cb?q=80&w=870&auto=format&fit=crop"
+                 alt="Surveying & Mapping"
+                 class="service-icon"
+                 width="300" height="180"
+                 loading="lazy">
+          </div>
           <h3 id="s2">Surveying & Mapping</h3>
           <p>Boundary confirmation, physical planning, valuation, GIS mapping, title-related surveys.</p>
           <a class="btn btn-sm" href="surveying-mapping.html">Learn more...</a>
         </article>
         <article class="service-card item" aria-labelledby="s3">
-          <img src="https://images.unsplash.com/photo-1765020553734-2c050ddb9494?w=600&auto=format&fit=crop&q=80"
-               alt="Consultancy Services" class="service-icon" width="300" height="180" loading="lazy">
+          <div class="service-icon-wrapper">
+            <img src="https://images.unsplash.com/photo-1765020553734-2c050ddb9494?w=600&auto=format&fit=crop&q=80"
+                 alt="Consultancy Services"
+                 class="service-icon"
+                 width="300" height="180"
+                 loading="lazy">
+          </div>
           <h3 id="s3">Consultancy Services</h3>
           <p>Legal transactions, official office processes, and auctioneering through registered partners.</p>
           <a class="btn btn-sm" href="consultancy-services.html">Learn more...</a>
@@ -801,14 +1177,14 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
   </div>
 </footer>
 
-<!-- Floating WhatsApp -->
+<!-- Floating WhatsApp Button -->
 <a class="whatsapp-float" href="https://wa.me/254782424154?text=Hello%20Spatio%20Property%20Services%2C%20I%20need%20assistance..." 
    target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <i class="fab fa-whatsapp" aria-hidden="true"></i>
 </a>
 
 <!-- Photo Modal -->
-<div class="modal-overlay" id="photoModal" role="dialog" aria-modal="true">
+<div class="modal-overlay" id="photoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal-content">
     <span class="modal-close" id="closeModal" aria-label="Close">&times;</span>
     <img id="modalImage" src="" alt="Property Photo">
@@ -882,6 +1258,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'hidden';
     mobileToggle.setAttribute('aria-expanded', 'true');
   }
+  
   function closeMobileMenu() {
     mobileMenu.classList.remove('show');
     mobileMenu.setAttribute('aria-hidden', 'true');
@@ -889,10 +1266,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
     mobileToggle.setAttribute('aria-expanded', 'false');
   }
+  
   mobileToggle?.addEventListener('click', openMobileMenu);
   overlay?.addEventListener('click', closeMobileMenu);
   mobileMenu?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMobileMenu);
+  });
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu?.classList.contains('show')) {
+      closeMobileMenu();
+    }
   });
   
   // ===== 🔄 Services Scroll =====
@@ -907,12 +1291,15 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollLeftBtn.disabled = scrollLeft <= 0;
     scrollRightBtn.disabled = scrollLeft + clientWidth >= scrollWidth - 10;
   }
+  
   scrollLeftBtn?.addEventListener('click', () => {
     scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
   });
+  
   scrollRightBtn?.addEventListener('click', () => {
     scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   });
+  
   scrollContainer?.addEventListener('scroll', updateScrollButtons);
   window.addEventListener('resize', updateScrollButtons);
   setTimeout(updateScrollButtons, 100);
@@ -945,7 +1332,7 @@ document.addEventListener('DOMContentLoaded', () => {
     L.control.layers({ "OpenStreetMap": osm, "Satellite": satellite }).addTo(map);
   }
   
-  // ===== 📦 Supabase Setup (Client-Side Only) =====
+  // ===== 📦 Supabase Setup (YOUR ORIGINAL CONFIG) =====
   const supabaseUrl = 'https://mdtcckyejiwdzocklfmf.supabase.co';
   const supabaseAnonKey = 'sb_publishable_1O-a6s0K1KANqu3w0nwFmw_uETdLXxn';
   const supabaseClient = supabase.createClient(supabaseUrl, supabaseAnonKey);
@@ -1023,7 +1410,6 @@ document.addEventListener('DOMContentLoaded', () => {
       
       container.innerHTML = html;
       
-      // Click to locate on map
       container.querySelectorAll('.featured-card').forEach(card => {
         card.addEventListener('click', function() {
           const lat = parseFloat(this.dataset.lat);
@@ -1044,7 +1430,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1500);
           }
         });
-        // Keyboard support
+        
         card.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -1078,7 +1464,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   
-  // ===== 🎨 Render & Filter Listings (Original Simple Logic) =====
+  // ===== 🎨 Render & Filter Listings (ORIGINAL SIMPLE LOGIC) =====
   function renderListings(listings) {
     const container = document.getElementById('listingsContainer');
     const search = document.getElementById('searchLocation')?.value.toLowerCase() || '';
@@ -1092,13 +1478,11 @@ document.addEventListener('DOMContentLoaded', () => {
       return matchLoc && matchType && matchCat;
     });
     
-    // Clear non-featured markers
     Object.keys(markers).forEach(id => {
       if (map?.hasLayer(markers[id])) map.removeLayer(markers[id]);
     });
     markers = {};
     
-    // Add markers for filtered
     filtered.forEach(item => {
       if (item.lat && item.lng && !featuredMarkers[item.id]) {
         addMarker(item, false);
@@ -1110,7 +1494,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     
-    // Build table - Original style with Locate button only
+    // Build table - ORIGINAL STYLE with Locate button only
     let html = `
       <div class="table-responsive">
         <table class="listing-table">
@@ -1136,7 +1520,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const statusClass = status === 'sold' ? 'text-danger' : status === 'rented' ? 'text-warning' : 'text-success';
       
       html += `
-        <tr data-id="${item.id}" data-photo="${photoUrl}" data-lat="${item.lat}" data-lng="${item.lng}" data-location="${item.location}">
+        <tr data-id="${item.id}" data-photo="${photoUrl}" data-lat="${item.lat}" data-lng="${item.lng}">
           <td>${i + 1}</td>
           <td><span class="fw-bold ${statusClass}">${status.toUpperCase()}</span></td>
           <td><strong>${item.location}</strong></td>
@@ -1145,13 +1529,11 @@ document.addEventListener('DOMContentLoaded', () => {
           <td>${item.size || '—'}</td>
           <td class="text-success fw-bold">${item.price || '—'}</td>
           <td>
-            <button class="btn btn-sm btn-primary view-photo" aria-label="View photo of ${item.location}">
-              <i class="fas fa-image"></i> View
-            </button>
+            <button class="btn btn-sm btn-primary view-photo"><i class="fas fa-image"></i> View</button>
           </td>
           <td>
             ${(item.lat && item.lng) 
-              ? `<button class="btn btn-sm btn-dark locate-on-map" data-id="${item.id}" aria-label="Locate ${item.location} on map">
+              ? `<button class="btn btn-sm btn-dark locate-on-map" data-id="${item.id}">
                   <i class="fas fa-map-marker-alt"></i> Locate
                 </button>` 
               : '—'}
@@ -1167,7 +1549,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // ===== 🎯 Interaction Logic =====
   function attachEventListeners() {
-    // View photo modal
     document.querySelectorAll('.view-photo').forEach(btn => {
       btn.addEventListener('click', () => {
         const row = btn.closest('tr');
@@ -1188,11 +1569,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const id = row.dataset.id;
         
         if (lat && lng) {
-          // Smooth scroll to map
           document.getElementById('propertyMap')?.scrollIntoView({ behavior: 'smooth' });
-          // Fly to location
           map?.flyTo([lat, lng], 15, { animate: true, duration: 1.5 });
-          // Open popup and pulse marker
           setTimeout(() => {
             const marker = markers[id] || featuredMarkers[id];
             if (marker) {
@@ -1249,13 +1627,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initMap();
   loadFeaturedListings();
   loadListings();
-  
-  // ===== ♿ Accessibility: Close mobile menu on Escape =====
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileMenu?.classList.contains('show')) {
-      closeMobileMenu();
-    }
-  });
 });
 </script>
 </body>
