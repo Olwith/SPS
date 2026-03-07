@@ -1,2303 +1,1536 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<!-- 🔐 Security & Performance -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' https: 'unsafe-inline'; img-src 'self' https: data: blob:; connect-src 'self' https://mdtcckyejiwdzocklfmf.supabase.co https://*.supabase.co https://*.openstreetmap.org https://*.arcgisonline.com https://wa.me https://formspree.io; font-src 'self' https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:;">
-<link rel="preconnect" href="https://mdtcckyejiwdzocklfmf.supabase.co" crossorigin>
-<link rel="preconnect" href="https://unpkg.com" crossorigin>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="dns-prefetch" href="https://*.tile.openstreetmap.org">
-
-<!-- 📄 Primary Meta Tags -->
-<title>Property Services Kenya | Land Surveying & Real Estate Consultancy</title>
-<meta name="description" content="Spatio Property Services - Leading property sales, land surveying, GIS mapping & real estate consultancy in Kenya. Find verified properties for sale & rent in Nairobi, Mombasa, Kisumu.">
-<meta name="keywords" content="property services Kenya, land surveying Nairobi, property for sale, real estate consultancy, GIS mapping, property rentals, surveyor Kenya, land for sale Kenya">
-<meta name="author" content="Spatio Property Services">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://spatiopropertyservices.co.ke/">
-
-<!-- 🌐 Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://spatiopropertyservices.co.ke/">
-<meta property="og:title" content="Property Services Kenya | Spatio Property Services">
-<meta property="og:description" content="Verified properties for sale & rent. Professional land surveying, GIS mapping & real estate consultancy across Kenya.">
-<meta property="og:image" content="https://spatiopropertyservices.co.ke/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:site_name" content="Spatio Property Services">
-<meta property="og:locale" content="en_KE">
-
-<!-- 🐦 Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://spatiopropertyservices.co.ke/">
-<meta name="twitter:title" content="Property Services Kenya | Spatio Property Services">
-<meta name="twitter:description" content="Verified properties for sale & rent. Professional land surveying & real estate consultancy in Kenya.">
-<meta name="twitter:image" content="https://spatiopropertyservices.co.ke/og-image.jpg">
-<meta name="twitter:site" content="@SpatioPropKE">
-
-<!-- 🎨 Theme & Icons -->
-<meta name="theme-color" content="#0f3d3e" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0b1f22" media="(prefers-color-scheme: dark)">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Spatio Properties">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-
-<!-- 🧭 Structured Data (JSON-LD) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "RealEstateAgent",
-  "name": "Spatio Property Services",
-  "image": "https://i.ibb.co/NgVMK99N/Whats-App-Image-2026-01-27-at-08-54-24.jpg",
-  "@id": "https://spatiopropertyservices.co.ke",
-  "url": "https://spatiopropertyservices.co.ke",
-  "telephone": "+254782424154",
-  "email": "info.spske@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Nairobi",
-    "addressLocality": "Nairobi",
-    "addressCountry": "KE"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -1.286389,
-    "longitude": 36.817223
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    "opens": "08:00",
-    "closes": "18:00"
-  },
-  "priceRange": "$$",
-  "areaServed": ["KE"],
-  "makesOffer": {
-    "@type": "OfferCatalog",
-    "name": "Property Services",
-    "itemListElement": [
-      {"@type": "OfferCatalogItem", "name": "Property Sales"},
-      {"@type": "OfferCatalogItem", "name": "Land Surveying"},
-      {"@type": "OfferCatalogItem", "name": "GIS Mapping"},
-      {"@type": "OfferCatalogItem", "name": "Real Estate Consultancy"}
-    ]
-  }
-}
-</script>
-
-<!-- 🏠 Breadcrumb Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "name": "Home",
-    "item": "https://spatiopropertyservices.co.ke/"
-  },{
-    "@type": "ListItem",
-    "position": 2,
-    "name": "Listings",
-    "item": "https://spatiopropertyservices.co.ke/#listings"
-  }]
-}
-</script>
-
-<!-- 🎨 Fonts & Libraries -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-<!-- ⚡ Critical CSS Inlined -->
-<style>
-:root {
-  --primary: #0f3d3e;
-  --secondary: #136f63;
-  --accent: #d4a017;
-  --light: #f4f7f6;
-  --dark: #0b1f22;
-  --muted: #6c7a7a;
-  --header-h: 72px;
-  --max-width: 1400px;
-  --container-pad: 5%;
-  --radius-lg: 16px;
-  --shadow-lg: 0 12px 30px rgba(0,0,0,0.08);
-  --shadow-focus: 0 6px 18px rgba(15,61,62,0.18);
-  --transition: all 0.3s ease;
-  --font-main: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-}
-
-[data-theme="dark"] {
-  --primary: #1a5254;
-  --secondary: #1a8a7a;
-  --accent: #e6b422;
-  --light: #121a1b;
-  --dark: #f8f9fa;
-  --muted: #adb5bd;
-  --shadow-lg: 0 12px 30px rgba(0,0,0,0.3);
-}
-
-/* ===== BASE RESET ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  font-family: var(--font-main);
-  line-height: 1.6;
-  color: var(--dark);
-  background: #fff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  max-width: 100vw;
-  transition: background 0.3s ease, color 0.3s ease;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
-}
-
-[data-theme="dark"] body {
-  background: #0d1117;
-  color: #f8f9fa;
-}
-
-/* Prevent horizontal scroll */
-img, video, iframe {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-a:hover {
-  color: var(--accent);
-}
-
-button {
-  font-family: inherit;
-  cursor: pointer;
-}
-
-/* ===== ACCESSIBILITY ===== */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
-}
-
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--accent);
-  color: white;
-  padding: 8px 16px;
-  z-index: 10000;
-  transition: top 0.3s;
-}
-
-.skip-link:focus {
-  top: 0;
-}
-
-/* Focus styles */
-a:focus, button:focus, input:focus, select:focus, textarea:focus {
-  outline: 3px solid rgba(15,61,62,0.3);
-  outline-offset: 2px;
-  box-shadow: var(--shadow-focus);
-}
-
-[data-theme="dark"] a:focus,
-[data-theme="dark"] button:focus,
-[data-theme="dark"] input:focus,
-[data-theme="dark"] select:focus,
-[data-theme="dark"] textarea:focus {
-  outline-color: rgba(212,160,23,0.5);
-}
-
-/* ===== HEADER ===== */
-header {
-  width: 100%;
-  background: var(--primary);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  position: fixed;
-  top: 0;
-  z-index: 999;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  padding-top: env(safe-area-inset-top);
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  gap: 12px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-.logo-img {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--accent);
-  transition: transform 0.3s ease;
-}
-
-.logo-img:hover {
-  transform: scale(1.05);
-}
-
-.logo-text {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.3px;
-  white-space: nowrap;
-}
-
-.logo-text span {
-  color: var(--accent);
-}
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
-}
-
-.theme-toggle {
-  background: rgba(255,255,255,0.15);
-  border: none;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-  min-width: 44px;
-  min-height: 44px;
-}
-
-.theme-toggle:hover {
-  background: var(--accent);
-  transform: rotate(15deg);
-}
-
-.desktop-nav ul {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.desktop-nav a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-  transition: var(--transition);
-  padding: 8px 4px;
-  position: relative;
-  font-size: 0.95rem;
-  white-space: nowrap;
-}
-
-.desktop-nav a:hover,
-.desktop-nav a.active {
-  color: var(--accent);
-}
-
-.desktop-nav a.active::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--accent);
-  border-radius: 2px;
-}
-
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.6rem;
-  color: #fff;
-  cursor: pointer;
-  z-index: 1001;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-  min-width: 44px;
-  min-height: 44px;
-}
-
-.menu-toggle:hover {
-  background: rgba(255,255,255,0.15);
-}
-
-/* Mobile Navigation */
-.mobile-nav {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 85%;
-  max-width: 320px;
-  height: 100vh;
-  height: 100dvh;
-  background: var(--primary);
-  box-shadow: -2px 0 15px rgba(0,0,0,0.4);
-  padding: calc(70px + env(safe-area-inset-top)) 24px 24px;
-  flex-direction: column;
-  transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
-  z-index: 1000;
-  overflow-y: auto;
-  padding-bottom: env(safe-area-inset-bottom);
-}
-
-.mobile-nav.show {
-  right: 0;
-}
-
-.mobile-nav .nav-list {
-  list-style: none;
-  margin-bottom: 24px;
-}
-
-.mobile-nav .nav-list a {
-  display: block;
-  padding: 14px 0;
-  font-size: 1.1rem;
-  text-decoration: none;
-  color: #fff;
-  transition: var(--transition);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-}
-
-.mobile-nav .nav-list a:hover,
-.mobile-nav .nav-list a.active {
-  color: var(--accent);
-  padding-left: 8px;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  z-index: 998;
-  display: none;
-  backdrop-filter: blur(4px);
-  transition: opacity 0.3s ease;
-}
-
-.overlay.show {
-  display: block;
-  opacity: 1;
-}
-
-/* ===== HERO SECTION ===== */
-.hero {
-  min-height: calc(100vh - var(--header-h));
-  min-height: calc(100dvh - var(--header-h));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: calc(var(--header-h) + 2rem) var(--container-pad) 4rem;
-  background: linear-gradient(rgba(11,31,34,0.75), rgba(11,31,34,0.75)),
-              url('https://plus.unsplash.com/premium_photo-1723759283157-54d22e11a870?w=1600&auto=format&fit=crop&q=80') center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at bottom, rgba(212,160,23,0.15) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.hero-content {
-  max-width: 900px;
-  position: relative;
-  z-index: 2;
-  animation: fadeInUp 0.8s ease-out;
-  padding: 0 16px;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero h1 {
-  font-size: clamp(2rem, 6.5vw, 4rem);
-  margin-bottom: 1rem;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-  line-height: 1.1;
-  font-weight: 800;
-  word-wrap: break-word;
-}
-
-.hero p {
-  font-size: clamp(1rem, 3.5vw, 1.3rem);
-  margin: 1.2rem 0 2rem;
-  opacity: 0.95;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 8px;
-}
-
-/* ===== BUTTONS ===== */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px 36px;
-  background: var(--accent);
-  color: #fff;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
-  box-shadow: 0 10px 25px rgba(212,160,23,0.4);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  cursor: pointer;
-  border: none;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-  min-height: 44px;
-  white-space: nowrap;
-}
-
-.btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, transparent, rgba(255,255,255,0.2), transparent);
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
-}
-
-.btn:hover::before {
-  transform: translateX(100%);
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 35px rgba(212,160,23,0.55);
-}
-
-.btn.btn-outline {
-  background: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  box-shadow: none;
-}
-
-.btn.btn-outline:hover {
-  background: #fff;
-  color: var(--primary);
-}
-
-.btn.btn-sm {
-  padding: 10px 24px;
-  font-size: 0.9rem;
-  min-height: 40px;
-}
-
-.btn.btn-icon {
-  padding: 12px;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-}
-
-/* ===== SECTIONS ===== */
-section {
-  padding: 72px var(--container-pad);
-  scroll-margin-top: calc(var(--header-h) + 20px);
-}
-
-.section-header {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 56px;
-}
-
-.section-title {
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
-  margin-bottom: 16px;
-  color: var(--dark);
-  font-weight: 800;
-  line-height: 1.2;
-  padding: 0 8px;
-}
-
-[data-theme="dark"] .section-title {
-  color: #f8f9fa;
-}
-
-.section-title span {
-  color: var(--accent);
-}
-
-.section-subtitle {
-  font-size: 1.1rem;
-  color: var(--muted);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* ===== FEATURED LISTINGS ===== */
-.featured-listings {
-  background: #fff;
-}
-
-[data-theme="dark"] .featured-listings {
-  background: #0d1117;
-}
-
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-  gap: 28px;
-  max-width: var(--max-width);
-  margin: 0 auto 48px;
-  padding: 0 16px;
-}
-
-.featured-card {
-  background: #fff;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  transition: var(--transition);
-  cursor: pointer;
-  position: relative;
-  transform: translateY(30px);
-  opacity: 0;
-  animation: fadeUp 0.7s ease forwards;
-  border: 1px solid rgba(0,0,0,0.05);
-}
-
-[data-theme="dark"] .featured-card {
-  background: #161b22;
-  border-color: rgba(255,255,255,0.1);
-}
-
-.featured-card:nth-child(1) { animation-delay: 0.1s; }
-.featured-card:nth-child(2) { animation-delay: 0.2s; }
-.featured-card:nth-child(3) { animation-delay: 0.3s; }
-.featured-card:nth-child(4) { animation-delay: 0.4s; }
-.featured-card:nth-child(5) { animation-delay: 0.5s; }
-
-@keyframes fadeUp {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.featured-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-}
-
-.featured-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-  display: block;
-}
-
-.featured-card:hover img {
-  transform: scale(1.06);
-}
-
-.featured-card-content {
-  padding: 22px;
-}
-
-.featured-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 8px;
-  color: var(--dark);
-  font-weight: 700;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-[data-theme="dark"] .featured-card h3 {
-  color: #f8f9fa;
-}
-
-.featured-card p {
-  color: var(--muted);
-  font-size: 0.95rem;
-  margin-bottom: 12px;
-  line-height: 1.5;
-}
-
-.featured-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 16px;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.featured-price {
-  color: var(--secondary);
-  font-weight: 800;
-  font-size: 1.15rem;
-}
-
-[data-theme="dark"] .featured-price {
-  color: var(--accent);
-}
-
-.new-badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  background: var(--accent);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 6px 14px;
-  border-radius: 50px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  z-index: 10;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(212,160,23,0.4);
-  }
-  50% {
-    box-shadow: 0 0 0 10px rgba(212,160,23,0);
-  }
-}
-
-.skeleton {
-  height: 340px;
-  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 37%, #e5e7eb 63%);
-  background-size: 400% 100%;
-  animation: skeleton 1.4s ease infinite;
-  border-radius: var(--radius-lg);
-}
-
-[data-theme="dark"] .skeleton {
-  background: linear-gradient(90deg, #2d333b 25%, #373e47 37%, #2d333b 63%);
-}
-
-@keyframes skeleton {
-  0% { background-position: 100% 0; }
-  100% { background-position: 0 0; }
-}
-
-/* ===== SERVICES SECTION ===== */
-.services {
-  background: var(--light);
-}
-
-[data-theme="dark"] .services {
-  background: #0f1419;
-}
-
-.services-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
-.scroll-container {
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 1rem 0;
-  scroll-behavior: smooth;
-  flex: 1;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.scroll-container::-webkit-scrollbar {
-  display: none;
-}
-
-.services-scroll .item {
-  display: inline-block;
-  vertical-align: top;
-  width: 300px;
-  margin: 0 12px;
-  white-space: normal;
-}
-
-.scroll-btn {
-  background: #fff;
-  border: none;
-  width: 44px;
-  height: 44px;
-  border-radius: 100%;
-  font-size: 1.3rem;
-  color: var(--primary);
-  cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  z-index: 10;
-  transition: var(--transition);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  min-width: 44px;
-  min-height: 44px;
-}
-
-[data-theme="dark"] .scroll-btn {
-  background: #1e2530;
-  color: #f8f9fa;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
-
-.scroll-btn:hover {
-  transform: scale(1.1);
-  background: var(--primary);
-  color: white;
-}
-
-.scroll-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.scroll-btn.left {
-  margin-right: 3px;
-}
-
-.scroll-btn.right {
-  margin-left: 3px;
-}
-
-.service-card {
-  background: #fff;
-  border-radius: var(--radius-lg);
-  padding: 32px 32px;
-  text-align: center;
-  box-shadow: var(--shadow-lg);
-  transition: var(--transition);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid rgba(0,0,0,0.05);
-}
-
-[data-theme="dark"] .service-card {
-  background: #161b22;
-  border-color: rgba(255,255,255,0.1);
-}
-
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-}
-
-.service-icon-wrapper {
-  width: 100%;
-  height: 180px;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 20px;
-  position: relative;
-  background: var(--light);
-}
-
-.service-card .service-icon {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.service-card:hover .service-icon {
-  transform: scale(1.05);
-}
-
-.service-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-  color: var(--dark);
-  font-weight: 700;
-}
-
-[data-theme="dark"] .service-card h3 {
-  color: #f8f9fa;
-}
-
-.service-card p {
-  color: var(--muted);
-  font-size: 0.95rem;
-  margin-bottom: 20px;
-  flex-grow: 1;
-}
-
-.service-card .btn {
-  align-self: center;
-  margin-top: auto;
-  padding: 10px 28px;
-  font-size: 0.9rem;
-}
-
-/* ===== ABOUT SECTION ===== */
-.about-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-  align-items: center;
-  padding: 0 16px;
-}
-
-.about-text h3 {
-  margin-bottom: 16px;
-  font-size: 1.6rem;
-  color: var(--dark);
-  font-weight: 700;
-}
-
-[data-theme="dark"] .about-text h3 {
-  color: #f8f9fa;
-}
-
-.about-text p {
-  color: #444;
-  margin-bottom: 20px;
-  line-height: 1.7;
-}
-
-[data-theme="dark"] .about-text p {
-  color: #adb5bd;
-}
-
-.about-list {
-  list-style: none;
-  margin: 24px 0;
-  padding-left: 0;
-}
-
-.about-list li {
-  margin: 14px 0;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  color: #333;
-  font-size: 1.02rem;
-}
-
-[data-theme="dark"] .about-list li {
-  color: #f8f9fa;
-}
-
-.about-list i {
-  color: var(--secondary);
-  font-size: 1.3rem;
-  margin-top: 3px;
-  flex-shrink: 0;
-}
-
-.about-img {
-  height: 420px;
-  border-radius: var(--radius-lg);
-  background: url('https://images.unsplash.com/photo-1649145058041-f3e2ed855990?w=800&auto=format&fit=crop&q=80') center/cover no-repeat;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-  position: relative;
-  overflow: hidden;
-}
-
-.about-img::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(15,61,62,0.2), transparent 60%);
-}
-
-/* ===== FILTERS ===== */
-.filters-section {
-  background: #fff;
-  padding: 24px var(--container-pad);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  position: sticky;
-  top: var(--header-h);
-  z-index: 100;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-}
-
-[data-theme="dark"] .filters-section {
-  background: #0d1117;
-  border-color: rgba(255,255,255,0.1);
-}
-
-.filters-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.filters-grid input,
-.filters-grid select {
-  width: 100%;
-  padding: 14px 16px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  font-size: 16px;
-  background: #fff;
-  transition: var(--transition);
-  min-height: 48px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-[data-theme="dark"] .filters-grid input,
-[data-theme="dark"] .filters-grid select {
-  background: #1e2530;
-  border-color: #374151;
-  color: #f8f9fa;
-}
-
-.filters-grid input:focus,
-.filters-grid select:focus {
-  outline: none;
-  border-color: var(--secondary);
-  box-shadow: 0 0 0 3px rgba(19,111,99,0.15);
-}
-
-/* ===== LISTINGS TABLE ===== */
-.table-title {
-  margin: 2.5rem 0 1rem;
-  font-size: 1.4rem;
-  color: var(--dark);
-  padding: 0 16px;
-}
-
-[data-theme="dark"] .table-title {
-  color: #f8f9fa;
-}
-
-.table-responsive {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 16px;
-}
-
-.listing-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  min-width: 800px;
-}
-
-[data-theme="dark"] .listing-table {
-  background: #161b22;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-.listing-table th,
-.listing-table td {
-  padding: 14px 16px;
-  text-align: left;
-  border-bottom: 1px solid #e5e7eb;
-  white-space: nowrap;
-}
-
-[data-theme="dark"] .listing-table th,
-[data-theme="dark"] .listing-table td {
-  border-color: #374151;
-}
-
-.listing-table th {
-  background: var(--primary);
-  color: #fff;
-  font-weight: 600;
-  position: sticky;
-  top: 0;
-}
-
-.listing-table tr:hover {
-  background: var(--light);
-}
-
-[data-theme="dark"] .listing-table tr:hover {
-  background: #1e2530;
-}
-
-.listing-table td button {
-  white-space: nowrap;
-  min-height: 40px;
-  min-width: 44px;
-  padding: 8px 16px;
-}
-
-/* ===== MAP SECTION ===== */
-#propertyMap {
-  width: 100%;
-  height: 450px;
-  border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-  margin: 0 16px;
-}
-
-[data-theme="dark"] #propertyMap {
-  background: #1e2530;
-  border-color: rgba(255,255,255,0.1);
-}
-
-/* ===== CONTACT SECTION ===== */
-.contact {
-  background: var(--dark);
-  color: #f9fafb;
-}
-
-.contact .section-title {
-  color: #ffffff;
-}
-
-.contact .section-title span {
-  color: var(--accent);
-}
-
-.contact-wrapper {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 36px;
-  align-items: start;
-  padding: 0 16px;
-}
-
-.contact-block h3 {
-  color: var(--accent);
-  font-size: 1.4rem;
-  margin-bottom: 8px;
-}
-
-.contact-block p {
-  font-size: 1.02rem;
-  margin-bottom: 18px;
-  color: #f3f4f6;
-}
-
-.contact-methods {
-  margin-top: 26px;
-}
-
-.contact-item {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  margin: 14px 0;
-}
-
-.contact-item i {
-  font-size: 1.6rem;
-  color: var(--accent);
-  min-width: 24px;
-}
-
-.whatsapp-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  padding: 16px 28px;
-  border-radius: 70px;
-  font-weight: 800;
-  font-size: 1rem;
-  background: #25D366;
-  color: #fff;
-  box-shadow: 0 10px 30px rgba(37,211,102,0.28);
-  text-decoration: none;
-  min-height: 44px;
-  transition: transform 0.2s ease;
-}
-
-.whatsapp-primary:hover {
-  transform: translateY(-2px);
-}
-
-.contact-form {
-  background: #fff;
-  color: var(--dark);
-  padding: 22px;
-  border-radius: 12px;
-  box-shadow: var(--shadow-lg);
-}
-
-[data-theme="dark"] .contact-form {
-  background: #161b22;
-  border-color: rgba(255,255,255,0.1);
-  color: #f8f9fa;
-}
-
-.form-group {
-  margin-bottom: 1rem;
-}
-
-.form-group label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 8px;
-  font-size: 0.95rem;
-  color: var(--dark);
-}
-
-[data-theme="dark"] .form-group label {
-  color: #f8f9fa;
-}
-
-.form-control {
-  width: 100%;
-  padding: 14px 16px;
-  border-radius: 8px;
-  border: 1px solid #e6e6e6;
-  font-size: 16px;
-  background: #fff;
-  transition: var(--transition);
-  min-height: 48px;
-}
-
-[data-theme="dark"] .form-control {
-  background: #1e2530;
-  border-color: #374151;
-  color: #f8f9fa;
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: var(--secondary);
-  box-shadow: 0 0 0 3px rgba(19,111,99,0.15);
-}
-
-.contact-note {
-  text-align: center;
-  margin-top: 10px;
-  color: #666;
-  font-size: 0.92rem;
-}
-
-[data-theme="dark"] .contact-note {
-  color: #9ca3af;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  background: #0a0a0a;
-  color: #9ca3af;
-  text-align: center;
-  padding: 32px 24px;
-  font-size: 0.95rem;
-}
-
-footer a {
-  color: #d1d5db;
-  transition: var(--transition);
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-}
-
-footer a:hover {
-  color: var(--accent);
-}
-
-/* ===== FLOATING WHATSAPP ===== */
-.whatsapp-float {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #25D366;
-  color: #fff;
-  font-size: 1.6rem;
-  box-shadow: 0 6px 20px rgba(37,211,102,0.35);
-  z-index: 1400;
-  transition: var(--transition);
-  text-decoration: none;
-  min-width: 64px;
-  min-height: 64px;
-  right: calc(20px + env(safe-area-inset-right));
-  bottom: calc(20px + env(safe-area-inset-bottom));
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.12);
-}
-
-/* ===== MODAL ===== */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.8);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  padding: 20px;
-}
-
-.modal-overlay.show {
-  display: flex;
-}
-
-.modal-content {
-  position: relative;
-  max-width: 95%;
-  max-height: 90vh;
-  border-radius: 12px;
-  background: #fff;
-  overflow: hidden;
-}
-
-[data-theme="dark"] .modal-content {
-  background: #161b22;
-}
-
-.modal-content img {
-  max-width: 100%;
-  max-height: 90vh;
-  border-radius: 12px;
-  display: block;
-  object-fit: contain;
-}
-
-.modal-close {
-  position: absolute;
-  top: -40px;
-  right: 0;
-  font-size: 2rem;
-  color: #fff;
-  cursor: pointer;
-  min-width: 44px;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ===== COOKIE CONSENT ===== */
-.cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #fff;
-  color: var(--dark);
-  padding: 20px 24px;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
-  z-index: 1500;
-  display: none;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  animation: slideUp 0.3s ease;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  padding-bottom: calc(20px + env(safe-area-inset-bottom));
-}
-
-[data-theme="dark"] .cookie-banner {
-  background: #161b22;
-  color: #f8f9fa;
-  border-color: rgba(255,255,255,0.1);
-}
-
-.cookie-banner.show {
-  display: flex;
-}
-
-.cookie-text {
-  flex: 1;
-  min-width: 280px;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.cookie-text a {
-  color: var(--secondary);
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 1px dashed;
-}
-
-.cookie-text a:hover {
-  color: var(--accent);
-}
-
-.cookie-btns {
-  display: flex;
-  gap: 12px;
-  flex-shrink: 0;
-}
-
-.cookie-btn {
-  padding: 10px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border: none;
-  cursor: pointer;
-  transition: var(--transition);
-  min-height: 44px;
-  min-width: 44px;
-}
-
-.cookie-btn.accept {
-  background: var(--accent);
-  color: #fff;
-}
-
-.cookie-btn.decline {
-  background: #6c7a7a;
-  color: #fff;
-}
-
-.cookie-btn:hover {
-  transform: translateY(-2px);
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-/* ===== LOADING ===== */
-.loading {
-  text-align: center;
-  padding: 2rem;
-  color: var(--muted);
-}
-
-/* Marker pulse animation */
-.leaflet-marker-icon.pulse {
-  animation: pulse 1s ease infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.3); }
-  100% { transform: scale(1); }
-}
-
-/* ===== REDUCED MOTION ===== */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-  .whatsapp-float {
-    animation: none;
-  }
-}
-
-/* ===== RESPONSIVE BREAKPOINTS ===== */
-
-/* Large Tablets & Small Desktops (769px - 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-  :root {
-    --max-width: 1200px;
-    --container-pad: 4%;
-  }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   
-  .featured-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 24px;
-  }
-  
-  .services-scroll .item {
-    width: 260px;
-  }
-  
-  .hero {
-    padding: calc(var(--header-h) + 2rem) 4% 5rem;
-  }
-}
+  <!-- 🔐 Security & Performance -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: 'unsafe-inline'; img-src 'self' https: data: blob:; connect-src 'self' https://mdtcckyejiwdzocklfmf.supabase.co https://*.supabase.co https://*.openstreetmap.org https://*.arcgisonline.com https://wa.me https://formspree.io; font-src 'self' https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:;">
+  <link rel="preconnect" href="https://mdtcckyejiwdzocklfmf.supabase.co" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://*.tile.openstreetmap.org">
 
-/* Desktop (1025px+) */
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none !important;
-  }
-  
-  .desktop-nav {
-    display: block !important;
-  }
-  
-  .mobile-nav {
-    display: none !important;
-  }
-  
-  .about-content {
-    grid-template-columns: 1fr 1fr;
-  }
-  
-  .about-img {
-    height: 500px;
-  }
-  
-  .contact-wrapper {
-    grid-template-columns: 1fr 1fr;
-  }
-  
-  section {
-    padding: 80px var(--container-pad);
-  }
-  
-  .hero {
-    padding: calc(var(--header-h) + 2rem) var(--container-pad) 6rem;
-  }
-}
+  <!-- 📄 Primary Meta Tags -->
+  <title>Property Services Kenya | Land Surveying & Real Estate Consultancy</title>
+  <meta name="description" content="Spatio Property Services - Leading property sales, land surveying, GIS mapping & real estate consultancy in Kenya. Find verified properties for sale & rent in Nairobi, Mombasa, Kisumu.">
+  <meta name="keywords" content="property services Kenya, land surveying Nairobi, property for sale, real estate consultancy, GIS mapping, property rentals, surveyor Kenya, land for sale Kenya">
+  <meta name="author" content="Spatio Property Services">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://spatiopropertyservices.co.ke/">
 
-/* Tablets (481px - 768px) */
-@media (max-width: 768px) {
-  :root {
-    --max-width: 100%;
-    --header-h: 68px;
-  }
-  
-  .desktop-nav {
-    display: none !important;
-  }
-  
-  .menu-toggle {
-    display: flex !important;
-  }
-  
-  .hero {
-    padding-top: calc(var(--header-h) + 1rem);
-    min-height: calc(100dvh - var(--header-h));
-  }
-  
-  .about-img {
-    order: -1;
-  }
-  
-  .about-content {
-    grid-template-columns: 1fr;
-  }
-  
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-  }
-  
-  section {
-    padding: 60px 4%;
-  }
-  
-  .service-card .service-icon {
-    height: 160px;
-  }
-  
-  .featured-card img {
-    height: 180px;
-  }
-  
-  .filters-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .logo-text {
-    font-size: 1.1rem;
-  }
-  
-  .logo-img {
-    width: 48px;
-    height: 48px;
-  }
-  
-  .navbar {
-    padding: 12px 16px;
-  }
-  
-  #propertyMap {
-    height: 350px;
-    margin: 0;
-  }
-}
+  <!-- 🌐 Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://spatiopropertyservices.co.ke/">
+  <meta property="og:title" content="Property Services Kenya | Spatio Property Services">
+  <meta property="og:description" content="Verified properties for sale & rent. Professional land surveying, GIS mapping & real estate consultancy across Kenya.">
+  <meta property="og:image" content="https://spatiopropertyservices.co.ke/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Spatio Property Services">
+  <meta property="og:locale" content="en_KE">
 
-/* Mobile Phones (320px - 480px) */
-@media (max-width: 480px) {
-  :root {
-    --header-h: 64px;
-  }
-  
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-  
-  .hero p {
-    font-size: 0.95rem;
-    margin-bottom: 1.1rem;
-  }
-  
-  .whatsapp-float {
-    width: 56px;
-    height: 56px;
-    font-size: 1.45rem;
-    right: 14px;
-    bottom: 14px;
-  }
-  
-  section {
-    padding: 50px 4%;
-  }
-  
-  .mobile-nav {
-    width: 90%;
-    max-width: 300px;
-  }
-  
-  .featured-card-content {
-    padding: 15px;
-  }
-  
-  .featured-card h3 {
-    font-size: 1.1rem;
-  }
-  
-  .section-title {
-    font-size: 1.6rem;
-  }
-  
-  .btn {
-    padding: 12px 28px;
-    font-size: 0.95rem;
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .btn.btn-sm {
-    padding: 10px 20px;
-  }
-  
-  .filters-grid input,
-  .filters-grid select {
-    padding: 12px 14px;
-    font-size: 16px;
-  }
-  
-  .contact-form {
-    padding: 16px;
-  }
-  
-  .form-control {
-    padding: 12px 14px;
-  }
-  
-  .cookie-banner {
-    padding: 16px;
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .cookie-btns {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .cookie-btn {
-    flex: 1;
-    max-width: 140px;
-  }
-  
-  .listing-table {
-    min-width: 700px;
-  }
-  
-  .listing-table th,
-  .listing-table td {
-    padding: 10px 12px;
-    font-size: 0.85rem;
-  }
-  
-  .modal-close {
-    top: -35px;
-    font-size: 1.8rem;
-  }
-  
-  footer {
-    padding: 24px 16px;
-    font-size: 0.85rem;
-  }
-}
+  <!-- 🐦 Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://spatiopropertyservices.co.ke/">
+  <meta name="twitter:title" content="Property Services Kenya | Spatio Property Services">
+  <meta name="twitter:description" content="Verified properties for sale & rent. Professional land surveying & real estate consultancy in Kenya.">
+  <meta name="twitter:image" content="https://spatiopropertyservices.co.ke/og-image.jpg">
+  <meta name="twitter:site" content="@SpatioPropKE">
 
-/* Very Small Screens (320px and below) */
-@media (max-width: 320px) {
-  .hero h1 {
-    font-size: 1.6rem;
-  }
-  
-  .hero p {
-    font-size: 0.9rem;
-  }
-  
-  .logo-text {
-    font-size: 1rem;
-    display: none;
-  }
-  
-  .navbar {
-    justify-content: center;
-  }
-  
-  .nav-actions {
-    position: absolute;
-    right: 16px;
-  }
-  
-  .whatsapp-float {
-    width: 50px;
-    height: 50px;
-    font-size: 1.3rem;
-  }
-  
-  .featured-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .services-scroll .item {
-    width: 260px;
-  }
-}
+  <!-- 🎨 Theme & Icons -->
+  <meta name="theme-color" content="#0f3d3e" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1f22" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Spatio Properties">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-/* Landscape Orientation on Mobile */
-@media (max-height: 500px) and (orientation: landscape) {
-  .hero {
-    min-height: 100vh;
-    padding: calc(var(--header-h) + 1rem) var(--container-pad) 2rem;
+  <!-- 🧭 Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Spatio Property Services",
+    "image": "https://i.ibb.co/NgVMK99N/Whats-App-Image-2026-01-27-at-08-54-24.jpg",
+    "@id": "https://spatiopropertyservices.co.ke",
+    "url": "https://spatiopropertyservices.co.ke",
+    "telephone": "+254782424154",
+    "email": "info.spske@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Nairobi",
+      "addressLocality": "Nairobi",
+      "addressCountry": "KE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -1.286389,
+      "longitude": 36.817223
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    "priceRange": "$$",
+    "areaServed": ["KE"],
+    "makesOffer": {
+      "@type": "OfferCatalog",
+      "name": "Property Services",
+      "itemListElement": [
+        {"@type": "OfferCatalogItem", "name": "Property Sales"},
+        {"@type": "OfferCatalogItem", "name": "Land Surveying"},
+        {"@type": "OfferCatalogItem", "name": "GIS Mapping"},
+        {"@type": "OfferCatalogItem", "name": "Real Estate Consultancy"}
+      ]
+    }
   }
-  
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-  
-  .hero p {
-    margin: 0.8rem 0 1.2rem;
-  }
-  
-  .mobile-nav {
-    max-width: 280px;
-  }
-}
+  </script>
 
-/* High DPI Displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .logo-img,
-  .featured-card img,
-  .service-card .service-icon {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+  <!-- 🏠 Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://spatiopropertyservices.co.ke/"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Listings",
+      "item": "https://spatiopropertyservices.co.ke/#listings"
+    }]
   }
-}
+  </script>
 
-/* Print Styles */
-@media print {
-  header,
-  .whatsapp-float,
-  .cookie-banner,
-  .filters-section,
-  .theme-toggle,
-  .menu-toggle,
-  .mobile-nav,
-  .overlay,
-  #propertyMap {
-    display: none !important;
-  }
-  
-  body {
-    background: #fff;
-    color: #000;
-  }
-  
-  .btn {
-    background: none;
-    color: #000;
-    border: 1px solid #000;
-    box-shadow: none;
-  }
-}
-</style>
+  <!-- 🎨 Fonts & Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- ⚡ Critical CSS Inlined -->
+  <style>
+    :root {
+      --primary: #0f3d3e;
+      --secondary: #136f63;
+      --accent: #d4a017;
+      --light: #f4f7f6;
+      --dark: #0b1f22;
+      --muted: #6c7a7a;
+      --header-h: 72px;
+      --max-width: 1400px;
+      --container-pad: 5%;
+      --radius-lg: 16px;
+      --shadow-lg: 0 12px 30px rgba(0,0,0,0.08);
+      --shadow-focus: 0 6px 18px rgba(15,61,62,0.18);
+      --transition: all 0.3s ease;
+      --font-main: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --primary: #1a5254;
+      --secondary: #1a8a7a;
+      --accent: #e6b422;
+      --light: #121a1b;
+      --dark: #f8f9fa;
+      --muted: #adb5bd;
+      --shadow-lg: 0 12px 30px rgba(0,0,0,0.3);
+    }
+
+    /* ===== BASE RESET ===== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font-main);
+      line-height: 1.6;
+      color: var(--dark);
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      max-width: 100vw;
+      transition: background 0.3s ease, color 0.3s ease;
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    [data-theme="dark"] body { background: #0d1117; color: #f8f9fa; }
+    
+    /* Prevent horizontal scroll */
+    img, video, iframe { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; transition: var(--transition); }
+    a:hover { color: var(--accent); }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* ===== ACCESSIBILITY ===== */
+    .visually-hidden {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+    .skip-link {
+      position: absolute; top: -40px; left: 0; background: var(--accent);
+      color: white; padding: 8px 16px; z-index: 10000; transition: top 0.3s;
+    }
+    .skip-link:focus { top: 0; }
+    
+    /* Focus styles */
+    a:focus, button:focus, input:focus, select:focus, textarea:focus {
+      outline: 3px solid rgba(15,61,62,0.3);
+      outline-offset: 2px;
+      box-shadow: var(--shadow-focus);
+    }
+    [data-theme="dark"] a:focus, [data-theme="dark"] button:focus, 
+    [data-theme="dark"] input:focus, [data-theme="dark"] select:focus, 
+    [data-theme="dark"] textarea:focus { outline-color: rgba(212,160,23,0.5); }
+
+    /* ===== HEADER ===== */
+    header {
+      width: 100%; background: var(--primary);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      position: fixed; top: 0; z-index: 999;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      padding-top: env(safe-area-inset-top);
+    }
+    .navbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 20px; max-width: var(--max-width); margin: 0 auto; gap: 12px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .logo-img {
+      width: 56px; height: 56px; border-radius: 50%;
+      object-fit: cover; border: 2px solid var(--accent);
+      transition: transform 0.3s ease;
+    }
+    .logo-img:hover { transform: scale(1.05); }
+    .logo-text {
+      font-size: 1.3rem; font-weight: 700; color: #fff;
+      letter-spacing: -0.3px; white-space: nowrap;
+    }
+    .logo-text span { color: var(--accent); }
+    .nav-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .theme-toggle {
+      background: rgba(255,255,255,0.15); border: none;
+      width: 44px; height: 44px; border-radius: 50%;
+      color: #fff; font-size: 1.1rem; display: flex;
+      align-items: center; justify-content: center;
+      transition: var(--transition);
+      min-width: 44px; min-height: 44px;
+    }
+    .theme-toggle:hover { background: var(--accent); transform: rotate(15deg); }
+    .desktop-nav ul {
+      display: flex; gap: 24px; list-style: none; margin: 0; padding: 0;
+    }
+    .desktop-nav a {
+      text-decoration: none; color: #fff; font-weight: 500;
+      transition: var(--transition); padding: 8px 4px;
+      position: relative; font-size: 0.95rem; white-space: nowrap;
+    }
+    .desktop-nav a:hover, .desktop-nav a.active { color: var(--accent); }
+    .desktop-nav a.active::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 100%; height: 2px; background: var(--accent);
+      border-radius: 2px;
+    }
+    .menu-toggle {
+      display: none; background: none; border: none;
+      font-size: 1.6rem; color: #fff; cursor: pointer;
+      z-index: 1001; width: 44px; height: 44px;
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; transition: var(--transition);
+      min-width: 44px; min-height: 44px;
+    }
+    .menu-toggle:hover { background: rgba(255,255,255,0.15); }
+
+    /* Mobile Navigation */
+    .mobile-nav {
+      position: fixed; top: 0; right: -100%; width: 85%;
+      max-width: 320px; height: 100vh; height: 100dvh; background: var(--primary);
+      box-shadow: -2px 0 15px rgba(0,0,0,0.4);
+      padding: calc(70px + env(safe-area-inset-top)) 24px 24px;
+      flex-direction: column;
+      transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+      z-index: 1000; overflow-y: auto;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    .mobile-nav.show { right: 0; }
+    .mobile-nav .nav-list { list-style: none; margin-bottom: 24px; }
+    .mobile-nav .nav-list a {
+      display: block; padding: 14px 0; font-size: 1.1rem;
+      text-decoration: none; color: #fff; transition: var(--transition);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      min-height: 44px; display: flex; align-items: center;
+    }
+    .mobile-nav .nav-list a:hover, .mobile-nav .nav-list a.active {
+      color: var(--accent); padding-left: 8px;
+    }
+    .overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6); z-index: 998; display: none;
+      backdrop-filter: blur(4px); transition: opacity 0.3s ease;
+    }
+    .overlay.show { display: block; opacity: 1; }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      min-height: calc(100vh - var(--header-h));
+      min-height: calc(100dvh - var(--header-h));
+      display: flex; align-items: center; justify-content: center;
+      padding: calc(var(--header-h) + 2rem) var(--container-pad) 4rem;
+      background: linear-gradient(rgba(11,31,34,0.75), rgba(11,31,34,0.75)),
+                  url('https://plus.unsplash.com/premium_photo-1723759283157-54d22e11a870?w=1600&auto=format&fit=crop&q=80') center/cover no-repeat;
+      color: #fff; text-align: center; position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at bottom, rgba(212,160,23,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      max-width: 900px; position: relative; z-index: 2;
+      animation: fadeInUp 0.8s ease-out; padding: 0 16px;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 6.5vw, 4rem);
+      margin-bottom: 1rem; text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      line-height: 1.1; font-weight: 800; word-wrap: break-word;
+    }
+    .hero p {
+      font-size: clamp(1rem, 3.5vw, 1.3rem);
+      margin: 1.2rem 0 2rem; opacity: 0.95; max-width: 700px;
+      margin-left: auto; margin-right: auto; padding: 0 8px;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; padding: 14px 36px; background: var(--accent);
+      color: #fff; border-radius: 50px; font-weight: 700;
+      font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+      box-shadow: 0 10px 25px rgba(212,160,23,0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      cursor: pointer; border: none; text-decoration: none;
+      position: relative; overflow: hidden; min-height: 44px; white-space: nowrap;
+    }
+    .btn::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, transparent, rgba(255,255,255,0.2), transparent);
+      transform: translateX(-100%); transition: transform 0.6s ease;
+    }
+    .btn:hover::before { transform: translateX(100%); }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 16px 35px rgba(212,160,23,0.55); }
+    .btn.btn-outline {
+      background: transparent; border: 2px solid #fff;
+      color: #fff; box-shadow: none;
+    }
+    .btn.btn-outline:hover { background: #fff; color: var(--primary); }
+    .btn.btn-sm { padding: 10px 24px; font-size: 0.9rem; min-height: 40px; }
+    .btn.btn-icon { padding: 12px; width: 48px; height: 48px; border-radius: 50%; }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 72px var(--container-pad);
+      scroll-margin-top: calc(var(--header-h) + 20px);
+    }
+    .section-header {
+      text-align: center; max-width: 800px; margin: 0 auto 56px;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      margin-bottom: 16px; color: var(--dark);
+      font-weight: 800; line-height: 1.2; padding: 0 8px;
+    }
+    [data-theme="dark"] .section-title { color: #f8f9fa; }
+    .section-title span { color: var(--accent); }
+    .section-subtitle {
+      font-size: 1.1rem; color: var(--muted);
+      max-width: 600px; margin: 0 auto;
+    }
+
+    /* ===== FEATURED LISTINGS ===== */
+    .featured-listings { background: #fff; }
+    [data-theme="dark"] .featured-listings { background: #0d1117; }
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+      gap: 28px; max-width: var(--max-width); margin: 0 auto 48px;
+      padding: 0 16px;
+    }
+    .featured-card {
+      background: #fff; border-radius: var(--radius-lg);
+      overflow: hidden; box-shadow: var(--shadow-lg);
+      transition: var(--transition); cursor: pointer;
+      position: relative; transform: translateY(30px);
+      opacity: 0; animation: fadeUp 0.7s ease forwards;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    [data-theme="dark"] .featured-card {
+      background: #161b22; border-color: rgba(255,255,255,0.1);
+    }
+    .featured-card:nth-child(1) { animation-delay: 0.1s; }
+    .featured-card:nth-child(2) { animation-delay: 0.2s; }
+    .featured-card:nth-child(3) { animation-delay: 0.3s; }
+    .featured-card:nth-child(4) { animation-delay: 0.4s; }
+    .featured-card:nth-child(5) { animation-delay: 0.5s; }
+    @keyframes fadeUp {
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .featured-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+    .featured-card img {
+      width: 100%; height: 220px; object-fit: cover;
+      transition: transform 0.6s ease; display: block;
+    }
+    .featured-card:hover img { transform: scale(1.06); }
+    .featured-card-content { padding: 22px; }
+    .featured-card h3 {
+      font-size: 1.25rem; margin-bottom: 8px;
+      color: var(--dark); font-weight: 700;
+      display: -webkit-box; -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+    [data-theme="dark"] .featured-card h3 { color: #f8f9fa; }
+    .featured-card p {
+      color: var(--muted); font-size: 0.95rem;
+      margin-bottom: 12px; line-height: 1.5;
+    }
+    .featured-meta {
+      display: flex; justify-content: space-between;
+      align-items: center; margin-top: 16px;
+      flex-wrap: wrap; gap: 10px;
+    }
+    .featured-price {
+      color: var(--secondary); font-weight: 800;
+      font-size: 1.15rem;
+    }
+    [data-theme="dark"] .featured-price { color: var(--accent); }
+    .new-badge {
+      position: absolute; top: 16px; left: 16px;
+      background: var(--accent); color: #fff;
+      font-size: 0.75rem; font-weight: 700;
+      padding: 6px 14px; border-radius: 50px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 10; animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(212,160,23,0.4); }
+      50% { box-shadow: 0 0 0 10px rgba(212,160,23,0); }
+    }
+    .skeleton {
+      height: 340px; background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 37%, #e5e7eb 63%);
+      background-size: 400% 100%; animation: skeleton 1.4s ease infinite;
+      border-radius: var(--radius-lg);
+    }
+    [data-theme="dark"] .skeleton {
+      background: linear-gradient(90deg, #2d333b 25%, #373e47 37%, #2d333b 63%);
+    }
+    @keyframes skeleton {
+      0% { background-position: 100% 0; }
+      100% { background-position: 0 0; }
+    }
+
+    /* ===== SERVICES SECTION (UPDATED FOR TOUCH) ===== */
+    .services { background: var(--light); }
+    [data-theme="dark"] .services { background: #0f1419; }
+    .services-wrapper {
+      position: relative; display: flex; align-items: center;
+      max-width: var(--max-width); margin: 0 auto;
+      padding: 0 16px;
+    }
+    .scroll-container {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 1rem 0;
+      scroll-behavior: smooth;
+      flex: 1;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE/Edge */
+      -webkit-overflow-scrolling: touch; /* iOS Smooth */
+      scroll-snap-type: x mandatory; /* Snap to cards */
+    }
+    .scroll-container::-webkit-scrollbar { display: none; /* Chrome/Safari */ }
+    
+    .services-scroll .item {
+      display: inline-block;
+      vertical-align: top;
+      width: 300px;
+      margin: 0 12px;
+      white-space: normal;
+      scroll-snap-align: start; /* Snap point */
+    }
+
+    .service-card {
+      background: #fff; border-radius: var(--radius-lg);
+      padding: 32px 24px; text-align: center;
+      box-shadow: var(--shadow-lg); transition: var(--transition);
+      height: 100%; display: flex; flex-direction: column;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    [data-theme="dark"] .service-card {
+      background: #161b22; border-color: rgba(255,255,255,0.1);
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+    .service-icon-wrapper {
+      width: 100%; height: 180px; border-radius: 12px;
+      overflow: hidden; margin-bottom: 20px;
+      position: relative; background: var(--light);
+    }
+    .service-card .service-icon {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .service-card:hover .service-icon { transform: scale(1.05); }
+    .service-card h3 {
+      font-size: 1.3rem; margin-bottom: 12px;
+      color: var(--dark); font-weight: 700;
+    }
+    [data-theme="dark"] .service-card h3 { color: #f8f9fa; }
+    .service-card p {
+      color: var(--muted); font-size: 0.95rem;
+      margin-bottom: 20px; flex-grow: 1;
+    }
+    .service-card .btn {
+      align-self: center; margin-top: auto;
+      padding: 10px 28px; font-size: 0.9rem;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .about-content {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr;
+      gap: 40px; align-items: center; padding: 0 16px;
+    }
+    .about-text h3 {
+      margin-bottom: 16px; font-size: 1.6rem;
+      color: var(--dark); font-weight: 700;
+    }
+    [data-theme="dark"] .about-text h3 { color: #f8f9fa; }
+    .about-text p {
+      color: #444; margin-bottom: 20px; line-height: 1.7;
+    }
+    [data-theme="dark"] .about-text p { color: #adb5bd; }
+    .about-list {
+      list-style: none; margin: 24px 0; padding-left: 0;
+    }
+    .about-list li {
+      margin: 14px 0; display: flex; align-items: flex-start;
+      gap: 14px; color: #333; font-size: 1.02rem;
+    }
+    [data-theme="dark"] .about-list li { color: #f8f9fa; }
+    .about-list i {
+      color: var(--secondary); font-size: 1.3rem;
+      margin-top: 3px; flex-shrink: 0;
+    }
+    .about-img {
+      height: 420px; border-radius: var(--radius-lg);
+      background: url('https://images.unsplash.com/photo-1649145058041-f3e2ed855990?w=800&auto=format&fit=crop&q=80') center/cover no-repeat;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+      position: relative; overflow: hidden;
+    }
+    .about-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(15,61,62,0.2), transparent 60%);
+    }
+
+    /* ===== FILTERS ===== */
+    .filters-section {
+      background: #fff; padding: 24px var(--container-pad);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      position: sticky; top: var(--header-h); z-index: 100;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    [data-theme="dark"] .filters-section {
+      background: #0d1117; border-color: rgba(255,255,255,0.1);
+    }
+    .filters-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px; max-width: var(--max-width); margin: 0 auto;
+    }
+    .filters-grid input, .filters-grid select {
+      width: 100%; padding: 14px 16px; border-radius: 8px;
+      border: 1px solid #d1d5db; font-size: 16px;
+      background: #fff; transition: var(--transition);
+      min-height: 48px; -webkit-appearance: none; -moz-appearance: none; appearance: none;
+    }
+    [data-theme="dark"] .filters-grid input, [data-theme="dark"] .filters-grid select {
+      background: #1e2530; border-color: #374151;
+      color: #f8f9fa;
+    }
+    .filters-grid input:focus, .filters-grid select:focus {
+      outline: none; border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(19,111,99,0.15);
+    }
+
+    /* ===== LISTINGS TABLE ===== */
+    .table-title {
+      margin: 2.5rem 0 1rem; font-size: 1.4rem; color: var(--dark);
+      padding: 0 16px;
+    }
+    [data-theme="dark"] .table-title { color: #f8f9fa; }
+    .table-responsive {
+      overflow-x: auto; -webkit-overflow-scrolling: touch;
+      padding: 0 16px;
+    }
+    .listing-table {
+      width: 100%; border-collapse: collapse;
+      background: #fff; border-radius: 10px;
+      overflow: hidden; box-shadow: var(--shadow-lg);
+      min-width: 800px;
+    }
+    [data-theme="dark"] .listing-table {
+      background: #161b22; border: 1px solid rgba(255,255,255,0.1);
+    }
+    .listing-table th, .listing-table td {
+      padding: 14px 16px; text-align: left;
+      border-bottom: 1px solid #e5e7eb; white-space: nowrap;
+    }
+    [data-theme="dark"] .listing-table th, [data-theme="dark"] .listing-table td {
+      border-color: #374151;
+    }
+    .listing-table th {
+      background: var(--primary); color: #fff;
+      font-weight: 600; position: sticky; top: 0;
+    }
+    .listing-table tr:hover { background: var(--light); }
+    [data-theme="dark"] .listing-table tr:hover { background: #1e2530; }
+    .listing-table td button {
+      white-space: nowrap; min-height: 40px; min-width: 44px;
+      padding: 8px 16px;
+    }
+
+    /* ===== MAP SECTION ===== */
+    #propertyMap {
+      width: 100%; height: 450px;
+      border-radius: 14px; box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      margin: 0 16px;
+    }
+    [data-theme="dark"] #propertyMap {
+      background: #1e2530; border-color: rgba(255,255,255,0.1);
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact { background: var(--dark); color: #f9fafb; }
+    .contact .section-title { color: #ffffff; }
+    .contact .section-title span { color: var(--accent); }
+    .contact-wrapper {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr;
+      gap: 36px; align-items: start; padding: 0 16px;
+    }
+    .contact-block h3 {
+      color: var(--accent); font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+    .contact-block p {
+      font-size: 1.02rem; margin-bottom: 18px;
+      color: #f3f4f6;
+    }
+    .contact-methods { margin-top: 26px; }
+    .contact-item {
+      display: flex; gap: 14px;
+      align-items: center; margin: 14px 0;
+    }
+    .contact-item i {
+      font-size: 1.6rem; color: var(--accent);
+      min-width: 24px;
+    }
+    .whatsapp-primary {
+      display: inline-flex; align-items: center;
+      gap: 14px; padding: 16px 28px;
+      border-radius: 70px; font-weight: 800;
+      font-size: 1rem; background: #25D366;
+      color: #fff; box-shadow: 0 10px 30px rgba(37,211,102,0.28);
+      text-decoration: none; min-height: 44px;
+      transition: transform 0.2s ease;
+    }
+    .whatsapp-primary:hover { transform: translateY(-2px); }
+    .contact-form {
+      background: #fff; color: var(--dark);
+      padding: 22px; border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+    }
+    [data-theme="dark"] .contact-form {
+      background: #161b22; border-color: rgba(255,255,255,0.1);
+      color: #f8f9fa;
+    }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label {
+      display: block; font-weight: 600;
+      margin-bottom: 8px; font-size: 0.95rem;
+      color: var(--dark);
+    }
+    [data-theme="dark"] .form-group label { color: #f8f9fa; }
+    .form-control {
+      width: 100%; padding: 14px 16px;
+      border-radius: 8px; border: 1px solid #e6e6e6;
+      font-size: 16px; background: #fff;
+      transition: var(--transition); min-height: 48px;
+    }
+    [data-theme="dark"] .form-control {
+      background: #1e2530; border-color: #374151;
+      color: #f8f9fa;
+    }
+    .form-control:focus {
+      outline: none; border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(19,111,99,0.15);
+    }
+    .contact-note {
+      text-align: center; margin-top: 10px;
+      color: #666; font-size: 0.92rem;
+    }
+    [data-theme="dark"] .contact-note { color: #9ca3af; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0a0a0a; color: #9ca3af;
+      text-align: center; padding: 32px 24px;
+      font-size: 0.95rem;
+    }
+    footer a {
+      color: #d1d5db; transition: var(--transition);
+      min-height: 44px; display: inline-flex; align-items: center;
+    }
+    footer a:hover { color: var(--accent); }
+
+    /* ===== FLOATING WHATSAPP ===== */
+    .whatsapp-float {
+      position: fixed; right: 20px; bottom: 20px;
+      width: 64px; height: 64px; border-radius: 50%;
+      display: flex; align-items: center;
+      justify-content: center; background: #25D366;
+      color: #fff; font-size: 1.6rem;
+      box-shadow: 0 6px 20px rgba(37,211,102,0.35);
+      z-index: 1400; transition: var(--transition);
+      text-decoration: none; min-width: 64px;
+      min-height: 64px;
+      right: calc(20px + env(safe-area-inset-right));
+      bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+    .whatsapp-float:hover { transform: scale(1.12); }
+
+    /* ===== MODAL ===== */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.8); display: none;
+      align-items: center; justify-content: center;
+      z-index: 2000; padding: 20px;
+    }
+    .modal-overlay.show { display: flex; }
+    .modal-content {
+      position: relative; max-width: 95%;
+      max-height: 90vh; border-radius: 12px;
+      background: #fff; overflow: hidden;
+    }
+    [data-theme="dark"] .modal-content { background: #161b22; }
+    .modal-content img {
+      max-width: 100%; max-height: 90vh;
+      border-radius: 12px; display: block;
+      object-fit: contain;
+    }
+    .modal-close {
+      position: absolute; top: -40px; right: 0;
+      font-size: 2rem; color: #fff; cursor: pointer;
+      min-width: 44px; min-height: 44px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ===== COOKIE CONSENT ===== */
+    .cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: #fff; color: var(--dark);
+      padding: 20px 24px; box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+      z-index: 1500; display: none; flex-wrap: wrap;
+      align-items: center; justify-content: space-between;
+      gap: 16px; animation: slideUp 0.3s ease;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+    [data-theme="dark"] .cookie-banner {
+      background: #161b22; color: #f8f9fa;
+      border-color: rgba(255,255,255,0.1);
+    }
+    .cookie-banner.show { display: flex; }
+    .cookie-text {
+      flex: 1; min-width: 280px;
+      font-size: 0.95rem; line-height: 1.6;
+    }
+    .cookie-text a {
+      color: var(--secondary); font-weight: 600;
+      text-decoration: none; border-bottom: 1px dashed;
+    }
+    .cookie-text a:hover { color: var(--accent); }
+    .cookie-btns {
+      display: flex; gap: 12px; flex-shrink: 0;
+    }
+    .cookie-btn {
+      padding: 10px 24px; border-radius: 8px;
+      font-weight: 600; font-size: 0.95rem;
+      border: none; cursor: pointer;
+      transition: var(--transition); min-height: 44px;
+      min-width: 44px;
+    }
+    .cookie-btn.accept { background: var(--accent); color: #fff; }
+    .cookie-btn.decline { background: #6c7a7a; color: #fff; }
+    .cookie-btn:hover { transform: translateY(-2px); }
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+
+    /* ===== LOADING ===== */
+    .loading { text-align: center; padding: 2rem; color: var(--muted); }
+
+    /* Marker pulse animation */
+    .leaflet-marker-icon.pulse { animation: pulse 1s ease infinite; }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+
+    /* ===== REDUCED MOTION ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .whatsapp-float { animation: none; }
+    }
+
+    /* ===== RESPONSIVE BREAKPOINTS ===== */
+    
+    /* Large Tablets & Small Desktops (769px - 1024px) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      :root { --max-width: 1200px; --container-pad: 4%; }
+      .featured-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+      .services-scroll .item { width: 260px; }
+      .hero { padding: calc(var(--header-h) + 2rem) 4% 5rem; }
+    }
+
+    /* Desktop (1025px+) */
+    @media (min-width: 769px) {
+      .menu-toggle { display: none !important; }
+      .desktop-nav { display: block !important; }
+      .mobile-nav { display: none !important; }
+      .about-content { grid-template-columns: 1fr 1fr; }
+      .about-img { height: 500px; }
+      .contact-wrapper { grid-template-columns: 1fr 1fr; }
+      section { padding: 80px var(--container-pad); }
+      .hero { padding: calc(var(--header-h) + 2rem) var(--container-pad) 6rem; }
+    }
+
+    /* Tablets (481px - 768px) */
+    @media (max-width: 768px) {
+      :root { --max-width: 100%; --header-h: 68px; }
+      .desktop-nav { display: none !important; }
+      .menu-toggle { display: flex !important; }
+      .hero { padding-top: calc(var(--header-h) + 1rem); min-height: calc(100dvh - var(--header-h)); }
+      .about-img { order: -1; }
+      .about-content { grid-template-columns: 1fr; }
+      .contact-wrapper { grid-template-columns: 1fr; }
+      section { padding: 60px 4%; }
+      .service-card .service-icon { height: 160px; }
+      .featured-card img { height: 180px; }
+      .filters-grid { grid-template-columns: 1fr; }
+      .logo-text { font-size: 1.1rem; }
+      .logo-img { width: 48px; height: 48px; }
+      .navbar { padding: 12px 16px; }
+      #propertyMap { height: 350px; margin: 0; }
+    }
+
+    /* Mobile Phones (320px - 480px) */
+    @media (max-width: 480px) {
+      :root { --header-h: 64px; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 0.95rem; margin-bottom: 1.1rem; }
+      .whatsapp-float { width: 56px; height: 56px; font-size: 1.45rem; right: 14px; bottom: 14px; }
+      section { padding: 50px 4%; }
+      .mobile-nav { width: 90%; max-width: 300px; }
+      .featured-card-content { padding: 15px; }
+      .featured-card h3 { font-size: 1.1rem; }
+      .section-title { font-size: 1.6rem; }
+      .btn { padding: 12px 28px; font-size: 0.95rem; width: 100%; justify-content: center; }
+      .btn.btn-sm { padding: 10px 20px; }
+      .filters-grid input, .filters-grid select { padding: 12px 14px; font-size: 16px; }
+      .contact-form { padding: 16px; }
+      .form-control { padding: 12px 14px; }
+      .cookie-banner { padding: 16px; flex-direction: column; text-align: center; }
+      .cookie-btns { width: 100%; justify-content: center; }
+      .cookie-btn { flex: 1; max-width: 140px; }
+      .listing-table { min-width: 700px; }
+      .listing-table th, .listing-table td { padding: 10px 12px; font-size: 0.85rem; }
+      .modal-close { top: -35px; font-size: 1.8rem; }
+      footer { padding: 24px 16px; font-size: 0.85rem; }
+    }
+
+    /* Very Small Screens (320px and below) */
+    @media (max-width: 320px) {
+      .hero h1 { font-size: 1.6rem; }
+      .hero p { font-size: 0.9rem; }
+      .logo-text { font-size: 1rem; display: none; }
+      .navbar { justify-content: center; }
+      .nav-actions { position: absolute; right: 16px; }
+      .whatsapp-float { width: 50px; height: 50px; font-size: 1.3rem; }
+      .featured-grid { grid-template-columns: 1fr; }
+      .services-scroll .item { width: 260px; }
+    }
+
+    /* Landscape Orientation on Mobile */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .hero { min-height: 100vh; padding: calc(var(--header-h) + 1rem) var(--container-pad) 2rem; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { margin: 0.8rem 0 1.2rem; }
+      .mobile-nav { max-width: 280px; }
+    }
+
+    /* High DPI Displays */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .logo-img, .featured-card img, .service-card .service-icon {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      header, .whatsapp-float, .cookie-banner, .filters-section,
+      .theme-toggle, .menu-toggle, .mobile-nav, .overlay, #propertyMap {
+        display: none !important;
+      }
+      body { background: #fff; color: #000; }
+      .btn { background: none; color: #000; border: 1px solid #000; box-shadow: none; }
+    }
+  </style>
 </head>
 <body>
-<!-- ♿ Accessibility Skip Link -->
-<a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- ♿ Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- 🍪 Cookie Consent Banner -->
-<div class="cookie-banner" id="cookieBanner" role="region" aria-label="Cookie consent">
-  <p class="cookie-text">
-    We use cookies to enhance your experience, analyze site traffic, and personalize content.
-    By continuing to use this site, you agree to our use of cookies.
-  </p>
-  <div class="cookie-btns">
-    <button class="cookie-btn decline" id="cookieDecline">Decline</button>
-    <button class="cookie-btn accept" id="cookieAccept">Accept</button>
-  </div>
-</div>
-
-<!-- 🧭 Header -->
-<header>
-  <div class="navbar container">
-    <a href="/" class="logo" aria-label="Spatio Property Services Home">
-      <img src="https://i.ibb.co/NgVMK99N/Whats-App-Image-2026-01-27-at-08-54-24.jpg"
-           alt="Spatio Property Services Logo"
-           class="logo-img"
-           width="56" height="56"
-           loading="eager">
-      <span class="logo-text">Spatio<span>Property</span>Services</span>
-    </a>
-    
-    <nav class="desktop-nav" aria-label="Primary navigation">
-      <ul id="nav-desktop">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#featured">Featured</a></li>
-        <li><a href="#listings">All Listings</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    
-    <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
-        <i class="fas fa-moon" aria-hidden="true"></i>
-      </button>
-      <button class="menu-toggle" id="mobileToggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars" aria-hidden="true"></i>
-      </button>
+  <!-- 🍪 Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Cookie consent">
+    <p class="cookie-text">
+      We use cookies to enhance your experience, analyze site traffic, and personalize content.
+      By continuing to use this site, you agree to our use of cookies.
+    </p>
+    <div class="cookie-btns">
+      <button class="cookie-btn decline" id="cookieDecline">Decline</button>
+      <button class="cookie-btn accept" id="cookieAccept">Accept</button>
     </div>
   </div>
-  
-  <!-- 📱 Mobile Navigation -->
-  <div class="mobile-nav" id="mobileMenu" aria-hidden="true">
-    <nav class="nav-list">
-      <ul>
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#featured">Featured</a></li>
-        <li><a href="#listings">All Listings</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="overlay" id="overlay" aria-hidden="true"></div>
-</header>
 
-<!-- 🏠 Main Content -->
-<main id="main-content">
-  <!-- Hero Section -->
-  <section class="hero" id="home" aria-label="Hero">
-    <div class="hero-content">
-      <h1>Property Solutions <span style="color:var(--accent);">Surveying</span> & Consultancy</h1>
-      <p>We connect buyers, sellers, landlords and tenants while delivering professional surveying, mapping and property consultancy services across Kenya.</p>
-      <a href="#contact" class="btn">Talk to Us</a>
-    </div>
-  </section>
-
-  <!-- Featured Listings Section -->
-  <section class="featured-listings" id="featured" aria-label="Featured Listings">
-    <h2 class="section-title">New <span>Listings</span></h2>
-    <div class="featured-grid container" id="featuredContainer" role="list">
-      <!-- Skeleton loaders for initial state -->
-      <div class="skeleton" role="status"><span class="visually-hidden">Loading featured listings...</span></div>
-      <div class="skeleton"></div>
-      <div class="skeleton"></div>
-    </div>
-    <div class="text-center">
-      <a href="#listings" class="btn">View More Listings</a>
-    </div>
-  </section>
-
-  <!-- Services with Arrow Navigation -->
-  <section class="services" id="services" aria-label="Services">
-    <h2 class="section-title">Our <span>Services</span></h2>
-    <div class="services-wrapper container">
-      <button class="scroll-btn left" id="scrollLeft" aria-label="Scroll left" disabled>&#10094;</button>
-      <div class="scroll-container services-scroll" id="servicesScroll">
-        <article class="service-card item" aria-labelledby="s1">
-          <div class="service-icon-wrapper">
-            <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=600&auto=format&fit=crop&q=80"
-                 alt="Property Bazaar Services"
-                 class="service-icon"
-                 width="300" height="180"
-                 loading="lazy">
-          </div>
-          <h3 id="s1">Property Bazaar Services</h3>
-          <p>Renting and letting, buying and selling of properties, and verified property listings.</p>
-          <a class="btn btn-sm" href="property-bazaar.html">Learn more...</a>
-        </article>
-        <article class="service-card item" aria-labelledby="s2">
-          <div class="service-icon-wrapper">
-            <img src="https://plus.unsplash.com/premium_photo-1683134342961-182d4ba368cb?q=80&w=870&auto=format&fit=crop"
-                 alt="Surveying & Mapping"
-                 class="service-icon"
-                 width="300" height="180"
-                 loading="lazy">
-          </div>
-          <h3 id="s2">Surveying & Mapping</h3>
-          <p>Boundary confirmation, physical planning, valuation, GIS mapping, title-related surveys.</p>
-          <a class="btn btn-sm" href="surveying-mapping.html">Learn more...</a>
-        </article>
-        <article class="service-card item" aria-labelledby="s3">
-          <div class="service-icon-wrapper">
-            <img src="https://images.unsplash.com/photo-1765020553734-2c050ddb9494?w=600&auto=format&fit=crop&q=80"
-                 alt="Consultancy Services"
-                 class="service-icon"
-                 width="300" height="180"
-                 loading="lazy">
-          </div>
-          <h3 id="s3">Consultancy Services</h3>
-          <p>Legal transactions, official office processes, and auctioneering through registered partners.</p>
-          <a class="btn btn-sm" href="consultancy-services.html">Learn more...</a>
-        </article>
-      </div>
-      <button class="scroll-btn right" id="scrollRight" aria-label="Scroll right">&#10095;</button>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="about" id="about" aria-label="About">
-    <h2 class="section-title">About <span>Us</span></h2>
-    <div class="about-content">
-      <div class="about-text">
-        <h3>Trusted Property & Land Professionals</h3>
-        <p>Spatio Property Services provides integrated solutions in real estate, surveying, mapping and consultancy, ensuring transparency, accuracy and value.</p>
-        <ul class="about-list">
-          <li><i class="fas fa-check-circle"></i> Verified property listings</li>
-          <li><i class="fas fa-check-circle"></i> Professional surveying and mapping</li>
-          <li><i class="fas fa-check-circle"></i> Legal and transaction support</li>
-          <li><i class="fas fa-check-circle"></i> Client-focused service delivery</li>
+  <!-- 🧭 Header -->
+  <header>
+    <div class="navbar container">
+      <a href="/" class="logo" aria-label="Spatio Property Services Home">
+        <img src="https://i.ibb.co/NgVMK99N/Whats-App-Image-2026-01-27-at-08-54-24.jpg"
+             alt="Spatio Property Services Logo"
+             class="logo-img"
+             width="56" height="56"
+             loading="eager">
+        <span class="logo-text">Spatio<span>Property</span>Services</span>
+      </a>
+      
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <ul id="nav-desktop">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#featured">Featured</a></li>
+          <li><a href="#listings">All Listings</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-        <div style="margin-top:18px;">
-          <a href="#contact" class="btn">Get in Touch</a>
-          <a href="about-us.html" class="btn btn-sm" style="background:var(--primary); margin-left:12px;">More About Us...</a>
-        </div>
-      </div>
-      <div class="about-img" role="img" aria-label="Survey team in the field"></div>
-    </div>
-  </section>
-
-  <!-- Filters - Original Simple Style -->
-  <div class="filters-section">
-    <div class="filters-grid container">
-      <input type="text" id="searchLocation" placeholder="Search by location" aria-label="Search by location">
-      <select id="filterType" aria-label="Filter by property type">
-        <option value="">All Types</option>
-        <option value="Apartment">Apartment</option>
-        <option value="Plot">Plot</option>
-        <option value="Land">Land</option>
-        <option value="Residential Plot">Residential Plot</option>
-        <option value="Commercial Land">Commercial Land</option>
-        <option value="Agricultural Land">Agricultural Land</option>
-      </select>
-      <select id="filterCategory" aria-label="Filter by category">
-        <option value="">All Categories</option>
-        <option value="For Sale">For Sale</option>
-        <option value="To Let">To Let</option>
-      </select>
-    </div>
-  </div>
-
-  <!-- All Listings -->
-  <section class="listings" id="listings" aria-label="Property and Land Listings">
-    <h2 class="section-title">Available <span>Properties & Lands</span></h2>
-    <div class="container">
-      <div id="listingsContainer">
-        <div class="loading">Loading listings...</div>
+      </nav>
+      
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+        <button class="menu-toggle" id="mobileToggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
       </div>
     </div>
-  </section>
-
-  <!-- Property Map -->
-  <section class="container" style="margin-top:60px">
-    <h3 class="table-title">Property Locations</h3>
-    <div id="propertyMap" role="region" aria-label="Interactive map of property locations"></div>
-  </section>
-
-  <!-- Contact -->
-  <section class="contact" id="contact" aria-label="Contact">
-    <h2 class="section-title">Get In <span>Touch</span></h2>
-    <div class="contact-wrapper">
-      <div class="contact-block">
-        <h3>Talk to Us on WhatsApp</h3>
-        <p>Click below and start talking to our representative</p>
-        <p>
-          <a class="whatsapp-primary" href="https://wa.me/254782424154?text=Hello%20Spatio%20Property%20Services%2C%20I%20need%20help%20with%20..." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-            <i class="fab fa-whatsapp" aria-hidden="true" style="font-size:1.55rem;"></i>
-            <span style="display:block;text-align:left;">
-              <strong style="display:block;">Chat on WhatsApp</strong>
-              <small style="display:block;opacity:.95;">+254 782 424 154</small>
-            </span>
-          </a>
-        </p>
-        <div class="contact-methods">
-          <div class="contact-item"><i class="fas fa-phone"></i><div><strong>Call:</strong> <a href="tel:+254782424154" style="color:#fff">+254 782 424 154</a></div></div>
-          <div class="contact-item"><i class="fas fa-envelope"></i><div><strong>Email:</strong> <a href="mailto:info.spske@gmail.com" style="color:#fff">info.spske@gmail.com</a></div></div>
-          <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><strong>Location:</strong> Nairobi, Kenya</div></div>
-        </div>
-      </div>
-      <form action="https://formspree.io/f/xreejeyy" method="POST" class="contact-form" aria-label="Contact form">
-        <div class="form-group">
-          <label for="email">Your Email</label>
-          <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Your Message</label>
-          <textarea id="message" name="message" class="form-control" rows="5" placeholder="Type your inquiry here" required></textarea>
-        </div>
-        <input type="hidden" name="subject" value="Spatio Property Services Website Inquiry">
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-    </div>
-  </section>
-</main>
-
-<!-- Footer - Minimal (Only Back to Top) -->
-<footer>
-  <div class="container">
-    <p>&copy; <span id="year"></span> Spatio Property Services. All Rights Reserved.</p>
-    <p><a href="#home" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Back to Top</a></p>
-  </div>
-</footer>
-
-<!-- Floating WhatsApp Button -->
-<a class="whatsapp-float" href="https://wa.me/254782424154?text=Hello%20Spatio%20Property%20Services%2C%20I%20need%20assistance..." 
-   target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <i class="fab fa-whatsapp" aria-hidden="true"></i>
-</a>
-
-<!-- Photo Modal -->
-<div class="modal-overlay" id="photoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal-content">
-    <span class="modal-close" id="closeModal" aria-label="Close">&times;</span>
-    <img id="modalImage" src="" alt="Property Photo">
-  </div>
-</div>
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  // ===== 🔐 Cookie Consent =====
-  const cookieBanner = document.getElementById('cookieBanner');
-  const cookieAccept = document.getElementById('cookieAccept');
-  const cookieDecline = document.getElementById('cookieDecline');
-  
-  if (!localStorage.getItem('cookiesAccepted')) {
-    setTimeout(() => cookieBanner.classList.add('show'), 2000);
-  }
-  
-  cookieAccept.addEventListener('click', () => {
-    localStorage.setItem('cookiesAccepted', 'true');
-    cookieBanner.classList.remove('show');
-  });
-  
-  cookieDecline.addEventListener('click', () => {
-    localStorage.setItem('cookiesAccepted', 'declined');
-    cookieBanner.classList.remove('show');
-  });
-  
-  // ===== 🌓 Dark Mode Toggle =====
-  const themeToggle = document.getElementById('themeToggle');
-  const html = document.documentElement;
-  
-  const savedTheme = localStorage.getItem('theme');
-  const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
-  if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
-    html.setAttribute('data-theme', 'dark');
-    updateThemeIcon(true);
-  }
-  
-  function updateThemeIcon(isDark) {
-    const icon = themeToggle.querySelector('i');
-    if (icon) {
-      icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
-    }
-  }
-  
-  function toggleTheme() {
-    const isDark = html.getAttribute('data-theme') === 'dark';
-    const newTheme = isDark ? 'light' : 'dark';
-    html.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcon(!isDark);
-  }
-  
-  themeToggle?.addEventListener('click', toggleTheme);
-  
-  // ===== 📱 Mobile Menu =====
-  const mobileToggle = document.getElementById('mobileToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const overlay = document.getElementById('overlay');
-  
-  function openMobileMenu() {
-    mobileMenu.classList.add('show');
-    mobileMenu.setAttribute('aria-hidden', 'false');
-    overlay.classList.add('show');
-    document.body.style.overflow = 'hidden';
-    mobileToggle.setAttribute('aria-expanded', 'true');
-  }
-  
-  function closeMobileMenu() {
-    mobileMenu.classList.remove('show');
-    mobileMenu.setAttribute('aria-hidden', 'true');
-    overlay.classList.remove('show');
-    document.body.style.overflow = '';
-    mobileToggle.setAttribute('aria-expanded', 'false');
-  }
-  
-  mobileToggle?.addEventListener('click', openMobileMenu);
-  overlay?.addEventListener('click', closeMobileMenu);
-  mobileMenu?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMobileMenu);
-  });
-  
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileMenu?.classList.contains('show')) {
-      closeMobileMenu();
-    }
-  });
-  
-  // ===== 🔄 Services Scroll =====
-  const scrollContainer = document.getElementById('servicesScroll');
-  const scrollLeftBtn = document.getElementById('scrollLeft');
-  const scrollRightBtn = document.getElementById('scrollRight');
-  const scrollAmount = 320;
-  
-  function updateScrollButtons() {
-    if (!scrollContainer) return;
-    const { scrollLeft, scrollWidth, clientWidth } = scrollContainer;
-    scrollLeftBtn.disabled = scrollLeft <= 0;
-    scrollRightBtn.disabled = scrollLeft + clientWidth >= scrollWidth - 10;
-  }
-  
-  scrollLeftBtn?.addEventListener('click', () => {
-    scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  });
-  
-  scrollRightBtn?.addEventListener('click', () => {
-    scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  });
-  
-  scrollContainer?.addEventListener('scroll', updateScrollButtons);
-  window.addEventListener('resize', updateScrollButtons);
-  setTimeout(updateScrollButtons, 100);
-  
-  // ===== 🗺️ Map Initialization =====
-  let map;
-  let markers = {};
-  let featuredMarkers = {};
-  
-  function initMap() {
-    const mapEl = document.getElementById('propertyMap');
-    if (!mapEl) return;
     
-    map = L.map("propertyMap", {
-      center: [-1.286389, 36.817223],
-      zoom: 7,
-      scrollWheelZoom: false
+    <!-- 📱 Mobile Navigation -->
+    <div class="mobile-nav" id="mobileMenu" aria-hidden="true">
+      <nav class="nav-list">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#featured">Featured</a></li>
+          <li><a href="#listings">All Listings</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="overlay" id="overlay" aria-hidden="true"></div>
+  </header>
+
+  <!-- 🏠 Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero" id="home" aria-label="Hero">
+      <div class="hero-content">
+        <h1>Property Solutions <span style="color:var(--accent);">Surveying</span> & Consultancy</h1>
+        <p>We connect buyers, sellers, landlords and tenants while delivering professional surveying, mapping and property consultancy services across Kenya.</p>
+        <a href="#contact" class="btn">Talk to Us</a>
+      </div>
+    </section>
+
+    <!-- Featured Listings Section -->
+    <section class="featured-listings" id="featured" aria-label="Featured Listings">
+      <h2 class="section-title">New <span>Listings</span></h2>
+      <div class="featured-grid container" id="featuredContainer" role="list">
+        <!-- Skeleton loaders for initial state -->
+        <div class="skeleton" role="status"><span class="visually-hidden">Loading featured listings...</span></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+      </div>
+      <div class="text-center">
+        <a href="#listings" class="btn">View More Listings</a>
+      </div>
+    </section>
+
+    <!-- Services with Touch Scrolling (NO BUTTONS) -->
+    <section class="services" id="services" aria-label="Services">
+      <h2 class="section-title">Our <span>Services</span></h2>
+      <div class="services-wrapper container">
+        <!-- Buttons Removed -->
+        <div class="scroll-container services-scroll" id="servicesScroll">
+          <article class="service-card item" aria-labelledby="s1">
+            <div class="service-icon-wrapper">
+              <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=600&auto=format&fit=crop&q=80"
+                   alt="Property Bazaar Services"
+                   class="service-icon"
+                   width="300" height="180"
+                   loading="lazy">
+            </div>
+            <h3 id="s1">Property Bazaar Services</h3>
+            <p>Renting and letting, buying and selling of properties, and verified property listings.</p>
+            <a class="btn btn-sm" href="property-bazaar.html">Learn more...</a>
+          </article>
+          <article class="service-card item" aria-labelledby="s2">
+            <div class="service-icon-wrapper">
+              <img src="https://plus.unsplash.com/premium_photo-1683134342961-182d4ba368cb?q=80&w=870&auto=format&fit=crop"
+                   alt="Surveying & Mapping"
+                   class="service-icon"
+                   width="300" height="180"
+                   loading="lazy">
+            </div>
+            <h3 id="s2">Surveying & Mapping</h3>
+            <p>Boundary confirmation, physical planning, valuation, GIS mapping, title-related surveys.</p>
+            <a class="btn btn-sm" href="surveying-mapping.html">Learn more...</a>
+          </article>
+          <article class="service-card item" aria-labelledby="s3">
+            <div class="service-icon-wrapper">
+              <img src="https://images.unsplash.com/photo-1765020553734-2c050ddb9494?w=600&auto=format&fit=crop&q=80"
+                   alt="Consultancy Services"
+                   class="service-icon"
+                   width="300" height="180"
+                   loading="lazy">
+            </div>
+            <h3 id="s3">Consultancy Services</h3>
+            <p>Legal transactions, official office processes, and auctioneering through registered partners.</p>
+            <a class="btn btn-sm" href="consultancy-services.html">Learn more...</a>
+          </article>
+        </div>
+        <!-- Buttons Removed -->
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about" aria-label="About">
+      <h2 class="section-title">About <span>Us</span></h2>
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Trusted Property & Land Professionals</h3>
+          <p>Spatio Property Services provides integrated solutions in real estate, surveying, mapping and consultancy, ensuring transparency, accuracy and value.</p>
+          <ul class="about-list">
+            <li><i class="fas fa-check-circle"></i> Verified property listings</li>
+            <li><i class="fas fa-check-circle"></i> Professional surveying and mapping</li>
+            <li><i class="fas fa-check-circle"></i> Legal and transaction support</li>
+            <li><i class="fas fa-check-circle"></i> Client-focused service delivery</li>
+          </ul>
+          <div style="margin-top:18px;">
+            <a href="#contact" class="btn">Get in Touch</a>
+            <a href="about-us.html" class="btn btn-sm" style="background:var(--primary); margin-left:12px;">More About Us...</a>
+          </div>
+        </div>
+        <div class="about-img" role="img" aria-label="Survey team in the field"></div>
+      </div>
+    </section>
+
+    <!-- Filters - Original Simple Style -->
+    <div class="filters-section">
+      <div class="filters-grid container">
+        <input type="text" id="searchLocation" placeholder="Search by location" aria-label="Search by location">
+        <select id="filterType" aria-label="Filter by property type">
+          <option value="">All Types</option>
+          <option value="Apartment">Apartment</option>
+          <option value="Plot">Plot</option>
+          <option value="Land">Land</option>
+          <option value="Residential Plot">Residential Plot</option>
+          <option value="Commercial Land">Commercial Land</option>
+          <option value="Agricultural Land">Agricultural Land</option>
+        </select>
+        <select id="filterCategory" aria-label="Filter by category">
+          <option value="">All Categories</option>
+          <option value="For Sale">For Sale</option>
+          <option value="To Let">To Let</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- All Listings -->
+    <section class="listings" id="listings" aria-label="Property and Land Listings">
+      <h2 class="section-title">Available <span>Properties & Lands</span></h2>
+      <div class="container">
+        <div id="listingsContainer">
+          <div class="loading">Loading listings...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Property Map -->
+    <section class="container" style="margin-top:60px">
+      <h3 class="table-title">Property Locations</h3>
+      <div id="propertyMap" role="region" aria-label="Interactive map of property locations"></div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact" aria-label="Contact">
+      <h2 class="section-title">Get In <span>Touch</span></h2>
+      <div class="contact-wrapper">
+        <div class="contact-block">
+          <h3>Talk to Us on WhatsApp</h3>
+          <p>Click below and start talking to our representative</p>
+          <p>
+            <a class="whatsapp-primary" href="https://wa.me/254782424154?text=Hello%20Spatio%20Property%20Services%2C%20I%20need%20help%20with%20..." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+              <i class="fab fa-whatsapp" aria-hidden="true" style="font-size:1.55rem;"></i>
+              <span style="display:block;text-align:left;">
+                <strong style="display:block;">Chat on WhatsApp</strong>
+                <small style="display:block;opacity:.95;">+254 782 424 154</small>
+              </span>
+            </a>
+          </p>
+          <div class="contact-methods">
+            <div class="contact-item"><i class="fas fa-phone"></i><div><strong>Call:</strong> <a href="tel:+254782424154" style="color:#fff">+254 782 424 154</a></div></div>
+            <div class="contact-item"><i class="fas fa-envelope"></i><div><strong>Email:</strong> <a href="mailto:info.spske@gmail.com" style="color:#fff">info.spske@gmail.com</a></div></div>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><strong>Location:</strong> Nairobi, Kenya</div></div>
+          </div>
+        </div>
+        <form action="https://formspree.io/f/xreejeyy" method="POST" class="contact-form" aria-label="Contact form">
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" class="form-control" rows="5" placeholder="Type your inquiry here" required></textarea>
+          </div>
+          <input type="hidden" name="subject" value="Spatio Property Services Website Inquiry">
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer - Minimal (Only Back to Top) -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Spatio Property Services. All Rights Reserved.</p>
+      <p><a href="#home" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Back to Top</a></p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a class="whatsapp-float" href="https://wa.me/254782424154?text=Hello%20Spatio%20Property%20Services%2C%20I%20need%20assistance..."
+     target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+
+  <!-- Photo Modal -->
+  <div class="modal-overlay" id="photoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <span class="modal-close" id="closeModal" aria-label="Close">&times;</span>
+      <img id="modalImage" src="" alt="Property Photo">
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // ===== 🔐 Cookie Consent =====
+    const cookieBanner = document.getElementById('cookieBanner');
+    const cookieAccept = document.getElementById('cookieAccept');
+    const cookieDecline = document.getElementById('cookieDecline');
+    
+    if (!localStorage.getItem('cookiesAccepted')) {
+      setTimeout(() => cookieBanner.classList.add('show'), 2000);
+    }
+    
+    cookieAccept.addEventListener('click', () => {
+      localStorage.setItem('cookiesAccepted', 'true');
+      cookieBanner.classList.remove('show');
     });
     
-    const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    cookieDecline.addEventListener('click', () => {
+      localStorage.setItem('cookiesAccepted', 'declined');
+      cookieBanner.classList.remove('show');
+    });
+
+    // ===== 🌓 Dark Mode Toggle =====
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
     
-    const satellite = L.tileLayer(
-      "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-      { maxZoom: 19, attribution: 'Tiles &copy; Esri' }
-    );
+    const savedTheme = localStorage.getItem('theme');
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    L.control.layers({ "OpenStreetMap": osm, "Satellite": satellite }).addTo(map);
-  }
-  
-  // ===== 📦 Supabase Setup (YOUR ORIGINAL CONFIG) =====
-  const supabaseUrl = 'https://mdtcckyejiwdzocklfmf.supabase.co';
-  const supabaseAnonKey = 'sb_publishable_1O-a6s0K1KANqu3w0nwFmw_uETdLXxn';
-  const supabaseClient = supabase.createClient(supabaseUrl, supabaseAnonKey);
-  
-  let allProperties = [];
-  
-  // ===== 📍 Add Marker to Map =====
-  function addMarker(item, isFeatured = false) {
-    const lat = Number(item.lat);
-    const lng = Number(item.lng);
-    if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
-    
-    const photoUrl = item.photo_url || 'https://via.placeholder.com/150?text=No+Image';
-    const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
-    
-    const popupContent = `
-      <div style="width:200px;font-family:sans-serif;">
-        <img src="${photoUrl}" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:8px;" alt="${item.location}">
-        <h5 style="margin:0;font-size:14px;color:#0f3d3e;font-weight:700;">${item.location || 'Property'}</h5>
-        <p style="margin:4px 0;font-size:12px;color:#6c7a7a;">${item.type || ''} ${item.category ? '• ' + item.category : ''}</p>
-        <p style="margin:0 0 10px 0;font-weight:800;color:#136f63;">${item.price || ''}</p>
-        <a href="${directionsUrl}" target="_blank" rel="noopener"
-           style="display:block;background:#d4a017;color:white;text-align:center;padding:8px;border-radius:5px;text-decoration:none;font-weight:600;font-size:12px;">
-          <i class="fas fa-directions"></i> Get Directions
-        </a>
-      </div>
-    `;
-    
-    const marker = L.marker([lat, lng])
-      .addTo(map)
-      .bindPopup(popupContent);
-    
-    if (isFeatured) {
-      featuredMarkers[item.id] = marker;
-    } else {
-      markers[item.id] = marker;
+    if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+      html.setAttribute('data-theme', 'dark');
+      updateThemeIcon(true);
     }
-  }
-  
-  // ===== 📋 Load Featured Listings (New ≤24h) =====
-  async function loadFeaturedListings() {
-    try {
-      const since = new Date(Date.now() - 86400000).toISOString();
-      const { data, error } = await supabaseClient
-        .from('properties')
-        .select('*')
-        .gte('created_at', since)
-        .order('created_at', { ascending: false })
-        .limit(5);
+    
+    function updateThemeIcon(isDark) {
+      const icon = themeToggle.querySelector('i');
+      if (icon) {
+        icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+      }
+    }
+    
+    function toggleTheme() {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      const newTheme = isDark ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(!isDark);
+    }
+    
+    themeToggle?.addEventListener('click', toggleTheme);
+
+    // ===== 📱 Mobile Menu =====
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('overlay');
+    
+    function openMobileMenu() {
+      mobileMenu.classList.add('show');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      overlay.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      mobileToggle.setAttribute('aria-expanded', 'true');
+    }
+    
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('show');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      overlay.classList.remove('show');
+      document.body.style.overflow = '';
+      mobileToggle.setAttribute('aria-expanded', 'false');
+    }
+    
+    mobileToggle?.addEventListener('click', openMobileMenu);
+    overlay?.addEventListener('click', closeMobileMenu);
+    mobileMenu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu?.classList.contains('show')) {
+        closeMobileMenu();
+      }
+    });
+
+    // ===== 🗺️ Map Initialization =====
+    let map;
+    let markers = {};
+    let featuredMarkers = {};
+    
+    function initMap() {
+      const mapEl = document.getElementById('propertyMap');
+      if (!mapEl) return;
       
-      if (error) throw error;
+      map = L.map("propertyMap", {
+        center: [-1.286389, 36.817223],
+        zoom: 7,
+        scrollWheelZoom: false
+      });
       
-      const container = document.getElementById('featuredContainer');
-      if (!data || data.length === 0) {
-        container.innerHTML = '<p class="text-center" style="grid-column:1/-1;color:var(--muted);">No new listings today. Check back soon!</p>';
+      const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+      
+      const satellite = L.tileLayer(
+        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+        { maxZoom: 19, attribution: 'Tiles &copy; Esri' }
+      );
+      
+      L.control.layers({ "OpenStreetMap": osm, "Satellite": satellite }).addTo(map);
+    }
+
+    // ===== 📦 Supabase Setup (YOUR ORIGINAL CONFIG) =====
+    const supabaseUrl = 'https://mdtcckyejiwdzocklfmf.supabase.co';
+    const supabaseAnonKey = 'sb_publishable_1O-a6s0K1KANqu3w0nwFmw_uETdLXxn';
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseAnonKey);
+    
+    let allProperties = [];
+
+    // ===== 📍 Add Marker to Map =====
+    function addMarker(item, isFeatured = false) {
+      const lat = Number(item.lat);
+      const lng = Number(item.lng);
+      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
+      
+      const photoUrl = item.photo_url || 'https://via.placeholder.com/150?text=No+Image';
+      const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+      
+      const popupContent = `
+        <div style="width:200px;font-family:sans-serif;">
+          <img src="${photoUrl}" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:8px;" alt="${item.location}">
+          <h5 style="margin:0;font-size:14px;color:#0f3d3e;font-weight:700;">${item.location || 'Property'}</h5>
+          <p style="margin:4px 0;font-size:12px;color:#6c7a7a;">${item.type || ''} ${item.category ? '• ' + item.category : ''}</p>
+          <p style="margin:0 0 10px 0;font-weight:800;color:#136f63;">${item.price || ''}</p>
+          <a href="${directionsUrl}" target="_blank" rel="noopener"
+             style="display:block;background:#d4a017;color:white;text-align:center;padding:8px;border-radius:5px;text-decoration:none;font-weight:600;font-size:12px;">
+             <i class="fas fa-directions"></i> Get Directions
+          </a>
+        </div>
+      `;
+      
+      const marker = L.marker([lat, lng])
+        .addTo(map)
+        .bindPopup(popupContent);
+      
+      if (isFeatured) {
+        featuredMarkers[item.id] = marker;
+      } else {
+        markers[item.id] = marker;
+      }
+    }
+
+    // ===== 📋 Load Featured Listings (New ≤24h) =====
+    async function loadFeaturedListings() {
+      try {
+        const since = new Date(Date.now() - 86400000).toISOString();
+        const { data, error } = await supabaseClient
+          .from('properties')
+          .select('*')
+          .gte('created_at', since)
+          .order('created_at', { ascending: false })
+          .limit(5);
+        
+        if (error) throw error;
+        
+        const container = document.getElementById('featuredContainer');
+        if (!data || data.length === 0) {
+          container.innerHTML = '<p class="text-center" style="grid-column:1/-1;color:var(--muted);">No new listings today. Check back soon!</p>';
+          return;
+        }
+        
+        let html = '';
+        data.forEach((item) => {
+          const photoUrl = item.photo_url || 'https://via.placeholder.com/800x600?text=No+Image';
+          html += `
+            <div class="featured-card" data-id="${item.id}" data-lat="${item.lat}" data-lng="${item.lng}" role="listitem" tabindex="0">
+              <span class="new-badge">NEW</span>
+              <img src="${photoUrl}" alt="${item.location}" loading="lazy" width="400" height="220">
+              <div class="featured-card-content">
+                <h3>${item.location}</h3>
+                <p>${item.type || ''} • ${item.category || ''}</p>
+                <div class="featured-price">${item.price || 'Price on request'}</div>
+              </div>
+            </div>
+          `;
+          if (item.lat && item.lng) addMarker(item, true);
+        });
+        
+        container.innerHTML = html;
+        
+        container.querySelectorAll('.featured-card').forEach(card => {
+          card.addEventListener('click', function() {
+            const lat = parseFloat(this.dataset.lat);
+            const lng = parseFloat(this.dataset.lng);
+            if (lat && lng) {
+              document.getElementById('propertyMap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              map?.flyTo([lat, lng], 15, { animate: true, duration: 1.5 });
+              setTimeout(() => {
+                const marker = markers[this.dataset.id] || featuredMarkers[this.dataset.id];
+                if (marker) {
+                  marker.openPopup();
+                  const icon = marker._icon;
+                  if (icon) {
+                    icon.classList.add('pulse');
+                    setTimeout(() => icon.classList.remove('pulse'), 2000);
+                  }
+                }
+              }, 1500);
+            }
+          });
+          
+          card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              card.click();
+            }
+          });
+        });
+      
+      } catch (err) {
+        console.error('Error loading featured:', err);
+        document.getElementById('featuredContainer').innerHTML =
+          '<p class="text-center" style="grid-column:1/-1;color:#e74c3c;">Failed to load featured properties.</p>';
+      }
+    }
+
+    // ===== 📋 Load All Listings =====
+    async function loadListings() {
+      try {
+        const { data, error } = await supabaseClient
+          .from('properties')
+          .select('*')
+          .order('created_at', { ascending: false });
+        
+        if (error) throw error;
+        allProperties = data || [];
+        renderListings(allProperties);
+      } catch (err) {
+        console.error(err);
+        document.getElementById('listingsContainer').innerHTML =
+          '<p class="text-center" style="color:#e74c3c;">Failed to load properties. Please try again.</p>';
+      }
+    }
+
+    // ===== 🎨 Render & Filter Listings (ORIGINAL SIMPLE LOGIC) =====
+    function renderListings(listings) {
+      const container = document.getElementById('listingsContainer');
+      const search = document.getElementById('searchLocation')?.value.toLowerCase() || '';
+      const type = document.getElementById('filterType')?.value || '';
+      const cat = document.getElementById('filterCategory')?.value || '';
+      
+      const filtered = listings.filter(item => {
+        const matchLoc = !search || item.location?.toLowerCase().includes(search);
+        const matchType = !type || item.type === type;
+        const matchCat = !cat || item.category === cat;
+        return matchLoc && matchType && matchCat;
+      });
+      
+      Object.keys(markers).forEach(id => {
+        if (map?.hasLayer(markers[id])) map.removeLayer(markers[id]);
+      });
+      markers = {};
+      
+      filtered.forEach(item => {
+        if (item.lat && item.lng && !featuredMarkers[item.id]) {
+          addMarker(item, false);
+        }
+      });
+      
+      if (filtered.length === 0) {
+        container.innerHTML = '<p class="text-center" style="color:var(--muted);">No matching listings found.</p>';
         return;
       }
       
-      let html = '';
-      data.forEach((item) => {
+      // Build table - ORIGINAL STYLE with Locate button only
+      let html = `
+        <div class="table-responsive">
+          <table class="listing-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Status</th>
+                <th>Location</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Size</th>
+                <th>Price</th>
+                <th>Photos</th>
+                <th>Map</th>
+              </tr>
+            </thead>
+            <tbody>
+      `;
+      
+      filtered.forEach((item, i) => {
         const photoUrl = item.photo_url || 'https://via.placeholder.com/800x600?text=No+Image';
+        const status = (item.status || 'Active').toLowerCase();
+        const statusClass = status === 'sold' ? 'text-danger' : status === 'rented' ? 'text-warning' : 'text-success';
+        
         html += `
-          <div class="featured-card" data-id="${item.id}" data-lat="${item.lat}" data-lng="${item.lng}" role="listitem" tabindex="0">
-            <span class="new-badge">NEW</span>
-            <img src="${photoUrl}" alt="${item.location}" loading="lazy" width="400" height="220">
-            <div class="featured-card-content">
-              <h3>${item.location}</h3>
-              <p>${item.type || ''} • ${item.category || ''}</p>
-              <div class="featured-price">${item.price || 'Price on request'}</div>
-            </div>
-          </div>
+          <tr data-id="${item.id}" data-photo="${photoUrl}" data-lat="${item.lat}" data-lng="${item.lng}">
+            <td>${i + 1}</td>
+            <td><span class="fw-bold ${statusClass}">${status.toUpperCase()}</span></td>
+            <td><strong>${item.location}</strong></td>
+            <td>${item.type || '—'}</td>
+            <td><span class="badge bg-secondary">${item.category || '—'}</span></td>
+            <td>${item.size || '—'}</td>
+            <td class="text-success fw-bold">${item.price || '—'}</td>
+            <td>
+              <button class="btn btn-sm btn-primary view-photo"><i class="fas fa-image"></i> View</button>
+            </td>
+            <td>
+              ${(item.lat && item.lng)
+                 ? `<button class="btn btn-sm btn-dark locate-on-map" data-id="${item.id}">
+                      <i class="fas fa-map-marker-alt"></i> Locate
+                    </button>`
+                 : '—'}
+            </td>
+          </tr>
         `;
-        if (item.lat && item.lng) addMarker(item, true);
       });
       
+      html += `</tbody></table></div>`;
       container.innerHTML = html;
+      attachEventListeners();
+    }
+
+    // ===== 🎯 Interaction Logic =====
+    function attachEventListeners() {
+      document.querySelectorAll('.view-photo').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const row = btn.closest('tr');
+          const img = document.getElementById('modalImage');
+          img.src = row.dataset.photo;
+          img.style.objectFit = "contain";
+          document.getElementById('photoModal').classList.add('show');
+          document.body.style.overflow = 'hidden';
+        });
+      });
       
-      container.querySelectorAll('.featured-card').forEach(card => {
-        card.addEventListener('click', function() {
-          const lat = parseFloat(this.dataset.lat);
-          const lng = parseFloat(this.dataset.lng);
+      // Locate on map - ORIGINAL FUNCTIONALITY
+      document.querySelectorAll('.locate-on-map').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const row = btn.closest('tr');
+          const lat = parseFloat(row.dataset.lat);
+          const lng = parseFloat(row.dataset.lng);
+          const id = row.dataset.id;
+          
           if (lat && lng) {
-            document.getElementById('propertyMap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            document.getElementById('propertyMap')?.scrollIntoView({ behavior: 'smooth' });
             map?.flyTo([lat, lng], 15, { animate: true, duration: 1.5 });
             setTimeout(() => {
-              const marker = markers[this.dataset.id] || featuredMarkers[this.dataset.id];
+              const marker = markers[id] || featuredMarkers[id];
               if (marker) {
                 marker.openPopup();
                 const icon = marker._icon;
@@ -2309,204 +1542,50 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1500);
           }
         });
-        
-        card.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            card.click();
-          }
-        });
       });
-      
-    } catch (err) {
-      console.error('Error loading featured:', err);
-      document.getElementById('featuredContainer').innerHTML =
-        '<p class="text-center" style="grid-column:1/-1;color:#e74c3c;">Failed to load featured properties.</p>';
     }
-  }
-  
-  // ===== 📋 Load All Listings =====
-  async function loadListings() {
-    try {
-      const { data, error } = await supabaseClient
-        .from('properties')
-        .select('*')
-        .order('created_at', { ascending: false });
-      
-      if (error) throw error;
-      allProperties = data || [];
-      renderListings(allProperties);
-    } catch (err) {
-      console.error(err);
-      document.getElementById('listingsContainer').innerHTML =
-        '<p class="text-center" style="color:#e74c3c;">Failed to load properties. Please try again.</p>';
+
+    // ===== 🔍 Filter Events =====
+    function debounce(func, wait) {
+      let timeout;
+      return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+      };
     }
-  }
-  
-  // ===== 🎨 Render & Filter Listings (ORIGINAL SIMPLE LOGIC) =====
-  function renderListings(listings) {
-    const container = document.getElementById('listingsContainer');
-    const search = document.getElementById('searchLocation')?.value.toLowerCase() || '';
-    const type = document.getElementById('filterType')?.value || '';
-    const cat = document.getElementById('filterCategory')?.value || '';
     
-    const filtered = listings.filter(item => {
-      const matchLoc = !search || item.location?.toLowerCase().includes(search);
-      const matchType = !type || item.type === type;
-      const matchCat = !cat || item.category === cat;
-      return matchLoc && matchType && matchCat;
+    const debouncedRender = debounce(() => renderListings(allProperties), 300);
+    document.getElementById('searchLocation')?.addEventListener('input', debouncedRender);
+    document.getElementById('filterType')?.addEventListener('change', debouncedRender);
+    document.getElementById('filterCategory')?.addEventListener('change', debouncedRender);
+
+    // ===== 🖼️ Modal Close =====
+    const modal = document.getElementById('photoModal');
+    document.getElementById('closeModal')?.addEventListener('click', () => {
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
     });
-    
-    Object.keys(markers).forEach(id => {
-      if (map?.hasLayer(markers[id])) map.removeLayer(markers[id]);
-    });
-    markers = {};
-    
-    filtered.forEach(item => {
-      if (item.lat && item.lng && !featuredMarkers[item.id]) {
-        addMarker(item, false);
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
       }
     });
-    
-    if (filtered.length === 0) {
-      container.innerHTML = '<p class="text-center" style="color:var(--muted);">No matching listings found.</p>';
-      return;
-    }
-    
-    // Build table - ORIGINAL STYLE with Locate button only
-    let html = `
-      <div class="table-responsive">
-        <table class="listing-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Status</th>
-              <th>Location</th>
-              <th>Type</th>
-              <th>Category</th>
-              <th>Size</th>
-              <th>Price</th>
-              <th>Photos</th>
-              <th>Map</th>
-            </tr>
-          </thead>
-          <tbody>
-    `;
-    
-    filtered.forEach((item, i) => {
-      const photoUrl = item.photo_url || 'https://via.placeholder.com/800x600?text=No+Image';
-      const status = (item.status || 'Active').toLowerCase();
-      const statusClass = status === 'sold' ? 'text-danger' : status === 'rented' ? 'text-warning' : 'text-success';
-      
-      html += `
-        <tr data-id="${item.id}" data-photo="${photoUrl}" data-lat="${item.lat}" data-lng="${item.lng}">
-          <td>${i + 1}</td>
-          <td><span class="fw-bold ${statusClass}">${status.toUpperCase()}</span></td>
-          <td><strong>${item.location}</strong></td>
-          <td>${item.type || '—'}</td>
-          <td><span class="badge bg-secondary">${item.category || '—'}</span></td>
-          <td>${item.size || '—'}</td>
-          <td class="text-success fw-bold">${item.price || '—'}</td>
-          <td>
-            <button class="btn btn-sm btn-primary view-photo"><i class="fas fa-image"></i> View</button>
-          </td>
-          <td>
-            ${(item.lat && item.lng) 
-              ? `<button class="btn btn-sm btn-dark locate-on-map" data-id="${item.id}">
-                  <i class="fas fa-map-marker-alt"></i> Locate
-                </button>` 
-              : '—'}
-          </td>
-        </tr>
-      `;
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('show')) {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+      }
     });
-    
-    html += `</tbody></table></div>`;
-    container.innerHTML = html;
-    attachEventListeners();
-  }
-  
-  // ===== 🎯 Interaction Logic =====
-  function attachEventListeners() {
-    document.querySelectorAll('.view-photo').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const row = btn.closest('tr');
-        const img = document.getElementById('modalImage');
-        img.src = row.dataset.photo;
-        img.style.objectFit = "contain";
-        document.getElementById('photoModal').classList.add('show');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-    
-    // Locate on map - ORIGINAL FUNCTIONALITY
-    document.querySelectorAll('.locate-on-map').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const row = btn.closest('tr');
-        const lat = parseFloat(row.dataset.lat);
-        const lng = parseFloat(row.dataset.lng);
-        const id = row.dataset.id;
-        
-        if (lat && lng) {
-          document.getElementById('propertyMap')?.scrollIntoView({ behavior: 'smooth' });
-          map?.flyTo([lat, lng], 15, { animate: true, duration: 1.5 });
-          setTimeout(() => {
-            const marker = markers[id] || featuredMarkers[id];
-            if (marker) {
-              marker.openPopup();
-              const icon = marker._icon;
-              if (icon) {
-                icon.classList.add('pulse');
-                setTimeout(() => icon.classList.remove('pulse'), 2000);
-              }
-            }
-          }, 1500);
-        }
-      });
-    });
-  }
-  
-  // ===== 🔍 Filter Events =====
-  function debounce(func, wait) {
-    let timeout;
-    return function(...args) {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func.apply(this, args), wait);
-    };
-  }
-  
-  const debouncedRender = debounce(() => renderListings(allProperties), 300);
-  document.getElementById('searchLocation')?.addEventListener('input', debouncedRender);
-  document.getElementById('filterType')?.addEventListener('change', debouncedRender);
-  document.getElementById('filterCategory')?.addEventListener('change', debouncedRender);
-  
-  // ===== 🖼️ Modal Close =====
-  const modal = document.getElementById('photoModal');
-  document.getElementById('closeModal')?.addEventListener('click', () => {
-    modal.classList.remove('show');
-    document.body.style.overflow = '';
+
+    // ===== 📅 Dynamic Year =====
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== 🚀 Initialize =====
+    initMap();
+    loadFeaturedListings();
+    loadListings();
   });
-  modal?.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('show');
-      document.body.style.overflow = '';
-    }
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('show')) {
-      modal.classList.remove('show');
-      document.body.style.overflow = '';
-    }
-  });
-  
-  // ===== 📅 Dynamic Year =====
-  document.getElementById('year').textContent = new Date().getFullYear();
-  
-  // ===== 🚀 Initialize =====
-  initMap();
-  loadFeaturedListings();
-  loadListings();
-});
-</script>
+  </script>
 </body>
 </html>
